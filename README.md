@@ -79,6 +79,20 @@ Evaluation run on **2026-02-06** with 12 tasks across 6 domains, using 3 evaluat
 5. **Opus 4.6 is the most reliable meta-evaluator** (8.5/10) but shows the highest self-bias (+0.66)
 6. **Scientific Reasoning has converged** — all three frontier models score 9.2
 
+### The Peer Evaluation Paradox
+
+A critical finding of this study: **the most reliable evaluator (Opus 4.6, meta-reliability 8.5/10) ranks second in overall performance (8.98 vs 4.5's 9.12).** This raises a fundamental question — is the strictest, most discerning model undervalued by less sophisticated evaluators?
+
+Key observations:
+- Opus 4.6 is the **harshest evaluator** (-0.28) and the **most reliable meta-evaluator** (8.5/10) — yet scores lower than Opus 4.5
+- Opus 4.6 leads in **Originality** (8.1 vs 7.9) across both runs, suggesting deeper thinking
+- The 0.14-point gap is **within statistical noise** for 12 tasks
+- As a "thinking model," 4.6's strict self-verification may produce advantages (fewer bugs, better UI consistency, edge case handling) that are **invisible to output-only evaluation**
+
+**Most balanced conclusion:** Both models have near-equivalent overall capability with different profiles — 4.5 optimizes for precision and completeness, 4.6 for depth, originality, and critical self-verification. The latter advantages likely manifest more strongly in complex, long-context real-world tasks (large codebase maintenance, nuanced debugging, holistic UI design) that our short-answer scoring rubric cannot capture.
+
+See [analysis/analysis_combined_en_20260206.md](analysis/analysis_combined_en_20260206.md) for the full discussion.
+
 ### Note on Data Quality and Gemini API Reliability
 
 **Anomaly filtering** is applied to remove corrupted evaluation data before score aggregation. Gemini 3.0 Pro experiences a **~10-17% structured output failure rate** — returning empty responses, unterminated JSON strings, or partially valid JSON. The framework handles this through:

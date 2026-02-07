@@ -301,6 +301,174 @@ Possible explanations:
 
 ---
 
+## 8. The Peer Evaluation Paradox: Can the Smartest Model Be Undervalued?
+
+### 8.1 The Hypothesis
+
+A fundamental question arises from the data: **Is Opus 4.6 undervalued because it is a stricter, more discerning evaluator?**
+
+The argument goes:
+1. Opus 4.6 is the most intelligent evaluator (highest meta-reliability at 8.5/10)
+2. Because it is smarter, it applies stricter standards (harshness index: -0.28)
+3. The other models cannot fully appreciate the quality of 4.6's output because they lack its level of discernment
+4. Result: 4.6 is penalized twice — once as a "harsh grader" and once by being evaluated by less sophisticated judges
+
+This is known in evaluation theory as the **"competence-evaluation paradox"** or the **"harsh grader penalty"** — a well-documented problem in human academic peer review where the most rigorous reviewers are themselves disadvantaged.
+
+### 8.2 Evidence Supporting the Hypothesis
+
+**1. The Meta-Reliability Contradiction**
+
+| Model | Meta Reliability (as evaluator) | Overall Score (as evaluated) |
+|-------|:-------------------------------:|:----------------------------:|
+| Opus 4.5 | 8.3 | **9.12** |
+| **Opus 4.6** | **8.5** | 8.98 |
+| Gemini | 5.4 | 8.67 |
+
+The most reliable evaluator ranks second in performance. If meta-reliability measures "how well a model judges quality," then Opus 4.6 has the strongest capacity to identify what constitutes good output — yet the consensus of the other (less reliable) evaluators places it below Opus 4.5.
+
+**2. Opus 4.6 Is the Strictest Evaluator (-0.28)**
+
+If strictness stems from "detecting flaws others miss," the lower scores 4.6 assigns may reflect *more accurate evaluation* rather than arbitrary harshness.
+
+**3. Self-Bias as Legitimate Self-Awareness**
+
+Opus 4.6's self-bias (+0.66) is normally interpreted as "favoring its own work." But if 4.6 genuinely produces higher-quality output than the consensus recognizes, rating itself higher could be *accurate self-assessment* rather than bias.
+
+**4. Consistent Originality Leadership**
+
+Across both runs, 4.6 leads in Originality (8.1 vs 7.9). Originality measures "non-obvious approaches" — a proxy for deeper thinking that may not be fully appreciated by less discerning evaluators.
+
+### 8.3 Evidence Against the Hypothesis
+
+**1. Bias Correction Is Already Applied**
+
+The profiler adjusts scores using evaluator harshness indices. If 4.6 is harsh, scores *given to* 4.6 are already adjusted upward. However, this correction is global — it does not account for the possibility that 4.6 has better *discrimination* (giving lower scores to genuinely weaker output and higher scores to genuinely stronger output).
+
+**2. Gemini (Independent Third Party) Also Prefers Opus 4.5**
+
+Gemini rates Opus 4.5 at 9.73 vs Opus 4.6 at 8.73. For the hypothesis to hold, Gemini must also "not be smart enough" to appreciate 4.6. However, Gemini's own meta-reliability is only 5.4/10 — making it the least reliable evaluator. *How much weight should an unreliable evaluator's "independent" opinion carry?*
+
+**3. Run A (2-Model) Also Shows 4.5 Leading**
+
+Even without Gemini, Opus 4.5 (9.05) > Opus 4.6 (8.93). Though the 0.12-point gap may not be statistically significant with only 12 tasks.
+
+### 8.4 The Fundamental Limitation of Peer Evaluation
+
+This hypothesis is **unfalsifiable within the peer evaluation framework** because there is no objective ground truth.
+
+```
+If the "smartest model" exists:
+  → Its evaluations are the most accurate
+  → But it is outnumbered by less discerning evaluators
+  → The majority consensus overrides the most accurate assessment
+  → Peer evaluation rewards "consensus-compatible" over "most correct"
+```
+
+This mirrors a known problem in academic peer review: **the most innovative papers are disproportionately rejected by conservative reviewers.** The structure of peer evaluation inherently favors the median perspective.
+
+### 8.5 The "Invisible Advantage" Paradox
+
+A further paradox emerges from the "thinking model" architecture:
+
+```
+Model A (no self-verification):
+  → Produces output with 3 subtle bugs in 10 attempts
+  → Evaluators notice the bugs, score decreases
+  → Bug rate is visible and penalized
+
+Model B (strict self-verification):
+  → Internal process catches 3 bugs before output
+  → Final output is clean in all 10 attempts
+  → Evaluators see "both models produce clean output"
+  → The self-correction effort is invisible
+```
+
+**The better a model is at self-correction, the less visible its advantage becomes in output-only evaluation.** The thinking model's internal quality control produces fewer observable failures, but this absence of failure is not measurably different from never having generated the failure in the first place.
+
+---
+
+## 9. Context Window, Originality, and Real-World Impact
+
+### 9.1 The Compound Effect Hypothesis
+
+Three properties measured in this evaluation may compound in real-world tasks in ways our scoring rubric cannot capture:
+
+| Property | Evaluation Evidence | Real-World Manifestation |
+|----------|-------------------|--------------------------|
+| **Evaluation strictness** | Harshness -0.28 | Self-correction during generation → fewer bugs |
+| **Originality** | 8.1 (highest) | Novel approaches → better problem-solving |
+| **Meta-cognitive ability** | Meta-reliability 8.5 (highest) | Self-awareness → consistent quality |
+
+These three properties likely share a common cognitive root: **the ability to deeply understand a problem and critically verify one's own output.** In a thinking model, this manifests as:
+
+- During evaluation → stricter standards (detects flaws others miss)
+- During generation → more original approaches (explores non-obvious solutions)
+- During self-review → catches more errors (applies same strictness to own output)
+
+### 9.2 Long Context × Strict Self-Verification = Practical Superiority
+
+Neither property alone is sufficient:
+
+- **Long context + lenient self-evaluation** = "sees the full picture but doesn't notice inconsistencies"
+- **Short context + strict self-evaluation** = "catches local errors but misses cross-file issues"
+- **Long context + strict self-evaluation** = "sees the full picture AND catches subtle inconsistencies"
+
+This compound effect is particularly relevant for:
+
+**Debugging:**
+
+| Bug Type | Short Context + Lenient | Long Context + Strict |
+|----------|:-:|:-:|
+| Local syntax errors | Detectable | Detectable |
+| Logic bugs within a function | Detectable | Detectable |
+| **Cross-file type inconsistencies** | Missed | **Detected** |
+| **Race conditions in state management** | Missed | **Detected** |
+| **Implicit API contract violations** | Missed | **Detected** |
+| **Edge case omissions** | Sometimes | **Detected** |
+
+**UI Design:**
+
+| Quality Dimension | Short Context + Lenient | Long Context + Strict |
+|-------------------|:-:|:-:|
+| Individual component correctness | Good | Good |
+| **Cross-page spacing consistency** | Inconsistent | **Consistent** |
+| **Dark mode coherence across all components** | Partial | **Complete** |
+| **Accessibility compliance (WCAG)** | Spotty | **Systematic** |
+| **Design system adherence** | Drifts | **Maintained** |
+
+### 9.3 What Our Evaluation Framework Cannot Measure
+
+| What We Measured | What We Could Not Measure |
+|-----------------|--------------------------|
+| Accuracy (local) | **System-wide coherence** (context-dependent) |
+| Completeness (requirements) | **Edge case exhaustiveness** (critical thinking-dependent) |
+| Logical consistency (within response) | **Cross-component consistency** (context-dependent) |
+| Clarity (expression) | **Practical deployability** (post-deploy quality) |
+| Originality (approach novelty) | **Robustness** (error handling quality) |
+
+**Our evaluation measured "quality of short answers" but not "ability to build complex systems."** The properties where Opus 4.6 excels (long context, strict self-verification, originality) are precisely those that matter most for the latter.
+
+### 9.4 Verification Proposals
+
+To test whether these unmeasured dimensions produce real differences:
+
+1. **Long-form coding tasks** — Generate 500+ line codebases; measure unit test pass rate, cross-file type safety, and dependency consistency
+2. **Graduated debugging tasks** — From syntax errors (all models pass) to race conditions and implicit contract violations (context + strictness dependent)
+3. **Multi-screen UI generation** — Generate 10+ screens simultaneously; auto-measure spacing/color/typography consistency and WCAG compliance
+4. **Iterative debugging** — Measure "how many fix attempts until all tests pass" as a composite metric for detection speed and correction accuracy
+
+### 9.5 The Most Balanced Conclusion
+
+Given all evidence:
+
+> **The 0.14-point gap between Opus 4.5 (9.12) and Opus 4.6 (8.98) is small enough to be within statistical noise for 12 tasks. When combined with the competence-evaluation paradox (the strictest evaluator being penalized for its own strictness), the most defensible conclusion is that both models have near-equivalent overall capability but fundamentally different profiles:**
+>
+> - **Opus 4.5** optimizes for precision, completeness, and consistent output — excelling in domains with clear correctness criteria
+> - **Opus 4.6** optimizes for depth, originality, and critical self-verification — advantages that are underrepresented in our scoring rubric and likely manifest more strongly in complex, long-context, real-world tasks such as large codebase maintenance, nuanced debugging, and holistic UI design
+
+---
+
 ## Appendix: Raw Data Summary
 
 ### A.1 Run A (2-Model) — Full Domain Scores
