@@ -1,0 +1,23 @@
+id: multilingual_001
+domain: multilingual
+difficulty: medium
+prompt: |
+  Translate the following Japanese text into English, then analyze
+  the translation challenges:
+
+  「木漏れ日が差し込む縁側で、おばあちゃんが淹れてくれたお茶を
+  すすりながら、何も考えない贅沢な時間を過ごした。」
+
+  Tasks:
+  1. Provide your best English translation.
+  2. Identify at least 3 culturally specific concepts that are
+     difficult to translate directly (e.g., 木漏れ日, 縁側).
+  3. For each concept, explain what is lost in translation and
+     suggest strategies to preserve the nuance.
+  4. Provide an alternative "free translation" that prioritizes
+     emotional impact over literal accuracy.
+expected_aspects:
+  - translation_quality
+  - cultural_concept_identification
+  - nuance_analysis
+  - free_translation_creativity

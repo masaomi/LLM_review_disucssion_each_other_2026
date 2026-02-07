@@ -1,0 +1,188 @@
+{
+  "task_id": "code_generation_001",
+  "evaluations": [
+    {
+      "task_id": "code_generation_001",
+      "evaluator_key": "opus_4_5",
+      "evaluated_key": "opus_4_6",
+      "blind_label": "Model A",
+      "scores": {
+        "accuracy": 10.0,
+        "completeness": 9.0,
+        "logical_consistency": 10.0,
+        "clarity": 10.0,
+        "originality": 8.0
+      },
+      "strengths": [
+        "Correct O(1) implementation using doubly linked list with hash map - the core data structure choice is optimal",
+        "Excellent use of sentinel nodes (dummy head/tail) to simplify edge case handling",
+        "Comprehensive type hints throughout the code including Optional, Any, and Dict",
+        "Thorough docstrings with clear explanations, examples, and complexity annotations",
+        "Well beyond the required 3 unit tests - provides 9 comprehensive tests covering edge cases like capacity=1, invalid capacity, size tracking, and stress testing",
+        "Clean separation of internal methods (_remove_node, _add_to_front, _move_to_front, _evict_lru) with clear single responsibilities",
+        "Use of __slots__ in _Node class for memory optimization",
+        "Helpful visual diagram explaining the data structure",
+        "Proper error handling with ValueError for invalid capacity"
+      ],
+      "weaknesses": [
+        "The complexity analysis table at the end is truncated/incomplete - only shows 'get() time' row header without the full explanation",
+        "Space complexity is mentioned in the task requirements but not explicitly documented in the final complexity analysis section",
+        "Could have included a delete/remove operation for additional utility, though not required",
+        "The __contains__ method doesn't update access order, which is documented but could be surprising behavior - a note about this design decision would strengthen the implementation"
+      ],
+      "reasoning": "This is an excellent LRU Cache implementation that meets all requirements and goes beyond in several areas. The core algorithm is correct - using a doubly linked list for O(1) removal/insertion combined with a hash map for O(1) lookup is the standard optimal approach. The code demonstrates strong software engineering practices: sentinel nodes eliminate null checks, __slots__ optimizes memory, comprehensive docstrings aid understanding, and the test suite is thorough. The implementation correctly handles all edge cases including updating existing keys, proper eviction order, and capacity=1 scenarios. The only notable weakness is the truncated complexity analysis section at the end, which appears to have been cut off. The space complexity (O(capacity)) should have been explicitly stated. Despite this minor documentation gap, the implementation itself is flawless and the code quality is professional-grade.",
+      "is_self_bias_test": false,
+      "timestamp": 1770407654.395919,
+      "error": null
+    },
+    {
+      "task_id": "code_generation_001",
+      "evaluator_key": "opus_4_5",
+      "evaluated_key": "gemini_3_pro",
+      "blind_label": "Model B",
+      "scores": {
+        "accuracy": 10.0,
+        "completeness": 10.0,
+        "logical_consistency": 10.0,
+        "clarity": 10.0,
+        "originality": 7.0
+      },
+      "strengths": [
+        "Correct implementation of LRU cache using hash map and doubly linked list, achieving O(1) time complexity for both get and put operations",
+        "Comprehensive type hints throughout the code (Dict, Any, Optional) as required",
+        "Well-written docstrings for all classes and methods explaining purpose and parameters",
+        "Three well-designed unit tests covering basic operations, eviction policy, and key updates with clear comments explaining state transitions",
+        "Thorough complexity analysis with clear explanations for both time and space complexity",
+        "Excellent use of sentinel/dummy nodes to simplify edge case handling, with clear explanation of why this design choice was made",
+        "Clean code organization with helper methods (_add_node, _remove_node, _move_to_head, _pop_tail) that improve readability",
+        "Input validation for capacity with appropriate error handling"
+      ],
+      "weaknesses": [
+        "The implementation follows the standard/canonical approach for LRU cache, showing limited originality in the solution",
+        "Return value of -1 for missing keys is a common convention but could be more Pythonic (e.g., raising KeyError or returning None)",
+        "Could have included edge case tests such as capacity of 1, or testing the ValueError for invalid capacity"
+      ],
+      "reasoning": "This response is an exemplary implementation of an LRU cache that meets all requirements specified in the task. The accuracy is perfect - the implementation correctly uses a hash map combined with a doubly linked list to achieve O(1) operations, and does not use the forbidden functools.lru_cache or collections.OrderedDict. The completeness is excellent, covering all five requirements: O(1) operations, proper eviction, type hints, docstrings, unit tests, and complexity analysis. The logical consistency is flawless - the code is well-structured with clear separation of concerns, and the complexity analysis correctly explains why each operation is O(1). The clarity is outstanding with excellent documentation, meaningful variable names, and a helpful design explanation section that explains the rationale behind key decisions like using dummy nodes. The only area where the response doesn't excel is originality - while the implementation is clean and well-executed, it follows the standard textbook approach for LRU cache implementation. This is not necessarily a weakness for a coding task where correctness is paramount, but it doesn't demonstrate novel insights or creative approaches beyond the canonical solution.",
+      "is_self_bias_test": false,
+      "timestamp": 1770407654.098955,
+      "error": null
+    },
+    {
+      "task_id": "code_generation_001",
+      "evaluator_key": "opus_4_6",
+      "evaluated_key": "opus_4_5",
+      "blind_label": "Model A",
+      "scores": {
+        "accuracy": 10.0,
+        "completeness": 10.0,
+        "logical_consistency": 10.0,
+        "clarity": 10.0,
+        "originality": 8.0
+      },
+      "strengths": [
+        "Correct O(1) implementation using a doubly linked list with sentinel nodes and a hash map, without using OrderedDict or functools.lru_cache.",
+        "Comprehensive type hints using TypeVar and Generic, making the cache truly generic over key and value types.",
+        "Excellent use of sentinel head/tail nodes to eliminate edge cases in linked list operations.",
+        "Well-structured docstrings on every class and method, including Args, Returns, Raises, and Time Complexity annotations.",
+        "Far exceeds the minimum of 3 unit tests — provides 11 tests covering basic operations, eviction policy, update behavior, capacity-one edge case, access order, invalid capacity, __contains__/__len__, different types, and doubly linked list internals.",
+        "Clean separation of concerns: Node, DoublyLinkedList, and LRUCache are distinct classes with clear responsibilities.",
+        "Includes __len__, __contains__, and __repr__ dunder methods for usability.",
+        "Complexity analysis is presented clearly in tabular form with per-operation and per-entry breakdowns.",
+        "Input validation (ValueError for non-positive capacity) adds robustness.",
+        "The code is syntactically correct and would run without errors."
+      ],
+      "weaknesses": [
+        "The sentinel nodes use `None` for key/value with a `# type: ignore` comment, which is a minor type-safety compromise. An alternative would be to use a separate sentinel class or Optional types on Node fields.",
+        "The `__contains__` method does not update access order, which is documented but could be surprising to some users — a brief note in the class docstring about this design choice would strengthen it.",
+        "The complexity analysis table for space complexity appears slightly truncated (the 'Per Entry' row's explanation ends abruptly), though the content is still understandable.",
+        "While the approach (doubly linked list + hash map) is the canonical solution and is executed very well, it doesn't offer a particularly novel or creative twist beyond the standard implementation."
+      ],
+      "reasoning": "This response is an exemplary implementation of an LRU Cache. The code is correct: get and put are both O(1) as required, eviction logic is properly handled, and the doubly linked list with sentinel nodes is a clean and well-known technique executed flawlessly. Type hints and docstrings are thorough and professional-grade, using Generic and TypeVar for true genericity. The test suite is comprehensive, covering not just the minimum 3 tests but 11 tests across a wide range of scenarios including edge cases (capacity 1, empty list removal, invalid capacity), different types, and internal data structure correctness. The complexity analysis is accurate and well-presented. The only minor issues are the type: ignore on sentinel nodes, a slightly truncated space complexity explanation, and the lack of novelty beyond the standard approach. Overall, this is a near-perfect response.",
+      "is_self_bias_test": false,
+      "timestamp": 1770407658.3894641,
+      "error": null
+    },
+    {
+      "task_id": "code_generation_001",
+      "evaluator_key": "opus_4_6",
+      "evaluated_key": "gemini_3_pro",
+      "blind_label": "Model B",
+      "scores": {
+        "accuracy": 10.0,
+        "completeness": 10.0,
+        "logical_consistency": 10.0,
+        "clarity": 10.0,
+        "originality": 7.0
+      },
+      "strengths": [
+        "Correct O(1) implementation using a hash map and doubly linked list with sentinel nodes, avoiding OrderedDict and functools.lru_cache as required.",
+        "Comprehensive type hints throughout (Dict, Any, Optional, return types) and thorough docstrings on every method.",
+        "Three well-designed unit tests covering basic get/put, eviction policy (including the subtle case where a get() changes eviction order), and key update behavior.",
+        "Excellent complexity analysis with clear justification for O(1) time for both operations and O(C) space.",
+        "Additional 'Design Explanation' section clearly articulates why a doubly linked list is needed (not just singly linked) and why sentinel/dummy nodes simplify the code.",
+        "Input validation on capacity with a ValueError for non-positive values.",
+        "Clean separation of concerns with private helper methods (_add_node, _remove_node, _move_to_head, _pop_tail)."
+      ],
+      "weaknesses": [
+        "The implementation is the classic/standard LRU cache approach (hash map + doubly linked list with sentinels), which is well-known and doesn't introduce novel insights or creative variations.",
+        "Returning -1 for cache misses is a LeetCode convention; raising a KeyError or returning None would be more Pythonic. The docstring documents this, but it's still a minor design concern.",
+        "The variable name 'new' in _remove_node shadows the Python built-in 'new' (though 'new' isn't commonly used, 'nxt' or 'next_node' would be cleaner).",
+        "Could have included an edge case test such as capacity=1 or testing that putting the same key multiple times doesn't increase cache size."
+      ],
+      "reasoning": "The response is an exemplary implementation of an LRU cache that satisfies every requirement: O(1) get/put via hash map + doubly linked list, fixed capacity with proper eviction, type hints, docstrings, 3+ unit tests, and a thorough complexity explanation. The code is correct—I traced through the eviction test and the update test and both produce the expected results. The sentinel node pattern is correctly implemented, and the helper methods cleanly decompose the linked list operations. The complexity analysis is accurate and well-explained. The only notable weaknesses are the use of -1 as a miss indicator (not very Pythonic), a minor variable naming issue, and the lack of novelty since this is the textbook approach. The clarity and organization are outstanding, with LaTeX-formatted complexity, clear section headers, and a design rationale section.",
+      "is_self_bias_test": false,
+      "timestamp": 1770407656.508688,
+      "error": null
+    },
+    {
+      "task_id": "code_generation_001",
+      "evaluator_key": "gemini_3_pro",
+      "evaluated_key": "opus_4_5",
+      "blind_label": "Model A",
+      "scores": {
+        "accuracy": 10.0,
+        "completeness": 10.0,
+        "logical_consistency": 10.0,
+        "clarity": 10.0,
+        "originality": 8.0
+      },
+      "strengths": [
+        "Correctly implements the LRU cache using a Hash Map and Doubly Linked List to ensure O(1) time complexity.",
+        "Uses sentinel nodes (head and tail) in the linked list, which significantly simplifies edge case handling (e.g., empty list, single element) and reduces the risk of bugs.",
+        "Includes comprehensive unit tests using the `unittest` framework, covering edge cases like capacity limits, updates, and eviction order.",
+        "Excellent use of Python type hinting (Generics) and detailed docstrings."
+      ],
+      "weaknesses": [],
+      "reasoning": "The model provided a flawless response. It correctly identified the optimal data structure (Hash Map + Doubly Linked List) to meet the O(1) requirement. The implementation details, particularly the use of sentinel nodes to avoid null pointer checks, demonstrate a high level of competence. The code is well-typed, documented, and the tests are thorough. All constraints were respected.",
+      "is_self_bias_test": false,
+      "timestamp": 1770407667.144237,
+      "error": null
+    },
+    {
+      "task_id": "code_generation_001",
+      "evaluator_key": "gemini_3_pro",
+      "evaluated_key": "opus_4_6",
+      "blind_label": "Model B",
+      "scores": {
+        "accuracy": 10.0,
+        "completeness": 8.0,
+        "logical_consistency": 10.0,
+        "clarity": 9.0,
+        "originality": 8.0
+      },
+      "strengths": [
+        "Correct and efficient O(1) implementation using a Doubly Linked List and Hash Map.",
+        "High-quality code with proper type hints, detailed docstrings, and memory optimization using `__slots__`.",
+        "Use of sentinel nodes (dummy head/tail) significantly simplifies the linked list logic.",
+        "Extensive unit testing suite (9 tests) covering edge cases like capacity limits, updates, and invalid inputs."
+      ],
+      "weaknesses": [
+        "The response is truncated at the very end, failing to complete the complexity analysis table and explanation."
+      ],
+      "reasoning": "The model provided an excellent implementation of the LRU cache. The code is Pythonic, robust, and correctly implements the required data structures without relying on built-ins like `OrderedDict`. The inclusion of `__slots__` and sentinel nodes demonstrates a strong understanding of data structures. The unit tests are comprehensive. However, the response cuts off abruptly in the final section, failing to fully address the requirement to explain time and space complexity.",
+      "is_self_bias_test": false,
+      "timestamp": 1770407671.1485271,
+      "error": null
+    }
+  ]
+}

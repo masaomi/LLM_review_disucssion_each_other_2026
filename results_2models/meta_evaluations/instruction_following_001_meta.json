@@ -1,0 +1,55 @@
+{
+  "task_id": "instruction_following_001",
+  "meta_evaluations": [
+    {
+      "task_id": "instruction_following_001",
+      "meta_evaluator_key": "opus_4_6",
+      "original_evaluator_key": "opus_4_5",
+      "original_evaluated_key": "opus_4_6",
+      "scores": {
+        "fairness": 8.0,
+        "specificity": 9.0,
+        "coverage": 8.0,
+        "calibration": 7.0
+      },
+      "detected_biases": [
+        "Slight leniency bias - the evaluation is overwhelmingly positive with only very minor, almost dismissive weaknesses noted",
+        "The weaknesses listed are somewhat manufactured rather than substantive critiques, suggesting a tendency to praise rather than critically assess"
+      ],
+      "missed_points": [
+        "The evaluation could have noted that the response is exceptionally well-crafted given the difficulty of the constraints, but the scores of 9 across the board feel slightly undifferentiated - the evaluator doesn't distinguish meaningfully between dimensions",
+        "The weakness about the joke being 'slightly informal for some professional contexts' is actually contradicted by the constraint itself, which explicitly requires 'exactly one subtle joke' - this is not a genuine weakness but rather perfect compliance with the task",
+        "The second weakness about not specifying temperature values is also not a real weakness since the task asked for exactly 3 technical specifications, not more - adding another would potentially violate the constraint",
+        "The evaluation could have discussed the quality of the call-to-action more critically - 'discovering what your old water bottle has been missing' is effective but could be analyzed further",
+        "The evaluation doesn't address whether the product description would be effective as marketing copy beyond just meeting the constraints"
+      ],
+      "reasoning": "The evaluation is generally competent and demonstrates strong specificity - it correctly identifies each constraint and maps it to specific elements in the response (e.g., listing the exact vowel-starting words, the three technical specs, etc.). The strengths section is thorough and well-evidenced. However, the evaluation suffers from calibration issues. The scores are uniformly high (8-9) across all dimensions without much differentiation, which suggests the evaluator may not have deeply considered what distinguishes a 9 from a 10 or an 8. The response genuinely does meet all constraints excellently, so high scores are warranted, but the near-uniform distribution feels lazy. The weaknesses identified are particularly problematic: both 'weaknesses' are actually non-issues when examined against the task constraints. The joke is required by the task, so calling it 'slightly informal' contradicts the requirement. Similarly, suggesting more technical specs when the task says 'exactly 3' would be a violation. This means the evaluator failed to identify any genuine weaknesses while manufacturing false ones, which hurts both coverage and calibration. The response is genuinely strong, but a more calibrated evaluation might have given perfect or near-perfect scores on constraint adherence while being more nuanced about writing quality, marketing effectiveness, or the naturalness of the joke integration. Overall, the evaluation is solid but somewhat surface-level in its critical analysis.",
+      "timestamp": 1770389898.4602711,
+      "error": null
+    },
+    {
+      "task_id": "instruction_following_001",
+      "meta_evaluator_key": "opus_4_5",
+      "original_evaluator_key": "opus_4_6",
+      "original_evaluated_key": "opus_4_5",
+      "scores": {
+        "fairness": 9.0,
+        "specificity": 10.0,
+        "coverage": 8.5,
+        "calibration": 8.5
+      },
+      "detected_biases": [
+        "Slight leniency bias - the evaluator seems predisposed to view the response favorably, giving high scores across all dimensions without much differentiation"
+      ],
+      "missed_points": [
+        "The evaluator could have noted that 'triple-wall vacuum technology' and 'precision sensor' might be considered additional technical specifications, making the count potentially exceed 3",
+        "The evaluator did not critically examine whether 'Bluetooth 5.0' alone constitutes a full technical specification or if it needs more context (e.g., range, data transfer rate)",
+        "The weakness about the joke making sentence 2 longer is valid but the evaluator didn't note this could affect readability more significantly",
+        "The evaluator could have questioned whether 'discover what intelligent drinking truly means' is a sufficiently strong call-to-action or somewhat vague"
+      ],
+      "reasoning": "This is a high-quality evaluation that demonstrates strong analytical skills. The evaluator excels in specificity - they cite exact words for the AEIOU pattern, identify precise technical specifications with their values, and quote the joke and call-to-action directly. The strengths section is comprehensive and well-documented with 8 distinct points. The fairness is generally good, with scores justified by evidence, though there's a slight tendency toward leniency. The weaknesses identified are thoughtful but somewhat gentle - the evaluator raises the technical specification counting issue but then dismisses it as 'reasonable grouping.' Coverage is solid but not exhaustive; the evaluator missed some potential issues like whether additional technical terms (triple-wall vacuum, precision sensor) could inflate the spec count, and whether the call-to-action is truly effective. Calibration is reasonable - scores of 8-9 across dimensions reflect a genuinely strong response, though the uniformly high scores (all 8-9) suggest the evaluator may not have differentiated enough between dimensions. The reasoning section provides a coherent summary that ties together the analysis well. Overall, this is a competent, thorough evaluation with minor room for improvement in critical depth.",
+      "timestamp": 1770389894.9919949,
+      "error": null
+    }
+  ]
+}

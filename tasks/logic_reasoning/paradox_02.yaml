@@ -1,0 +1,21 @@
+id: logic_reasoning_002
+domain: logic_reasoning
+difficulty: hard
+prompt: |
+  Analyze the following scenario and identify the logical structure:
+
+  A king tells a prisoner: "You may make one statement. If it is true,
+  you will be hanged. If it is false, you will be beheaded."
+
+  The prisoner says: "I will be beheaded."
+
+  1. Analyze why this creates a paradox.
+  2. Formalize the logical structure using propositional logic.
+  3. How do real logical systems (e.g., paraconsistent logic) handle
+     such self-referential statements?
+  4. Compare this to the Liar Paradox and Russell's Paradox.
+expected_aspects:
+  - paradox_identification
+  - formal_logic_representation
+  - knowledge_of_logic_systems
+  - cross_reference_to_known_paradoxes

@@ -1,0 +1,67 @@
+{
+  "task_id": "instruction_following_001",
+  "evaluations": [
+    {
+      "task_id": "instruction_following_001",
+      "evaluator_key": "opus_4_5",
+      "evaluated_key": "opus_4_6",
+      "blind_label": "Model A",
+      "scores": {
+        "accuracy": 9.0,
+        "completeness": 9.0,
+        "logical_consistency": 9.0,
+        "clarity": 9.0,
+        "originality": 8.0
+      },
+      "strengths": [
+        "Successfully follows the A-E-I-O-U vowel constraint for sentence starters (Achieving, Every, Intelligent, Our, Upgrade)",
+        "Includes exactly 3 technical specifications with numbers: 750ml Tritan body, 72-hour rechargeable battery, and Bluetooth 5.3",
+        "Avoids all prohibited words (revolutionary, innovative, cutting-edge)",
+        "Contains exactly 5 sentences as required",
+        "Includes a clever, subtle joke about needing technology to remind us to do what fish do effortlessly",
+        "Ends with a clear call-to-action directing readers to the website",
+        "Maintains professional tone throughout while incorporating humor naturally"
+      ],
+      "weaknesses": [
+        "The joke, while subtle and clever, could be considered slightly informal for some professional contexts",
+        "The temperature monitoring feature mentions 'preferred range' but doesn't specify actual temperature values, which could have been another technical specification"
+      ],
+      "reasoning": "This response demonstrates excellent adherence to all the strict constraints outlined in the task. The vowel sequence (A-E-I-O-U) is perfectly executed across the five sentences. The three technical specifications (750ml capacity, 72-hour battery, Bluetooth 5.3) are clearly stated with specific numbers. The tone remains professional while incorporating a genuinely amusing joke about fish that doesn't feel forced. The call-to-action at the end is clear and actionable. The response avoids all prohibited words while still conveying the product's advanced features effectively. The only minor weakness is that the temperature monitoring feature could have included specific temperature values to add another technical specification, though this wasn't strictly required. The writing is clear, well-organized, and the product description flows naturally despite the challenging constraints.",
+      "is_self_bias_test": false,
+      "timestamp": 1770389681.016732,
+      "error": null
+    },
+    {
+      "task_id": "instruction_following_001",
+      "evaluator_key": "opus_4_6",
+      "evaluated_key": "opus_4_5",
+      "blind_label": "Model A",
+      "scores": {
+        "accuracy": 9.0,
+        "completeness": 9.0,
+        "logical_consistency": 9.0,
+        "clarity": 9.0,
+        "originality": 8.0
+      },
+      "strengths": [
+        "Perfectly follows the AEIOU vowel order: Achieving (A), Every (E), Insulated (I), Our (O), Upgrade (U)",
+        "Exactly 5 sentences as required",
+        "Includes exactly 3 technical specifications with numbers: Bluetooth 5.0, 750ml bottle with 24/12 hour temperature retention, and 30-day rechargeable battery",
+        "Does not use any of the forbidden words (revolutionary, innovative, cutting-edge)",
+        "Contains one well-placed subtle joke about humans forgetting how to feel thirsty after inventing smartphones",
+        "Ends with a clear call-to-action: 'Upgrade your hydration routine today by visiting aquasensepro.com'",
+        "Professional tone maintained throughout while seamlessly incorporating the humor",
+        "The product description reads naturally and convincingly as real marketing copy"
+      ],
+      "weaknesses": [
+        "One could argue there are more than 3 technical specifications if you count the cold/hot retention times (24 hours, 12 hours) as separate specs, though grouping them as one temperature retention spec is reasonable",
+        "The joke in sentence 2 is somewhat long and makes that sentence noticeably longer than the others, slightly disrupting the flow",
+        "The call-to-action references a fictional URL which is fine for a fictional product but could be seen as slightly generic"
+      ],
+      "reasoning": "This response demonstrates excellent adherence to all six strict constraints. The AEIOU sentence-starting pattern is perfectly executed (Achieving, Every, Insulated, Our, Upgrade). The sentence count is exactly 5. The three technical specifications are clearly identifiable: Bluetooth 5.0, 750ml capacity with 24hr cold/12hr hot retention, and 30-day battery life. None of the forbidden words appear. The tone is professional with exactly one subtle joke about humans forgetting how to feel thirsty. The final sentence serves as a call-to-action. The writing quality is high—it reads like genuine marketing copy with good flow and persuasive language. The only minor quibble is whether the temperature retention times (24 hours cold, 12 hours hot) could be counted as separate specs, potentially pushing the count above 3, but this is a reasonable grouping as a single specification. Overall, this is an exceptionally well-crafted response that meets virtually all constraints precisely.",
+      "is_self_bias_test": false,
+      "timestamp": 1770389683.634413,
+      "error": null
+    }
+  ]
+}

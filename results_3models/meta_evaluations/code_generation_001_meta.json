@@ -1,0 +1,285 @@
+{
+  "task_id": "code_generation_001",
+  "meta_evaluations": [
+    {
+      "task_id": "code_generation_001",
+      "meta_evaluator_key": "opus_4_6",
+      "original_evaluator_key": "opus_4_5",
+      "original_evaluated_key": "opus_4_6",
+      "scores": {
+        "fairness": 9.0,
+        "specificity": 9.0,
+        "coverage": 9.0,
+        "calibration": 8.0
+      },
+      "detected_biases": [
+        "Slight leniency bias - the truncated complexity analysis section is a more significant issue than the scores suggest, since the task explicitly requires explaining time and space complexity"
+      ],
+      "missed_points": [
+        "The completeness score of 9.0 could arguably be lower given that the complexity analysis table is severely truncated - only one row header is visible, and the task explicitly requires explaining time AND space complexity. This is a core requirement, not a minor documentation gap.",
+        "The evaluator could have noted that returning None for cache misses (rather than raising KeyError) is a design choice that differs from typical dict-like interfaces and could mask bugs where None is a legitimate cached value",
+        "The evaluator didn't note that the `get` method returning None makes it impossible to distinguish between 'key not found' and 'key maps to None value' - a potential correctness issue",
+        "The __repr__ method is a nice addition that wasn't mentioned as a strength",
+        "The evaluator could have noted that the type hints use `Any` for keys, but hash map keys should ideally be Hashable"
+      ],
+      "reasoning": "This is a high-quality evaluation that correctly identifies the major strengths and weaknesses of the response. The evaluator demonstrates strong specificity by referencing concrete implementation details like sentinel nodes, __slots__, the separation of internal methods, and specific test cases. The strengths list is thorough and well-justified. The weaknesses are also relevant, particularly the truncated complexity analysis. However, the calibration could be improved: the completeness score of 9.0 seems slightly generous given that the complexity analysis - an explicit requirement - is severely truncated (only showing one row header). The task says 'Explain the time and space complexity' and this is largely missing from the response. This should have had a bigger impact on the completeness score (perhaps 7-8 rather than 9). The accuracy score of 10 is well-justified as the implementation is correct. The clarity score of 10 is appropriate given the excellent documentation and visual diagrams. The logical consistency score of 10 is fair. The originality score of 8 is reasonable - the implementation follows the standard approach but adds nice touches like __slots__, __contains__, __repr__, and comprehensive error handling. Overall, the evaluation is thorough, specific, and mostly well-calibrated, with a slight tendency toward leniency on the completeness dimension.",
+      "timestamp": 1770408132.7928078,
+      "error": null
+    },
+    {
+      "task_id": "code_generation_001",
+      "meta_evaluator_key": "gemini_3_pro",
+      "original_evaluator_key": "opus_4_5",
+      "original_evaluated_key": "opus_4_6",
+      "scores": {
+        "fairness": 10.0,
+        "specificity": 10.0,
+        "coverage": 10.0,
+        "calibration": 10.0
+      },
+      "detected_biases": [],
+      "missed_points": [],
+      "reasoning": "The evaluation is flawless. It correctly identifies the high quality of the code implementation (use of sentinel nodes, __slots__, correct O(1) logic) while accurately spotting the specific flaw in the response: the truncated complexity analysis section. The scores are perfectly calibrated to reflect a high-quality code response that suffered from a generation cutoff. The evaluator demonstrated deep technical understanding by referencing specific implementation details like the sentinel nodes and memory optimization.",
+      "timestamp": 1770408113.491411,
+      "error": null
+    },
+    {
+      "task_id": "code_generation_001",
+      "meta_evaluator_key": "opus_4_6",
+      "original_evaluator_key": "opus_4_5",
+      "original_evaluated_key": "gemini_3_pro",
+      "scores": {
+        "fairness": 8.0,
+        "specificity": 9.0,
+        "coverage": 8.0,
+        "calibration": 6.0
+      },
+      "detected_biases": [
+        "Leniency bias: giving perfect 10/10 scores across four dimensions suggests an unwillingness to differentiate between excellent and truly perfect work",
+        "Slight inconsistency between identified weaknesses and scores — the evaluator notes multiple valid weaknesses but still awards 10/10 for completeness and accuracy"
+      ],
+      "missed_points": [
+        "The return value of -1 for missing keys is arguably a correctness/design issue worth docking from accuracy or at least completeness, not just an originality concern — returning -1 means a legitimate stored value of -1 would be indistinguishable from a cache miss",
+        "The tests, while meeting the minimum of 3, could be considered somewhat limited — no edge case tests for capacity=1, no test for ValueError on invalid capacity, no test for overwriting with same key multiple times, no test for large number of operations. This could reasonably reduce the completeness score slightly below 10.",
+        "The type hints use 'Any' for keys and values, which while technically correct is not maximally informative — a generic/TypeVar approach would be more robust. This is a minor point but relevant to the type hints requirement.",
+        "The evaluator could have noted that using `if not node` instead of `if node is None` is slightly imprecise — it would treat a node with a falsy value differently, though in this implementation it works because cache.get returns None for missing keys",
+        "No thread-safety considerations were mentioned as a potential weakness",
+        "The evaluator didn't note that the unit tests use unittest.main with argv manipulation, which is a minor code smell"
+      ],
+      "reasoning": "The evaluation is generally well-structured, specific, and fair in its analysis. The evaluator correctly identifies the core strengths: proper O(1) implementation, good use of sentinel nodes, clean code organization, comprehensive documentation, and solid test coverage. The specificity is strong — the evaluator references concrete code elements like Dict, Any, Optional type hints, specific helper methods, and specific test scenarios. However, the calibration is the weakest aspect. Giving four perfect 10/10 scores is overly generous. While the response is genuinely excellent, the evaluator themselves identifies three meaningful weaknesses (canonical approach, -1 return value, missing edge case tests) yet doesn't let any of these impact the accuracy or completeness scores. The -1 return value issue is particularly notable — it's not just a style preference but a functional concern since it makes -1 values indistinguishable from cache misses. The completeness score of 10 is hard to justify when the evaluator explicitly notes missing edge case tests. A more calibrated evaluation might have accuracy at 9-9.5, completeness at 9, and clarity at 9.5-10. The fairness is generally good — the evaluation doesn't show model-specific bias — but the leniency pattern suggests a general reluctance to assign anything below perfect scores for high-quality work, which reduces discriminative power.",
+      "timestamp": 1770408121.151437,
+      "error": null
+    },
+    {
+      "task_id": "code_generation_001",
+      "meta_evaluator_key": "gemini_3_pro",
+      "original_evaluator_key": "opus_4_5",
+      "original_evaluated_key": "gemini_3_pro",
+      "scores": {
+        "fairness": 10.0,
+        "specificity": 10.0,
+        "coverage": 10.0,
+        "calibration": 10.0
+      },
+      "detected_biases": [],
+      "missed_points": [],
+      "reasoning": "The evaluation is exemplary. It accurately identifies that the code meets all strict requirements, including the specific O(1) constraints and the prohibition of standard library helpers. The evaluator demonstrates high specificity by referencing particular implementation details like the use of sentinel nodes (dummy head/tail) and the helper method structure. The critique regarding the return value of -1 (a LeetCode convention) versus a more Pythonic approach (None or KeyError) is insightful and technically sound. The scores are perfectly calibrated for a flawless implementation of a standard algorithm.",
+      "timestamp": 1770408168.215735,
+      "error": null
+    },
+    {
+      "task_id": "code_generation_001",
+      "meta_evaluator_key": "opus_4_5",
+      "original_evaluator_key": "opus_4_6",
+      "original_evaluated_key": "opus_4_5",
+      "scores": {
+        "fairness": 9.0,
+        "specificity": 10.0,
+        "coverage": 9.0,
+        "calibration": 7.0
+      },
+      "detected_biases": [
+        "Slight leniency bias - awarding perfect 10s across most categories for a response that, while excellent, has minor documented flaws",
+        "Possible positive framing bias - weaknesses are presented as very minor while strengths are emphasized extensively"
+      ],
+      "missed_points": [
+        "The evaluator could have noted that the `__contains__` method checking without updating access order could be considered a design flaw rather than just a documentation issue, as it creates inconsistent behavior with typical cache semantics",
+        "The evaluator did not mention that the example in the docstring shows `cache.get('b')` returning nothing but doesn't clarify it returns `None` explicitly",
+        "Could have noted that the tests don't include any concurrency/thread-safety tests, which might be relevant for a cache implementation in real-world scenarios",
+        "The evaluator didn't comment on whether the `__repr__` method's iteration through the linked list is O(n), which could be noted as a potential performance consideration"
+      ],
+      "reasoning": "The evaluation demonstrates excellent specificity, referencing concrete elements like 'sentinel nodes', 'TypeVar and Generic', specific test counts (11 tests), and exact method names. The evaluator provides detailed, evidence-based reasoning throughout. However, the calibration appears overly generous - giving perfect 10s for accuracy, completeness, logical consistency, and clarity when the evaluator themselves identified legitimate weaknesses (type: ignore compromise, truncated explanation, __contains__ behavior). A response with documented flaws, even minor ones, typically shouldn't receive perfect scores across the board. The fairness is generally good as the evaluation is based on observable code qualities, but there's a slight tendency to minimize weaknesses ('minor type-safety compromise') while maximizing praise. The coverage is strong, catching most important aspects including the sentinel node implementation, test comprehensiveness, and complexity analysis, though a few points were missed regarding design decisions and practical considerations. The 8.0 for originality is well-calibrated given the standard nature of the approach. Overall, this is a high-quality evaluation with thorough analysis, but the scoring could be more conservative given the identified issues.",
+      "timestamp": 1770408128.020009,
+      "error": null
+    },
+    {
+      "task_id": "code_generation_001",
+      "meta_evaluator_key": "gemini_3_pro",
+      "original_evaluator_key": "opus_4_6",
+      "original_evaluated_key": "opus_4_5",
+      "scores": {
+        "fairness": 10.0,
+        "specificity": 10.0,
+        "coverage": 10.0,
+        "calibration": 10.0
+      },
+      "detected_biases": [],
+      "missed_points": [],
+      "reasoning": "The evaluation is exceptional. It demonstrates a deep understanding of the code provided, verifying not just the surface-level requirements but also the internal logic (e.g., sentinel node implementation, type safety compromises). The evaluator correctly identifies that the response exceeds",
+      "timestamp": 1770408144.187816,
+      "error": null
+    },
+    {
+      "task_id": "code_generation_001",
+      "meta_evaluator_key": "opus_4_5",
+      "original_evaluator_key": "opus_4_6",
+      "original_evaluated_key": "gemini_3_pro",
+      "scores": {
+        "fairness": 9.0,
+        "specificity": 10.0,
+        "coverage": 9.0,
+        "calibration": 8.0
+      },
+      "detected_biases": [
+        "Slight leniency bias - giving perfect 10s across most dimensions for what is essentially a textbook implementation",
+        "Minor positive bias toward well-formatted responses (LaTeX, section headers) which may have inflated clarity score"
+      ],
+      "missed_points": [
+        "The evaluator could have noted that the tests don't actually run in the provided code since unittest.main() is at the end but the test class is in a separate code block",
+        "No mention of thread-safety considerations, which could be relevant for a cache implementation",
+        "Could have noted that the DNode class doesn't have __repr__ or __str__ methods for debugging purposes",
+        "The evaluator didn't mention that 'new' in Python is not actually a built-in (it's not in builtins), though the naming concern is still valid for readability",
+        "Could have mentioned the lack of a __len__ or __contains__ method for the cache class"
+      ],
+      "reasoning": "The evaluation is highly detailed and demonstrates strong analytical skills. The evaluator provides excellent specificity by referencing exact method names (_add_node, _remove_node, etc.), tracing through specific test cases, and identifying precise code issues like the 'new' variable name. The strengths section comprehensively covers the implementation's merits including sentinel nodes, type hints, complexity analysis, and input validation. The weaknesses identified are legitimate and well-reasoned, particularly the point about -1 vs KeyError/None being more Pythonic. However, the calibration shows some leniency - giving 10/10 for accuracy, completeness, logical consistency, and clarity for what the evaluator themselves acknowledges is a 'classic/standard' textbook approach seems generous. The originality score of 7 is appropriate given the standard nature of the solution. The evaluator correctly notes this is the well-known approach but still awards near-perfect scores elsewhere. The fairness is generally good with evidence-based reasoning, though there's a slight tendency to reward presentation quality (LaTeX formatting, section headers) heavily. The coverage is strong but misses a few minor points like the practical issue of the test code being in separate blocks and not being directly runnable as presented.",
+      "timestamp": 1770408138.495722,
+      "error": null
+    },
+    {
+      "task_id": "code_generation_001",
+      "meta_evaluator_key": "gemini_3_pro",
+      "original_evaluator_key": "opus_4_6",
+      "original_evaluated_key": "gemini_3_pro",
+      "scores": {
+        "fairness": 10.0,
+        "specificity": 10.0,
+        "coverage": 9.0,
+        "calibration": 10.0
+      },
+      "detected_biases": [],
+      "missed_points": [
+        ""
+      ],
+      "reasoning": "",
+      "timestamp": 1770408148.467131,
+      "error": null
+    },
+    {
+      "task_id": "code_generation_001",
+      "meta_evaluator_key": "opus_4_5",
+      "original_evaluator_key": "gemini_3_pro",
+      "original_evaluated_key": "opus_4_5",
+      "scores": {
+        "fairness": 7.0,
+        "specificity": 7.0,
+        "coverage": 6.0,
+        "calibration": 5.0
+      },
+      "detected_biases": [
+        "Positive bias - evaluator appears overly generous, awarding perfect 10s across most categories without acknowledging any weaknesses",
+        "Confirmation bias - evaluator focuses only on what the response did well without critically examining potential issues"
+      ],
+      "missed_points": [
+        "The `type: ignore` comments on sentinel nodes are a code smell that could be flagged as a minor weakness - there are cleaner ways to handle this with Optional types or separate sentinel class",
+        "The `__contains__` method doesn't update access order, which could be considered inconsistent behavior (though documented) - this design choice deserves discussion",
+        "The complexity analysis table is incomplete - it cuts off mid-sentence in the 'Per Entry' row",
+        "No discussion of thread safety limitations, which is relevant for cache implementations",
+        "The tests, while good, don't test concurrent access or stress test the implementation",
+        "The evaluator could have noted that returning None for missing keys (rather than raising KeyError) is a design choice that differs from standard dict behavior",
+        "No weakness identified for the lack of a `delete` or `clear` method which are common cache operations"
+      ],
+      "reasoning": "The evaluation demonstrates good understanding of the technical implementation and correctly identifies key strengths like the use of sentinel nodes and proper O(1) complexity. However, the evaluation suffers from significant calibration issues - awarding perfect 10s for accuracy, completeness, logical consistency, and clarity while listing zero weaknesses is overly generous and suggests insufficient critical analysis. A truly flawless response is extremely rare. The evaluator provides specific evidence for strengths (mentioning sentinel nodes, type hints, unittest framework) which shows good specificity, but the complete absence of any weaknesses suggests incomplete coverage. The response, while excellent, has minor issues: the complexity table is truncated, there are `type: ignore` pragmas that indicate typing compromises, and common cache features like deletion are missing. The evaluator should have identified at least some minor areas for improvement to provide a balanced assessment. The 8.0 for originality seems arbitrary without explanation of what would constitute higher originality.",
+      "timestamp": 1770408148.581443,
+      "error": null
+    },
+    {
+      "task_id": "code_generation_001",
+      "meta_evaluator_key": "opus_4_6",
+      "original_evaluator_key": "gemini_3_pro",
+      "original_evaluated_key": "opus_4_5",
+      "scores": {
+        "fairness": 6.0,
+        "specificity": 7.0,
+        "coverage": 6.0,
+        "calibration": 5.0
+      },
+      "detected_biases": [
+        "Leniency bias: The evaluator gave perfect 10/10 scores across all major dimensions and listed zero weaknesses, which is almost never warranted for any response.",
+        "Confirmation bias: The evaluator appears to have focused exclusively on what the response did well without critically examining potential issues."
+      ],
+      "missed_points": [
+        "The type hints using Generic[K, V] with TypeVar are used, but the sentinel nodes use `None` for key/value with a `# type: ignore` comment, which is a minor type safety concern worth noting.",
+        "The space complexity table appears to be cut off mid-sentence ('hash map entry'), indicating the response is incomplete. The evaluator did not note this.",
+        "The `get` method returns `None` for missing keys rather than raising a `KeyError`, which is a design choice worth discussing — it makes it impossible to distinguish between a cached `None` value and a missing key. This is a legitimate weakness.",
+        "The `__contains__` method does not update access order, which is a deliberate design choice but could be considered inconsistent with `get` behavior. This tradeoff deserves mention.",
+        "While the tests are good, they don't test concurrent access or thread safety, which could be mentioned as a limitation.",
+        "The evaluator could have noted that the response includes more than the minimum 3 required tests (it has 8+ tests for LRUCache and 3 for DoublyLinkedList), which is a strength worth specifically quantifying.",
+        "Originality score of 8 is given without explanation — the evaluator doesn't justify why it's not higher or lower.",
+        "The evaluator says 'flawless response' in reasoning but the response literally has a truncated complexity table, which contradicts this assessment."
+      ],
+      "reasoning": "The evaluation is overly generous, awarding perfect scores in 4 out of 5 categories and identifying zero weaknesses. While the response is indeed high quality — it correctly implements the LRU cache with proper data structures, good documentation, and thorough tests — no response is truly flawless. The evaluator missed the truncated space complexity table, the design limitation of returning None (which conflates missing keys with None values), and the type safety workaround with sentinel nodes. The strengths identified are accurate and specific (mentioning sentinel nodes, generics, unittest framework), which shows good specificity in that direction. However, the complete absence of weaknesses and the 'flawless' characterization indicate poor critical analysis. The calibration is off — giving four perfect 10s suggests the evaluator isn't using the full scoring range meaningfully. A more calibrated evaluation might give 9s for accuracy and completeness (noting the truncated table and None-value ambiguity) and perhaps 9 for clarity as well.",
+      "timestamp": 1770408157.41836,
+      "error": null
+    },
+    {
+      "task_id": "code_generation_001",
+      "meta_evaluator_key": "opus_4_5",
+      "original_evaluator_key": "gemini_3_pro",
+      "original_evaluated_key": "opus_4_6",
+      "scores": {
+        "fairness": 9.0,
+        "specificity": 9.0,
+        "coverage": 8.0,
+        "calibration": 8.0
+      },
+      "detected_biases": [
+        "Slight leniency bias - the evaluator gave high scores (8-10) despite acknowledging a significant truncation issue that leaves a core requirement incomplete"
+      ],
+      "missed_points": [
+        "The evaluator could have noted that the implementation includes additional features beyond requirements (like __contains__, __repr__, size property) which demonstrates good software engineering practices",
+        "The evaluator did not explicitly mention that the code is runnable and self-contained with the unittest framework",
+        "Could have noted the excellent ASCII diagram explaining the data structure visually",
+        "The completeness score of 8.0 may be too generous given that the complexity analysis (a specific requirement) is entirely incomplete - only the table header and one row are shown"
+      ],
+      "reasoning": "The evaluation is generally well-constructed and demonstrates good analytical skills. The evaluator correctly identifies the key strengths: proper O(1) implementation, use of sentinel nodes, __slots__ optimization, comprehensive testing, and good documentation. The weakness identification is accurate - the response is indeed truncated. However, there are calibration concerns: giving completeness an 8.0 when a specific requirement (complexity analysis) is almost entirely missing seems generous. The task explicitly required explaining 'time and space complexity' and only a partial table header exists. The specificity is strong - the evaluator references concrete elements like __slots__, sentinel nodes, and the test count. The fairness is good overall, though there's a slight tendency toward leniency. The coverage misses some positive aspects like the visual diagram and the additional utility methods that enhance usability. The evaluator's reasoning is clear and well-structured, providing a coherent narrative about the response quality.",
+      "timestamp": 1770408156.343403,
+      "error": null
+    },
+    {
+      "task_id": "code_generation_001",
+      "meta_evaluator_key": "opus_4_6",
+      "original_evaluator_key": "gemini_3_pro",
+      "original_evaluated_key": "opus_4_6",
+      "scores": {
+        "fairness": 9.0,
+        "specificity": 8.0,
+        "coverage": 8.0,
+        "calibration": 7.0
+      },
+      "detected_biases": [
+        "Slight leniency bias: the accuracy score of 10 is generous given that the complexity analysis table is truncated and thus the response does not fully satisfy requirement #5.",
+        "The completeness score of 8 could arguably be lower since the complexity analysis—an explicit requirement—is substantially incomplete (only one row of the table is visible)."
+      ],
+      "missed_points": [
+        "The evaluator did not note that the `get()` method returning `None` for missing keys is ambiguous if `None` is a valid stored value—a minor design consideration worth mentioning.",
+        "The evaluator could have noted that the `__contains__` method does not update access order, which is a deliberate and noteworthy design choice (it was documented in the code but not highlighted in the evaluation).",
+        "The evaluator did not explicitly mention that the response exceeds the minimum requirement of 3 unit tests by providing 9, which is a concrete strength worth quantifying in context of the requirements.",
+        "The truncation is more severe than the evaluator implies—the complexity analysis table only shows one row (get() time O(1)) and is missing put() time, space complexity, and any accompanying explanation. This means requirement #5 is largely unmet, which should have a bigger impact on the completeness and possibly accuracy scores.",
+        "The evaluator could have noted the good use of `__repr__` for debugging purposes as a minor strength."
+      ],
+      "reasoning": "The evaluation is generally well-structured and identifies the most important aspects of the response. The strengths listed are accurate and specific—mentioning `__slots__`, sentinel nodes, and the breadth of testing. The key weakness (truncation) is correctly identified. However, the calibration is somewhat lenient. The accuracy score of 10 seems too high given that the complexity analysis is incomplete—this is a factual gap in meeting the stated requirements. The completeness score of 8 also seems generous; requirement #5 explicitly asks for complexity explanation, and only one partial row of a table is provided. A score of 6-7 for completeness would be more appropriate. The logical consistency score of 10 is well-justified since the code that is present is logically sound. The clarity score of 9 is reasonable given the good documentation and diagrams. The originality score of 8 is fair—the implementation is standard but well-executed with nice touches like `__slots__` and `__repr__`. The evaluator's specificity is good, referencing concrete features like sentinel nodes and `__slots__`, though it could have been even more detailed about the extent of the truncation and its impact on requirement fulfillment.",
+      "timestamp": 1770408164.608771,
+      "error": null
+    }
+  ]
+}

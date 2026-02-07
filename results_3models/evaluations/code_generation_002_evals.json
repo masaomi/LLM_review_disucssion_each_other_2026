@@ -1,0 +1,188 @@
+{
+  "task_id": "code_generation_002",
+  "evaluations": [
+    {
+      "task_id": "code_generation_002",
+      "evaluator_key": "opus_4_5",
+      "evaluated_key": "opus_4_6",
+      "blind_label": "Model A",
+      "scores": {
+        "accuracy": 8.0,
+        "completeness": 9.0,
+        "logical_consistency": 8.0,
+        "clarity": 9.0,
+        "originality": 8.0
+      },
+      "strengths": [
+        "Excellent identification of the ambiguity in 'find all pairs' - correctly distinguishes between unique value pairs vs index-distinct pairs",
+        "Provides multiple solution versions (A, B, C) to address different interpretations of the problem",
+        "Comprehensive test suite covering edge cases including empty lists, single elements, duplicates, negatives, zeros, and large numbers",
+        "Well-organized with clear tables for edge cases and complexity analysis",
+        "Good use of Python's Counter from collections for efficient counting",
+        "Thorough complexity analysis for both buggy and fixed versions"
+      ],
+      "weaknesses": [
+        "Bug analysis is somewhat debatable - the original function's behavior with duplicates isn't necessarily a 'bug' depending on requirements; the response acknowledges this but could be clearer",
+        "The test code at the end appears truncated (incomplete assertion in TestProperties)",
+        "Version B's complexity analysis mentions O(n²) worst case but doesn't clearly explain when this would occur in practice",
+        "The claim that Bug 3 is 'actually CORRECT behavior' while simultaneously listing it as a bug is confusing",
+        "Could have included more discussion of when to use each version in practice"
+      ],
+      "reasoning": "The response demonstrates strong technical understanding and provides a thorough analysis of the problem. The identification of the ambiguity between unique pairs vs index-distinct pairs shows sophisticated thinking. The multiple solution versions are well-implemented with appropriate documentation. The complexity analysis is mostly accurate, though the O(n²) worst case for Version B could be better explained. The test suite is comprehensive and well-organized into logical categories. However, there are some logical inconsistencies in the bug analysis - particularly calling something a 'bug' while simultaneously saying it's 'correct behavior.' The response also appears truncated at the end, cutting off mid-assertion. Despite these issues, the overall quality is high with good code organization, clear explanations, and practical solutions.",
+      "is_self_bias_test": false,
+      "timestamp": 1770407682.785016,
+      "error": null
+    },
+    {
+      "task_id": "code_generation_002",
+      "evaluator_key": "opus_4_5",
+      "evaluated_key": "gemini_3_pro",
+      "blind_label": "Model B",
+      "scores": {
+        "accuracy": 7.0,
+        "completeness": 9.0,
+        "logical_consistency": 6.0,
+        "clarity": 9.0,
+        "originality": 8.0
+      },
+      "strengths": [
+        "Excellent organization with clear sections, tables, and code formatting that makes the response easy to follow",
+        "Comprehensive test suite covering many edge cases including empty lists, duplicates, negative numbers, zeros, and large numbers",
+        "Provides multiple solution variants (find_pairs, find_pairs_with_indices, find_unique_pairs) addressing different use cases",
+        "Good use of trace-through examples to demonstrate the bug behavior",
+        "Includes performance testing considerations and complexity analysis for different scenarios"
+      ],
+      "weaknesses": [
+        "The bug analysis is questionable - the original code actually handles duplicates reasonably for many interpretations of the problem. The claim that [3,3,3] with target 6 should return 3 pairs is one interpretation, but the original returns 2 pairs which could be considered correct depending on requirements",
+        "The complexity analysis for the fixed version claims O(n²) worst case, but this is actually expected behavior when finding all pairs - it's not really a 'fix' issue but a requirements change",
+        "Some test assertions may be incorrect - for example, test_basic_pair expects [(1, 4), (2, 3)] but the order depends on iteration order which may vary",
+        "The response doesn't clearly distinguish between 'bugs' and 'design decisions' - the original code works correctly for finding unique pairs by value",
+        "The claim that the original has 'Bug 2: Missing pairs with duplicates' is debatable since the original consistently finds one pair per complement match"
+      ],
+      "reasoning": "The response demonstrates strong technical writing skills and thoroughness in addressing the task. The code is well-documented and the test suite is comprehensive. However, there are accuracy concerns with the bug identification. The original code isn't necessarily 'buggy' - it implements a valid interpretation of 'find pairs' where each element can only be used once per pairing decision. The response treats the requirement for finding ALL index-based pairs as the only correct interpretation, but this is a design choice rather than a bug fix. The complexity analysis is mostly correct but conflates algorithmic complexity changes with bug fixes. The response would be stronger if it acknowledged that different interpretations exist and framed the changes as 'enhancements for different requirements' rather than 'bug fixes.' Despite these issues, the response provides valuable content including multiple solution variants and extensive testing.",
+      "is_self_bias_test": true,
+      "timestamp": 1770407697.322622,
+      "error": null
+    },
+    {
+      "task_id": "code_generation_002",
+      "evaluator_key": "opus_4_6",
+      "evaluated_key": "opus_4_5",
+      "blind_label": "Model A",
+      "scores": {
+        "accuracy": 7.0,
+        "completeness": 9.0,
+        "logical_consistency": 7.0,
+        "clarity": 9.0,
+        "originality": 8.0
+      },
+      "strengths": [
+        "Extremely well-organized response with clear sections, tables, and code formatting",
+        "Provides three variants of the solution (all pairs, pairs with indices, unique pairs) showing depth of understanding",
+        "Comprehensive test suite covering many edge cases including empty lists, negatives, zeros, floats, large numbers, and performance",
+        "Includes a performance test which is a thoughtful addition",
+        "Clear complexity analysis presented in table format for both original and fixed versions",
+        "The trace-through of the buggy code with [3,3,3] is helpful for understanding the issue",
+        "Summary table at the end provides a quick reference"
+      ],
+      "weaknesses": [
+        "The bug identification is somewhat inflated - the response lists 3 bugs but really there's primarily one core issue: the dictionary stores only one index per value, losing track of duplicates. Bug 2 and Bug 3 are not really separate bugs. Bug 3 is described as an issue but then immediately acknowledged as working correctly, which is confusing.",
+        "The response frames the original code as having 'several bugs' but the original code actually works correctly for most cases. The only real limitation is the duplicate handling where it misses some pairs. The code correctly handles negatives, empty lists, and self-pairing already.",
+        "The definition of 'all pairs' is debatable - the response assumes we want all index-based pairs (C(n,2) for duplicates), but this interpretation isn't the only valid one. The task says 'all pairs of numbers' which could mean unique value pairs.",
+        "Some test cases may not pass as written - for example, test_basic_pair assumes a specific ordering of results that depends on implementation details",
+        "The complexity analysis for the fixed version states O(n²) worst case which is correct, but doesn't discuss whether this is avoidable or if the output size itself is O(n²), making it output-sensitive and thus optimal",
+        "The response doesn't clearly articulate that the original code is actually quite reasonable and only fails in one specific scenario (multiple duplicates of the same value where complement equals the value itself or where multiple instances of the complement exist)"
+      ],
+      "reasoning": "The response is thorough and well-structured, providing multiple solution variants and comprehensive tests. However, it somewhat overstates the number of bugs in the original code. The original code actually handles most cases correctly - empty lists return [], single elements can't self-pair (correct behavior), and negative numbers work fine. The real issue is solely about duplicate handling where the dictionary overwrites previous indices. The response acknowledges this in Bug 3 ('the current code correctly handles this') but still lists it as a bug, which is misleading. The corrected solution is functionally correct and the three variants show good engineering thinking. The test suite is extensive and well-categorized. The complexity analysis is accurate. The clarity and organization are excellent with good use of tables, code comments, and section headers. The originality score reflects the multiple solution variants and the performance testing approach.",
+      "is_self_bias_test": false,
+      "timestamp": 1770407690.365555,
+      "error": null
+    },
+    {
+      "task_id": "code_generation_002",
+      "evaluator_key": "opus_4_6",
+      "evaluated_key": "gemini_3_pro",
+      "blind_label": "Model B",
+      "scores": {
+        "accuracy": 4.0,
+        "completeness": 1.0,
+        "logical_consistency": 5.0,
+        "clarity": 5.0,
+        "originality": 3.0
+      },
+      "strengths": [
+        "Correctly identifies the overwriting bug where duplicate numbers cause the dictionary to lose track of previous indices",
+        "Provides a concrete scenario ([3, 3, 3] with target 6) to illustrate the duplicate handling bug",
+        "Begins to structure the response in a clear, organized manner with numbered sections"
+      ],
+      "weaknesses": [
+        "The response is severely incomplete — it cuts off mid-sentence during bug identification and never provides the corrected version, complexity analysis, or test cases (tasks 2, 3, and 4 are entirely missing)",
+        "The claim that [3,3,3] with target 6 should produce 3 pairs is debatable — whether the original function's behavior is 'buggy' depends on the specification, and the response doesn't clearly define what constitutes a unique pair (index-based vs value-based)",
+        "The accuracy of bug #1 is questionable: the original function actually does produce 2 pairs for [3,3,3] target 6, which could be argued as correct depending on interpretation. The function finds (3,3) when i=1 (complement 3 is in seen) and (3,3) when i=2 (complement 3 is in seen), so it returns 2 pairs, not missing all combinations",
+        "Bug #2 is started but never completed, leaving the analysis of duplicate output logic unfinished",
+        "No discussion of the edge case where a number is paired with itself (e.g., [4] with target 8), which was explicitly requested",
+        "No discussion of empty list handling or negative numbers, both explicitly requested",
+        "No corrected code provided",
+        "No complexity analysis provided",
+        "No test cases provided"
+      ],
+      "reasoning": "The response is fundamentally incomplete, addressing only a small fraction of the task. It begins identifying bugs but cuts off after partially describing two issues. Tasks 2 (corrected version), 3 (complexity analysis), and 4 (test cases) are entirely absent. The accuracy of the bug analysis is also questionable — the claim about [3,3,3] producing only 2 pairs when 3 are expected depends on an interpretation that isn't well-justified. The original function actually does find pairs as elements are processed sequentially, and whether finding all C(3,2)=3 index-based pairs is required versus finding value-based unique pairs is a design decision the response doesn't adequately address. The response shows some understanding of the problem but fails to deliver on the vast majority of what was asked.",
+      "is_self_bias_test": false,
+      "timestamp": 1770407686.092224,
+      "error": null
+    },
+    {
+      "task_id": "code_generation_002",
+      "evaluator_key": "gemini_3_pro",
+      "evaluated_key": "opus_4_5",
+      "blind_label": "Model A",
+      "scores": {
+        "accuracy": 10.0,
+        "completeness": 10.0,
+        "logical_consistency": 10.0,
+        "clarity": 10.0,
+        "originality": 9.0
+      },
+      "strengths": [
+        "Correctly identified the specific bug in the original code (overwriting dictionary keys causing missing pairs for duplicates).",
+        "Provided a robust corrected solution that correctly handles the O(n²) worst-case scenario of finding all pairs.",
+        "Included useful variants of the function (returning indices, unique pairs) which adds value.",
+        "Comprehensive complexity analysis that correctly identifies the output-bound complexity.",
+        "Excellent test suite using `unittest` covering all requested edge cases and performance."
+      ],
+      "weaknesses": [
+        "Labeled 'Self-pairing issue' under 'Bugs' even though the content correctly explains that the original code handled it properly (a minor structural nitpick)."
+      ],
+      "reasoning": "The model",
+      "is_self_bias_test": false,
+      "timestamp": 1770407728.3763041,
+      "error": null
+    },
+    {
+      "task_id": "code_generation_002",
+      "evaluator_key": "gemini_3_pro",
+      "evaluated_key": "opus_4_6",
+      "blind_label": "Model B",
+      "scores": {
+        "accuracy": 5.0,
+        "completeness": 1.0,
+        "logical_consistency": 5.0,
+        "clarity": 2.0,
+        "originality": 1.0
+      },
+      "strengths": [
+        "Correctly identified the logic error regarding how the dictionary overwrites indices, preventing the detection of all valid pairs in a multi-duplicate scenario."
+      ],
+      "weaknesses": [
+        "The response is severely incomplete, cutting off mid-sentence in the first section.",
+        "Failed to provide the corrected code.",
+        "Failed to provide complexity analysis.",
+        "Failed to provide test cases."
+      ],
+      "reasoning": "The model's response is truncated and stops abruptly in the middle of the first task (identifying bugs). Consequently, it fails to address the majority of the prompt's requirements (fixing the code, analyzing complexity, and writing tests). While the initial analysis of the bug was on the right track, the incompleteness renders the response useless.",
+      "is_self_bias_test": true,
+      "timestamp": 1770407696.2258291,
+      "error": null
+    }
+  ]
+}

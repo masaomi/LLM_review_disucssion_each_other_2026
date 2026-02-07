@@ -1,0 +1,71 @@
+{
+  "task_id": "code_generation_002",
+  "evaluations": [
+    {
+      "task_id": "code_generation_002",
+      "evaluator_key": "opus_4_5",
+      "evaluated_key": "opus_4_6",
+      "blind_label": "Model A",
+      "scores": {
+        "accuracy": 8.0,
+        "completeness": 7.0,
+        "logical_consistency": 8.0,
+        "clarity": 9.0,
+        "originality": 8.0
+      },
+      "strengths": [
+        "Excellent organization with clear sections, tables, and code formatting that makes the response easy to follow",
+        "Provides multiple solution variants (find_all_pairs_by_index, find_unique_pairs, find_pairs_with_count) to address different interpretations of the requirements",
+        "Thorough complexity analysis with clear reasoning for both buggy and fixed versions, including worst-case scenarios",
+        "Comprehensive test cases organized by category (basic functionality, edge cases, duplicates, negatives, zeros, stress tests)",
+        "Good insight that the original function's behavior is ambiguous and requires specification clarification",
+        "Correctly identifies that storing only one index per value in the dictionary causes loss of information for duplicates"
+      ],
+      "weaknesses": [
+        "The bug analysis is somewhat overcomplicated - the original function actually works correctly for many cases the response claims are bugs (e.g., it correctly handles negative numbers, empty lists)",
+        "The response is cut off at the end, leaving the TestFindUniquePairs class incomplete",
+        "The claim that [3,3,3] with target 6 should return 3 pairs assumes a specific interpretation (all index combinations) that may not be the intended behavior",
+        "Some confusion in the bug analysis - Bug 2 is acknowledged as 'actually correct' but still listed as a bug",
+        "The response doesn't clearly state what the 'correct' behavior should be before providing fixes, making it harder to evaluate if the fixes are appropriate",
+        "Missing explicit handling/discussion of the case where the same element appears at different indices but the requirement is for unique value pairs"
+      ],
+      "reasoning": "The response demonstrates strong technical understanding and provides a well-structured analysis. The code solutions are clean and well-documented with docstrings explaining their behavior. The complexity analysis is accurate and includes important worst-case considerations. However, the bug analysis conflates specification ambiguity with actual bugs - the original function works correctly for its apparent intended purpose (finding value pairs that sum to target, with each pair found once per occurrence). The response's interpretation that all index combinations should be returned is one valid interpretation but not necessarily the 'correct' one. The test cases are comprehensive and well-organized, though the response is unfortunately truncated. The multiple solution variants show good understanding of different use cases, which adds originality. The clarity score is high due to excellent formatting, tables, and code organization.",
+      "is_self_bias_test": false,
+      "timestamp": 1770389635.797952,
+      "error": null
+    },
+    {
+      "task_id": "code_generation_002",
+      "evaluator_key": "opus_4_6",
+      "evaluated_key": "opus_4_5",
+      "blind_label": "Model A",
+      "scores": {
+        "accuracy": 7.0,
+        "completeness": 7.0,
+        "logical_consistency": 7.0,
+        "clarity": 8.0,
+        "originality": 8.0
+      },
+      "strengths": [
+        "Provides three different corrected versions addressing different interpretations of 'find all pairs', which shows deep understanding of the ambiguity in the problem specification",
+        "Excellent complexity analysis with clear distinction between buggy and fixed versions, including the important observation that O(n²) is unavoidable when there are O(n²) valid pairs",
+        "Very thorough test cases organized by category (basic, edge cases, duplicates, negatives, zeros, large/stress, self-pairing, order verification)",
+        "Good use of tables for summarizing bugs and complexity",
+        "The trace-through of the original code's behavior is methodical and helpful",
+        "Correctly identifies that the core bug is overwriting indices in the seen dictionary"
+      ],
+      "weaknesses": [
+        "The response is truncated — the test cases for TestFindUniquePairs are cut off mid-definition, leaving the response incomplete",
+        "The bug analysis is somewhat debatable: the original function actually works correctly for many cases the response claims are bugs. For instance, the original function is a well-known correct pattern for finding pairs that sum to a target. The 'overwrite' behavior is only a bug if you need ALL index combinations, which is one interpretation",
+        "Bug #3 in the summary table ('Pair ordering inconsistency') is not really a bug — it's a design choice, and the original function has consistent ordering (complement first, current number second)",
+        "The analysis conflates specification ambiguity with actual bugs. The original function correctly finds one pair per matching element encountered, which is a valid and common interpretation",
+        "The complexity analysis for find_unique_pairs states O(n log n) worst case due to sorting, but then says 'O(n) if we don't sort' — the sorting is an implementation choice the author made, not inherent to the problem",
+        "Some test cases have issues: test_mixed_negatives_positives checks for (-1, 7) but 7 is in the list and -1+7=6, so the assertion about (-3, 9) is trivially obvious and not very useful"
+      ],
+      "reasoning": "The response demonstrates strong technical knowledge and provides a comprehensive analysis with multiple solution variants. The three-version approach (all pairs by index, unique pairs, pairs with count) is creative and addresses the ambiguity well. However, there are accuracy concerns: the original function is actually a well-known correct implementation of the 'two-sum find all pairs' pattern, and many of the identified 'bugs' are really specification differences rather than bugs. The main legitimate bug is the overwriting behavior when you need all index combinations for duplicates. The response is truncated, cutting off the unique pairs test cases, which hurts completeness. The complexity analysis is solid and well-presented. The clarity is good with effective use of tables, code comments, and organized sections. The test cases that are present are thorough and well-categorized, though the truncation is a significant issue.",
+      "is_self_bias_test": true,
+      "timestamp": 1770389639.7734048,
+      "error": null
+    }
+  ]
+}

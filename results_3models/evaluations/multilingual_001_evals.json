@@ -1,0 +1,180 @@
+{
+  "task_id": "multilingual_001",
+  "evaluations": [
+    {
+      "task_id": "multilingual_001",
+      "evaluator_key": "opus_4_5",
+      "evaluated_key": "opus_4_6",
+      "blind_label": "Model A",
+      "scores": {
+        "accuracy": 9.0,
+        "completeness": 10.0,
+        "logical_consistency": 9.0,
+        "clarity": 10.0,
+        "originality": 9.0
+      },
+      "strengths": [
+        "Exceptional depth in explaining cultural concepts - the analysis of 木漏れ日 goes beyond surface-level definition to explore its emotional and aesthetic resonance, including the poetic etymology",
+        "Provides multiple practical translation strategies for each concept (borrowing, expansion, compensation), demonstrating sophisticated understanding of translation theory",
+        "The bonus concept (てくれた grammatical nuance) shows initiative and deep linguistic knowledge beyond the minimum requirements",
+        "The free translation effectively demonstrates the principles discussed, adding sensory details to compensate for lost cultural resonance",
+        "Excellent organization with clear headers, making the complex analysis easy to follow",
+        "The explanation of 縁側 as a liminal space captures architectural and philosophical dimensions that most translations miss"
+      ],
+      "weaknesses": [
+        "The initial translation uses 'engawa' without explanation, which could be seen as inconsistent with the later recommendation to gloss borrowed terms on first use",
+        "The claim that 'dappled sunlight' is 'clinical' may be slightly overstated - it does carry some poetic connotation in English",
+        "Could have briefly addressed the challenge of translating the sentence structure itself (Japanese topic-comment vs. English subject-verb patterns)"
+      ],
+      "reasoning": "This response demonstrates exceptional quality across all evaluation criteria. For accuracy, the translations and linguistic explanations are correct, with precise romanization and accurate cultural context. The analysis of 木漏れ日, 縁側, and the philosophical concept of 'luxurious emptiness' shows deep understanding of both languages. For completeness, the response exceeds requirements by providing a bonus fourth concept and multiple strategies per item. The logical consistency is strong - each concept analysis follows a clear pattern (meaning → what's lost → strategies), and the free translation logically applies the discussed principles. Clarity is outstanding with excellent formatting, clear prose, and well-organized sections. Originality is demonstrated through the insightful connection to Zen concepts like 無心 and 余白, the creative free translation that expands the single sentence into an atmospheric passage, and the sophisticated discussion of liminality in Japanese architecture. Minor weaknesses include a slight inconsistency in the initial translation's use of 'engawa' and some arguably overstated claims about English equivalents.",
+      "is_self_bias_test": false,
+      "timestamp": 1770407974.5657358,
+      "error": null
+    },
+    {
+      "task_id": "multilingual_001",
+      "evaluator_key": "opus_4_5",
+      "evaluated_key": "gemini_3_pro",
+      "blind_label": "Model B",
+      "scores": {
+        "accuracy": 9.0,
+        "completeness": 10.0,
+        "logical_consistency": 9.0,
+        "clarity": 10.0,
+        "originality": 8.0
+      },
+      "strengths": [
+        "Excellent identification of four culturally specific concepts (木漏れ日, 縁側, てくれた grammatical form, 贅沢な時間) exceeding the minimum requirement of three",
+        "Thorough explanation of what is lost in translation for each concept, with specific cultural and linguistic context",
+        "Multiple preservation strategies offered for each concept, showing deep understanding of translation approaches",
+        "The free translation effectively captures emotional resonance while maintaining the scene's essence",
+        "Well-organized structure with clear headings, tables, and logical flow",
+        "Insightful inclusion of the grammatical nuance of てくれた, which demonstrates sophisticated linguistic knowledge",
+        "The summary table provides a useful meta-analysis of translation philosophy"
+      ],
+      "weaknesses": [
+        "The initial 'best translation' retains 'engawa' without explanation, which may confuse readers unfamiliar with the term",
+        "Minor inaccuracy: the free translation introduces 'maple leaves' which is not specified in the original text",
+        "Could have addressed the challenge of translating すすりながら (the manner of drinking tea with slurping sounds, which is culturally acceptable in Japan)",
+        "The analysis of 贅沢な時間, while insightful, slightly overstates the countercultural aspect"
+      ],
+      "reasoning": "This response demonstrates exceptional quality across all evaluation criteria. The accuracy is high, with correct translations and cultural explanations, though the addition of 'maple leaves' in the free translation is a minor liberty. Completeness is outstanding—the response exceeds requirements by identifying four concepts instead of three and provides comprehensive analysis for each. The logical consistency is strong, with coherent reasoning throughout and well-justified preservation strategies. Clarity is excellent, with professional formatting, clear section divisions, and a helpful summary table. Originality is demonstrated through the inclusion of the grammatical nuance (てくれた) which many translators overlook, and the thoughtful meta-commentary on translation philosophy. The response shows genuine expertise in both Japanese language and translation theory.",
+      "is_self_bias_test": true,
+      "timestamp": 1770407972.183348,
+      "error": null
+    },
+    {
+      "task_id": "multilingual_001",
+      "evaluator_key": "opus_4_6",
+      "evaluated_key": "opus_4_5",
+      "blind_label": "Model A",
+      "scores": {
+        "accuracy": 9.0,
+        "completeness": 10.0,
+        "logical_consistency": 10.0,
+        "clarity": 10.0,
+        "originality": 9.0
+      },
+      "strengths": [
+        "The initial translation is highly accurate and reads naturally in English while staying faithful to the original Japanese meaning and tone.",
+        "The analysis of 木漏れ日 is exceptionally thorough, breaking down the compound morphologically (木 + 漏れ + 日) and explaining both the denotative and connotative losses in translation.",
+        "The discussion of 縁側 as a liminal space between interior and exterior is culturally insightful and architecturally precise, going beyond a simple definition to explain why Western equivalents fail.",
+        "The analysis of 何も考えない贅沢な時間 connects the phrase to broader cultural and philosophical frameworks (Zen 無心, 余白) while also identifying the specific translation problem: that 'thinking about nothing' reads as a deficit in English.",
+        "The bonus concept (てくれた) demonstrates deep linguistic knowledge by identifying a grammatical feature that encodes gratitude — something most analyses would overlook.",
+        "Each concept includes multiple concrete, practical strategies for preserving nuance (borrowing, expansion, compensation, footnoting), showing real translation expertise.",
+        "The free translation is beautifully crafted and the rationale explicitly explains the choices made, tying them back to the analysis.",
+        "The response is impeccably organized with clear headers, consistent structure, and excellent readability."
+      ],
+      "weaknesses": [
+        "The claim that おばあちゃん is 'softer than grandmother, warmer than grandma' is somewhat subjective and debatable — 'grandma' in English can carry very similar warmth depending on context and dialect. The distinction is slightly overstated.",
+        "The initial translation uses 'engawa' without gloss, which could be seen as inconsistent with the later recommendation to gloss it on first use — though this is a minor stylistic choice rather than an error."
+      ],
+      "reasoning": "This is an outstanding response that exceeds the task requirements in every dimension. The literal translation in Task 1 is accurate and elegant. Task 2 identifies not just 3 but 4 culturally specific concepts, each analyzed with genuine depth. The analyses in Task 3 go well beyond surface-level observations: the morphological breakdown of 木漏れ日, the architectural-philosophical framing of 縁側 as liminal space, the connection of 何も考えない贅沢な時間 to Zen and 余白, and the grammatical insight about てくれた all demonstrate expert-level understanding of both Japanese language/culture and translation theory. The strategies offered are varied and practical. The free translation in Task 4 is evocative and well-justified. The only minor weaknesses are a slightly overstated claim about おばあちゃん vs. 'grandma' and a small inconsistency regarding the glossing of 'engawa.' The clarity and organization are exemplary, and the response shows genuine originality in its insights and creative approaches.",
+      "is_self_bias_test": true,
+      "timestamp": 1770407976.651962,
+      "error": null
+    },
+    {
+      "task_id": "multilingual_001",
+      "evaluator_key": "opus_4_6",
+      "evaluated_key": "gemini_3_pro",
+      "blind_label": "Model B",
+      "scores": {
+        "accuracy": 9.0,
+        "completeness": 10.0,
+        "logical_consistency": 10.0,
+        "clarity": 10.0,
+        "originality": 9.0
+      },
+      "strengths": [
+        "The initial translation is highly accurate and reads naturally in English while staying faithful to the original Japanese meaning.",
+        "The analysis of 木漏れ日 goes beyond surface-level explanation, discussing the compound's internal poetic logic (trees as vessels from which light 'spills') and contrasting it with the clinical feel of 'dappled sunlight.'",
+        "The discussion of 縁側 as a liminal space between interior and exterior is architecturally and culturally precise, and the critique of 'veranda' or 'porch' as importing wrong associations is well-reasoned.",
+        "The analysis of 何も考えない贅沢な時間 connects it to broader cultural and philosophical frameworks (Zen 無心, 余白) while also explaining why the phrase doesn't land the same way in English — a genuinely insightful observation.",
+        "The bonus concept (てくれた and おばあちゃん) demonstrates deep linguistic knowledge and adds value beyond the minimum requirements.",
+        "The free translation is beautifully crafted, expanding compressed Japanese into sensory English prose, and the rationale explaining the choices is transparent and well-argued.",
+        "The response is impeccably organized with clear headers, consistent formatting, and logical flow from task to task.",
+        "Multiple preservation strategies are offered for each concept (borrowing, expansion, compensation, footnoting), showing practical translation expertise."
+      ],
+      "weaknesses": [
+        "The initial translation uses 'engawa' without gloss, which could be seen as inconsistent with the later recommendation to gloss it on first mention — though this is a minor stylistic choice rather than an error.",
+        "The claim that おばあちゃん is 'softer than grandmother, warmer than grandma' is somewhat subjective and debatable — many English speakers would consider 'grandma' quite warm and affectionate. The distinction could have been more carefully qualified.",
+        "While the free translation is emotionally effective, it adds details not present in the original (e.g., 'faint sweetness of the tea,' 'warming my hands') without explicitly flagging these as inventions rather than implications — though the rationale partially addresses this."
+      ],
+      "reasoning": "This is an exceptionally thorough and sophisticated response. The translation itself is accurate and well-crafted. The cultural analysis demonstrates genuine expertise in both Japanese language/culture and translation theory. Each concept is analyzed at multiple levels — linguistic, cultural, philosophical, and practical — with concrete strategies for preservation. The bonus concept exceeds requirements and shows attention to grammatical nuance (てくれた) that many analyses would overlook. The free translation is creative and emotionally resonant, with a clear rationale. The only weaknesses are minor: a slight inconsistency in the engawa glossing approach, a debatable claim about おばあちゃん vs. 'grandma,' and some unacknowledged additions in the free translation. The response excels in all evaluation criteria, with particular strength in logical consistency, completeness, and clarity.",
+      "is_self_bias_test": true,
+      "timestamp": 1770407976.6151302,
+      "error": null
+    },
+    {
+      "task_id": "multilingual_001",
+      "evaluator_key": "gemini_3_pro",
+      "evaluated_key": "opus_4_5",
+      "blind_label": "Model A",
+      "scores": {
+        "accuracy": 10.0,
+        "completeness": 10.0,
+        "logical_consistency": 10.0,
+        "clarity": 10.0,
+        "originality": 9.0
+      },
+      "strengths": [
+        "The 'Free Translation' demonstrates exceptional literary flair, particularly with the phrase 'coins of light' for komorebi.",
+        "The linguistic analysis of the auxiliary verb form '〜てくれた' (-te kureta) is precise and captures a nuance often overlooked by basic translators.",
+        "The model exceeded the requirement of identifying 3 concepts by analyzing 4 relevant terms.",
+        "The distinction made regarding 'zeitaku' (luxury) as a temporal/mental state rather than material wealth is highly insightful."
+      ],
+      "weaknesses": [],
+      "reasoning": "This is a flawless response. The model demonstrated a deep understanding of both the source language and the cultural context. The initial translation was accurate, and the decision to leave 'engawa' untranslated in the first version was well-justified by the subsequent analysis. The breakdown of translation challenges was sophisticated, offering practical strategies for preservation. The alternative 'free translation' was particularly impressive, moving beyond simple rewording to capture the emotional essence of the scene with poetic English prose.",
+      "is_self_bias_test": false,
+      "timestamp": 1770407986.5193322,
+      "error": null
+    },
+    {
+      "task_id": "multilingual_001",
+      "evaluator_key": "gemini_3_pro",
+      "evaluated_key": "opus_4_6",
+      "blind_label": "Model B",
+      "scores": {
+        "accuracy": 9.0,
+        "completeness": 10.0,
+        "logical_consistency": 10.0,
+        "clarity": 10.0,
+        "originality": 9.0
+      },
+      "strengths": [
+        "Excellent selection of cultural concepts, particularly the inclusion of 'Susuru' (slurping), which highlights a behavioral cultural difference rather than just a lexical one.",
+        "The analysis of 'Komorebi' and 'Engawa' is linguistically accurate and captures the architectural and atmospheric nuances well.",
+        "The 'Free Translation' effectively captures the emotional weight of the original text, justifying the deviation from literal accuracy with clear reasoning.",
+        "Formatting is clean, professional, and easy to read."
+      ],
+      "weaknesses": [
+        "In the literal translation, translating 'irete kureta' (淹れてくれた) as 'poured' is slightly less accurate than 'brewed' or 'made,' as 'ireru' specifically refers to the process of making tea, though 'poured' is acceptable in a casual context."
+      ],
+      "reasoning": "Model B provided a near-perfect response. It followed all instructions thoroughly. The translation was natural, and the cultural analysis was insightful—specifically the choice to analyze the verb 'susuru' (to slurp/sip), which addresses a significant cultural gap in table manners between Japan and the West. The strategies suggested for translation were practical. The free translation was distinct and well-justified. The only minor critique is the choice of 'poured' for the tea preparation verb, which is a very minor semantic preference.",
+      "is_self_bias_test": true,
+      "timestamp": 1770407989.795027,
+      "error": null
+    }
+  ]
+}

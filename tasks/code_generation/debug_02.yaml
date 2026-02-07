@@ -1,0 +1,34 @@
+id: code_generation_002
+domain: code_generation
+difficulty: hard
+prompt: |
+  The following Python function is intended to find all pairs of numbers
+  in a list that sum to a target value. It has several bugs.
+
+  ```python
+  def find_pairs(nums, target):
+      pairs = []
+      seen = {}
+      for i in range(len(nums)):
+          complement = target - nums[i]
+          if complement in seen:
+              pairs.append((complement, nums[i]))
+          seen[nums[i]] = i
+      return pairs
+  ```
+
+  Tasks:
+  1. Identify ALL bugs and edge cases the function fails on.
+  2. Provide a corrected version that handles:
+     - Duplicate numbers (e.g., [3,3,3] with target 6)
+     - Negative numbers
+     - Empty lists
+     - A number paired with itself (e.g., [4] with target 8)
+  3. Analyze time and space complexity of both the buggy and fixed versions.
+  4. Write comprehensive test cases.
+expected_aspects:
+  - bug_identification
+  - correct_fix
+  - edge_case_handling
+  - complexity_analysis
+  - test_coverage

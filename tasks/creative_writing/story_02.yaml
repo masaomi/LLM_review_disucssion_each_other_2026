@@ -1,0 +1,22 @@
+id: creative_writing_002
+domain: creative_writing
+difficulty: hard
+prompt: |
+  Write a micro-fiction story (exactly 100 words, no more, no less)
+  with the following constraints:
+
+  1. The story must involve TWO characters who never directly speak
+     to each other.
+  2. The reader should understand a secret that neither character knows.
+  3. The last sentence must recontextualize the entire story.
+  4. Use the word "light" exactly three times, each with a different meaning.
+
+  After the story, briefly explain (in 50 words or fewer) the
+  narrative technique you used.
+expected_aspects:
+  - exact_word_count
+  - constraint_adherence
+  - dramatic_irony
+  - twist_ending
+  - polysemy_usage
+  - self_awareness_of_technique

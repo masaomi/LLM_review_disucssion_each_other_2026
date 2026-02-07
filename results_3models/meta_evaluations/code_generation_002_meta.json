@@ -1,0 +1,296 @@
+{
+  "task_id": "code_generation_002",
+  "meta_evaluations": [
+    {
+      "task_id": "code_generation_002",
+      "meta_evaluator_key": "opus_4_6",
+      "original_evaluator_key": "opus_4_5",
+      "original_evaluated_key": "opus_4_6",
+      "scores": {
+        "fairness": 8.0,
+        "specificity": 8.0,
+        "coverage": 7.0,
+        "calibration": 7.0
+      },
+      "detected_biases": [
+        "Slight leniency bias - the response has a truncated test suite which is a significant issue that should have impacted scores more",
+        "The evaluator seems to give benefit of the doubt on the bug analysis quality, when the response's identification of 'bugs' is actually quite debatable since the original function works correctly for many cases"
+      ],
+      "missed_points": [
+        "The response fundamentally changes the function's semantics from returning all pairs (including duplicates by index) to returning only unique value pairs, which could be seen as not actually 'fixing' the original function but replacing it entirely",
+        "The original function actually handles negative numbers and empty lists correctly - these aren't bugs. The response acknowledges this in the table but still frames them as issues to 'fix', which is misleading. The evaluator partially catches this but doesn't penalize enough.",
+        "The response's Version C (recommended) uses sorted() on the output which adds O(k log k) complexity, but the response claims O(n) time - this inconsistency is noted in the response itself but the evaluator doesn't flag it as a weakness",
+        "The evaluator didn't note that the response's claim of 'several bugs' is overstated - the original code really only has one core issue: how it handles duplicates. The dictionary overwriting is a consequence of the same design choice, not a separate bug.",
+        "The response doesn't clearly address what the 'correct' behavior should be before fixing - it provides multiple versions but doesn't commit to what the original function was likely intended to do",
+        "The evaluator missed that the accuracy score of 8.0 seems too high given that the response lists Bug 3 as a bug while simultaneously saying it's correct behavior, and lists Bug 4 (no deduplication of equivalent pairs) when the original function actually always produces pairs in (complement, nums[i]) order and never produces both (a,b) and (b,a) for the same pair of indices",
+        "Bug 4 is arguably incorrect - the original function processes each element once left-to-right and always puts the complement first, so for any given pair of indices it will only produce one ordering. The evaluator notes the confusion around Bug 3 but misses that Bug 4 is also questionable."
+      ],
+      "reasoning": "The evaluation is generally competent and identifies several real strengths and weaknesses of the response. The strengths identified are accurate - the response does provide multiple interpretations, comprehensive tests, and good organization. The weakness about the truncated test code is correctly identified. However, the evaluation misses several important issues: (1) Bug 4 is questionable since the original function's single-pass approach naturally avoids producing both (a,b) and (b,a) for the same index pair; (2) the response overstates the number of bugs - the core issue is really about duplicate handling semantics; (3) the complexity claim of O(n) for Version C while using sorted() is slightly inconsistent; (4) the fundamental shift in semantics from the original function to the 'fixed' versions isn't adequately critiqued. The scores are somewhat lenient - an accuracy score of 8.0 seems high given the debatable bug identifications, and completeness at 9.0 seems high given the truncated test suite. The logical_consistency score of 8.0 could be lower given the Bug 3 contradiction and Bug 4 questionability. Overall, the evaluation demonstrates good analytical skills but misses some nuanced technical issues and is slightly too generous in its scoring.",
+      "timestamp": 1770408189.970583,
+      "error": null
+    },
+    {
+      "task_id": "code_generation_002",
+      "meta_evaluator_key": "gemini_3_pro",
+      "original_evaluator_key": "opus_4_5",
+      "original_evaluated_key": "opus_4_6",
+      "scores": {
+        "fairness": 9.0,
+        "specificity": 9.0,
+        "coverage": 8.0,
+        "calibration": 9.0
+      },
+      "detected_biases": [],
+      "missed_points": [
+        "The evaluator incorrectly claimed that the response did not explain when the O(n²) worst case for Version B would occur. The response explicitly stated: 'If all elements are the same and pair up, e.g., [3,3,3,...,3] target=6'.",
+        "The evaluator did not explicitly verify or comment on the functional correctness of the provided code solutions (which were correct)."
+      ],
+      "reasoning": "The evaluation is high-quality, fair, and well-calibrated. It correctly identified the truncation at the end of the response and the logical inconsistency in the analysis of 'Bug 3'. It praised the handling of ambiguity regarding unique vs. index-based pairs, which was the strongest part of the response. However, the evaluator hallucinated a weakness regarding the complexity analysis for Version B, claiming an explanation was missing when it was clearly present in the response's table. Aside from this oversight, the assessment was accurate.",
+      "timestamp": 1770408186.391413,
+      "error": null
+    },
+    {
+      "task_id": "code_generation_002",
+      "meta_evaluator_key": "opus_4_6",
+      "original_evaluator_key": "opus_4_5",
+      "original_evaluated_key": "gemini_3_pro",
+      "scores": {
+        "fairness": 7.0,
+        "specificity": 8.0,
+        "coverage": 7.0,
+        "calibration": 6.0
+      },
+      "detected_biases": [
+        "The evaluator appears biased toward defending the original buggy code, framing legitimate bug identification as mere 'design decisions' or 'interpretation differences' when the task explicitly asked for handling duplicates like [3,3,3] with target 6",
+        "The evaluator seems to penalize the response for following the task requirements (which explicitly asked for handling duplicate numbers) by treating the task's own specifications as ambiguous"
+      ],
+      "missed_points": [
+        "The evaluation was assessing a truncated/incomplete response - the response appears to be cut off mid-sentence, which should have been noted as a major weakness and should have significantly impacted completeness and other scores",
+        "The evaluator gave a completeness score of 9.0 despite the response being clearly incomplete (cut off mid-analysis of bug #2), which is a significant calibration error",
+        "The evaluator references test cases, multiple solution variants, and complexity analysis as strengths, but these don't appear in the truncated response that was shown - the evaluator may have been evaluating content not visible in the provided excerpt",
+        "The task explicitly states the function 'has several bugs' and specifies requirements for handling duplicates, negative numbers, empty lists, and self-pairing - the evaluator's framing of these as 'interpretation differences' contradicts the task specification",
+        "The evaluator didn't address whether the response correctly identified the self-pairing edge case (e.g., [4] with target 8 should return no pairs since you can't pair an element with itself)",
+        "The original code's behavior with [3,3,3] target 6 returning 2 pairs instead of 3 is indeed a bug given the task's explicit requirement - the evaluator's pushback on this is not well-founded given the task context"
+      ],
+      "reasoning": "The evaluation has several significant issues. Most critically, the evaluator appears to have assessed content beyond what was shown in the truncated response - referencing test suites, multiple solution variants, and complexity analysis that aren't present in the visible excerpt. This raises serious questions about whether the evaluator was working with the same content or hallucinating strengths. The completeness score of 9.0 is particularly problematic given the response is visibly cut off mid-sentence. The evaluator's specificity is actually decent when referencing concrete examples (like the [3,3,3] case and test assertions), but the fairness is compromised by a philosophical stance that the original code isn't really buggy - which contradicts the task's explicit statement that 'it has several bugs' and its explicit requirements for duplicate handling. The evaluator makes some valid points about the distinction between bugs and design decisions in general software engineering, but in the context of THIS specific task with its explicit requirements, this framing is inappropriate and penalizes the response for correctly following instructions. The calibration is off - accuracy at 7.0 and logical consistency at 6.0 seem too harsh if the response was correctly identifying bugs per the task specification, while completeness at 9.0 is far too generous for an incomplete response.",
+      "timestamp": 1770408186.3436239,
+      "error": null
+    },
+    {
+      "task_id": "code_generation_002",
+      "meta_evaluator_key": "gemini_3_pro",
+      "original_evaluator_key": "opus_4_5",
+      "original_evaluated_key": "gemini_3_pro",
+      "scores": {
+        "fairness": 8.0,
+        "specificity": 9.0,
+        "coverage": 8.0,
+        "calibration": 5.0
+      },
+      "detected_biases": [
+        "Interpretative Bias: The evaluator defends"
+      ],
+      "missed_points": [],
+      "reasoning": "",
+      "timestamp": 1770408191.768474,
+      "error": null
+    },
+    {
+      "task_id": "code_generation_002",
+      "meta_evaluator_key": "opus_4_5",
+      "original_evaluator_key": "opus_4_6",
+      "original_evaluated_key": "opus_4_5",
+      "scores": {
+        "fairness": 8.0,
+        "specificity": 9.0,
+        "coverage": 8.0,
+        "calibration": 7.0
+      },
+      "detected_biases": [
+        "Slight bias toward penalizing the response for 'overstating' bugs when the response actually acknowledges that some behaviors work correctly",
+        "The evaluator seems to favor a more conservative interpretation of what constitutes a 'bug' which may not align with the task's requirements"
+      ],
+      "missed_points": [
+        "The evaluator didn't fully acknowledge that the response's interpretation of 'all pairs' (index-based) is actually the more common and useful interpretation in algorithm problems",
+        "The evaluator didn't note that the response provides excellent documentation with docstrings explaining the behavior of each function variant",
+        "The evaluator could have mentioned that the response's handling of the 'number paired with itself' case (e.g., [4] with target 8) is correctly identified as already working in the original",
+        "The evaluator didn't credit the response for correctly identifying that the original code's behavior with [3,3,3] returns 2 pairs, not 3 - this is a genuine bug given the task requirements",
+        "The evaluator missed that the response provides a clear enumeration of expected pairs using index notation which aids understanding"
+      ],
+      "reasoning": "The evaluation is generally well-reasoned and provides specific evidence from the response. The evaluator correctly identifies many strengths including the organization, multiple solution variants, comprehensive testing, and clear complexity analysis. However, the evaluation has some calibration issues. The accuracy score of 7.0 seems somewhat harsh given that the response correctly identifies the core bug (duplicate handling) and provides working solutions. The evaluator's criticism that the response 'inflates' the number of bugs is partially valid but also somewhat unfair - the response does acknowledge when behaviors work correctly (Bug 3), and the distinction between Bug 1 and Bug 2 (storing one index vs. missing pairs) represents different manifestations of the same underlying issue, which is a reasonable way to explain the problem. The evaluator's point about the definition of 'all pairs' being debatable is valid but the task explicitly asks to handle 'Duplicate numbers (e.g., [3,3,3] with target 6)' which strongly suggests index-based pairs are expected. The specificity score is high because the evaluator references concrete examples like the [3,3,3] trace and specific test cases. Coverage is good but misses some positive aspects of the response. The logical_consistency score of 7.0 seems slightly low given that the response's logic is generally sound, even if the bug enumeration could be cleaner.",
+      "timestamp": 1770408201.059872,
+      "error": null
+    },
+    {
+      "task_id": "code_generation_002",
+      "meta_evaluator_key": "gemini_3_pro",
+      "original_evaluator_key": "opus_4_6",
+      "original_evaluated_key": "opus_4_5",
+      "scores": {
+        "fairness": 10.0,
+        "specificity": 10.0,
+        "coverage": 10.0,
+        "calibration": 10.0
+      },
+      "detected_biases": [],
+      "missed_points": [],
+      "reasoning": "",
+      "timestamp": 1770408207.817048,
+      "error": null
+    },
+    {
+      "task_id": "code_generation_002",
+      "meta_evaluator_key": "opus_4_5",
+      "original_evaluator_key": "opus_4_6",
+      "original_evaluated_key": "gemini_3_pro",
+      "scores": {
+        "fairness": 8.0,
+        "specificity": 9.0,
+        "coverage": 9.0,
+        "calibration": 8.5
+      },
+      "detected_biases": [
+        "Slight tendency toward harsh interpretation of the bug analysis accuracy, though this is arguably justified given the ambiguity in the response"
+      ],
+      "missed_points": [
+        "Could have acknowledged that the response's structured approach (numbered sections, clear headers) showed good organizational intent even if incomplete",
+        "Did not explicitly note that the response correctly identifies the dictionary-based approach as the source of the issue",
+        "Could have mentioned that the partial response shows competent understanding of hash-based pair-finding algorithms"
+      ],
+      "reasoning": "The evaluation demonstrates strong quality across all criteria. **Fairness**: The evaluator provides evidence-based criticism without apparent model bias. The questioning of the [3,3,3] bug analysis is legitimate and well-reasoned, noting that the interpretation depends on specification. The evaluator fairly acknowledges what the response does correctly (identifying the overwriting bug, providing concrete scenarios). **Specificity**: The evaluation excels here, citing specific examples from the response ([3,3,3] with target 6, [1,2] with target 3), quoting the exact claims made, and referencing specific task numbers that were missed. The technical analysis of what the original function actually produces is detailed and accurate. **Coverage**: The evaluator comprehensively identifies that tasks 2, 3, and 4 are entirely missing, notes the incomplete bug #2, and correctly points out missing edge case discussions (empty lists, negative numbers, self-pairing). The strengths identified are appropriate and specific. **Calibration**: The scores appear well-calibrated for a severely truncated response. Completeness at 1.0 is appropriate since ~80% of the task is unaddressed. Accuracy at 4.0 reasonably reflects that the partial analysis has merit but contains questionable claims. Clarity at 5.0 and logical consistency at 5.0 for the portion that exists seem fair. The only potential calibration issue is whether accuracy should be slightly higher given the correct identification of the core overwriting issue, but the evaluator's reasoning about the ambiguous interpretation is sound.",
+      "timestamp": 1770408203.598649,
+      "error": null
+    },
+    {
+      "task_id": "code_generation_002",
+      "meta_evaluator_key": "gemini_3_pro",
+      "original_evaluator_key": "opus_4_6",
+      "original_evaluated_key": "gemini_3_pro",
+      "scores": {
+        "fairness": 10.0,
+        "specificity": 10.0,
+        "coverage": 10.0,
+        "calibration": 0.0
+      },
+      "detected_biases": [],
+      "missed_points": [],
+      "reasoning": "",
+      "timestamp": 1770408241.588775,
+      "error": null
+    },
+    {
+      "task_id": "code_generation_002",
+      "meta_evaluator_key": "opus_4_5",
+      "original_evaluator_key": "gemini_3_pro",
+      "original_evaluated_key": "opus_4_5",
+      "scores": {
+        "fairness": 8.0,
+        "specificity": 7.0,
+        "coverage": 6.0,
+        "calibration": 5.0
+      },
+      "detected_biases": [
+        "Leniency bias - awarding perfect 10s across most categories without acknowledging any substantive weaknesses",
+        "Possible positive framing bias - the single weakness identified is dismissed as a 'minor structural nitpick'"
+      ],
+      "missed_points": [
+        "The response incorrectly states the original code finds 2 pairs for [3,3,3] with target 6, but tracing through shows it actually finds 2 pairs correctly - the expected count of 3 pairs assumes each index pair is unique, but the problem statement doesn't clearly require index-based uniqueness",
+        "The 'corrected' solution changes the problem semantics - the original returns value pairs, the fix returns multiple identical value tuples which may not be the intended behavior",
+        "Test case test_basic_pair expects [(1, 4), (2, 3)] but the order depends on iteration order which isn't guaranteed to match",
+        "The complexity analysis for the fixed version claims O(n²) worst case but doesn't account for the output size being part of the complexity bound",
+        "The response's claim that there are 3 bugs is questionable - Bug 2 and Bug 3 are not actually bugs in the original code as written",
+        "The evaluator's reasoning field is truncated ('The model') suggesting incomplete evaluation",
+        "The response provides three different function variants without clearly stating which one is THE corrected version answering the original task"
+      ],
+      "reasoning": "The evaluation shows significant leniency bias by awarding near-perfect scores (10/10 for accuracy, completeness, logical consistency, and clarity) despite several issues in the response. The evaluator correctly identified some strengths like the comprehensive test suite and complexity analysis, but failed to critically examine whether the 'bugs' identified were actually bugs. The original code's behavior for duplicates is a design choice, not necessarily a bug - it depends on problem interpretation. The evaluator also missed that the response's test cases have potential issues with order assumptions. The single weakness noted (structural nitpick about self-pairing) is valid but the evaluator failed to catch more substantive issues like the ambiguity in what constitutes a 'pair' (value-based vs index-based). The truncated reasoning field ('The model') suggests the evaluation may have been incomplete. A well-calibrated evaluation would likely score accuracy and logical consistency lower (7-8 range) given the debatable bug identification and test case issues.",
+      "timestamp": 1770408217.116651,
+      "error": null
+    },
+    {
+      "task_id": "code_generation_002",
+      "meta_evaluator_key": "opus_4_6",
+      "original_evaluator_key": "gemini_3_pro",
+      "original_evaluated_key": "opus_4_5",
+      "scores": {
+        "fairness": 4.0,
+        "specificity": 5.0,
+        "coverage": 4.0,
+        "calibration": 3.0
+      },
+      "detected_biases": [
+        "Leniency bias - giving perfect or near-perfect scores across all dimensions without sufficient critical analysis",
+        "Halo effect - the overall high quality of the response seems to have prevented the evaluator from identifying specific flaws"
+      ],
+      "missed_points": [
+        "The response's bug identification is debatable. The original code is arguably not 'buggy' per se - it works correctly for finding pairs using a hash map approach. The 'bug' of handling duplicates depends on the problem specification. The response frames the duplicate handling as a clear bug but this is an interpretation of requirements.",
+        "Bug 2 and Bug 1 are essentially the same issue (duplicate handling) - listing them as separate bugs inflates the bug count artificially. The evaluator should have noted this redundancy.",
+        "Bug 3 (self-pairing) is explicitly acknowledged by the response as NOT being a bug, yet it's listed under 'Bugs in the Original Code' - the evaluator noted this but only as a 'minor structural nitpick' when it's actually a more significant organizational/logical issue.",
+        "The corrected version changes the semantics of the function significantly (from finding unique complement pairs to finding all index-based pairs) without clearly justifying why the original interpretation was wrong. The evaluator didn't question this design choice.",
+        "The test case test_basic_pair expects [(1, 4), (2, 3)] but the order depends on iteration order - the test could be fragile. The evaluator didn't catch potential test fragility issues.",
+        "The complexity analysis for the original version is incomplete - it doesn't discuss that the original is actually O(n) which is optimal for finding one pair per complement value. The 'fix' degrades performance to O(n²) which could be seen as a trade-off worth discussing more critically.",
+        "The response doesn't discuss whether the problem asks for index pairs or value pairs - this ambiguity is central to whether the original code is actually buggy.",
+        "The evaluation's reasoning field is truncated ('The model') suggesting incomplete analysis",
+        "The evaluator gave 10/10 for accuracy but didn't verify whether all test cases would actually pass - for example, test_duplicates_with_different_numbers expects all pairs to be (1,2) but some would be (2,1) depending on which element is the complement vs current",
+        "The float test case could have precision issues that weren't discussed"
+      ],
+      "reasoning": "The evaluation is overly generous, awarding perfect 10s in four out of five categories. While the response is indeed high quality with good structure, multiple variants, and comprehensive tests, there are several issues the evaluator failed to identify. Most critically: (1) The fundamental question of whether the original code is truly 'buggy' or just implements a different interpretation of 'find pairs' was not examined. (2) The bug list contains redundancy (Bugs 1 and 2 are the same issue) and a non-bug listed as a bug (Bug 3). (3) The test cases have potential ordering issues that could cause failures. (4) The complexity analysis could be more nuanced about the trade-offs between the original O(n) solution and the O(n²) 'fix'. (5) The evaluation's reasoning is truncated, suggesting incomplete analysis. The evaluator did identify one valid weakness about the self-pairing structural issue but dismissed it too lightly. A more calibrated evaluation would likely score accuracy around 7-8, completeness around 8, and logical consistency around 7-8, reflecting the genuine quality of the response while acknowledging its flaws.",
+      "timestamp": 1770408225.976772,
+      "error": null
+    },
+    {
+      "task_id": "code_generation_002",
+      "meta_evaluator_key": "opus_4_5",
+      "original_evaluator_key": "gemini_3_pro",
+      "original_evaluated_key": "opus_4_6",
+      "scores": {
+        "fairness": 2.0,
+        "specificity": 3.0,
+        "coverage": 2.0,
+        "calibration": 1.0
+      },
+      "detected_biases": [
+        "The evaluator appears to have assessed a different or truncated version of the response than what was actually provided",
+        "Severe factual error in evaluation - the response clearly contains corrected code, complexity analysis, and comprehensive test cases"
+      ],
+      "missed_points": [
+        "The response provides three complete corrected versions (Version A, B, and C) with detailed documentation",
+        "The response includes a thorough complexity analysis table for both buggy and all fixed versions",
+        "The response contains extensive test cases organized into multiple test classes covering basic functionality, edge cases, duplicates, negative numbers, zeros, large numbers, return format, and property-based tests",
+        "The response provides excellent bug identification with a detailed table of edge cases",
+        "The response demonstrates strong pedagogical structure with clear section headers and explanations",
+        "The response shows sophisticated understanding of the ambiguity in 'find all pairs' and addresses it with multiple solution approaches"
+      ],
+      "reasoning": "This evaluation is fundamentally flawed and appears to be based on a completely different response than what was provided. The actual response is comprehensive and nearly complete - it includes detailed bug analysis, three corrected code versions with documentation, complexity analysis tables for all versions, and extensive pytest-based test cases organized into logical test classes. The evaluator claims the response 'cuts off mid-sentence in the first section' and 'failed to provide corrected code, complexity analysis, and test cases' - all of which are demonstrably false. The response does appear to be slightly truncated at the very end (mid-sentence in the last test method), but this is a minor issue affecting perhaps 1-2 lines of a single test case, not the catastrophic incompleteness the evaluator describes. The scores given (completeness: 1.0, clarity: 2.0, originality: 1.0) are grossly miscalibrated given the actual content. This evaluation would be appropriate for a response that truly stopped after the first paragraph, but it is entirely inappropriate for the comprehensive response that was actually provided. The evaluator either received a truncated version of the response or made a severe error in their assessment.",
+      "timestamp": 1770408220.394995,
+      "error": null
+    },
+    {
+      "task_id": "code_generation_002",
+      "meta_evaluator_key": "opus_4_6",
+      "original_evaluator_key": "gemini_3_pro",
+      "original_evaluated_key": "opus_4_6",
+      "scores": {
+        "fairness": 1.0,
+        "specificity": 2.0,
+        "coverage": 1.0,
+        "calibration": 1.0
+      },
+      "detected_biases": [
+        "The evaluator appears to have evaluated a completely different (truncated) version of the response than what was actually provided. The full response is clearly visible and contains all four sections: bug identification, corrected versions, complexity analysis, and comprehensive test cases.",
+        "Severe negative bias: the evaluator gave a completeness score of 1.0 and claimed the response was 'severely incomplete, cutting off mid-sentence in the first section,' which is factually incorrect given the response shown."
+      ],
+      "missed_points": [
+        "The response provides three corrected versions (A, B, and C) with clear documentation and handles all required edge cases (duplicates, negatives, empty lists, self-pairing).",
+        "The response includes a detailed complexity analysis table for both the buggy version and all three fixed versions.",
+        "The response includes extremely comprehensive test cases organized into well-structured test classes covering basic functionality, edge cases, duplicates, negative numbers, zeros, large numbers, return format, and property-based tests.",
+        "The response provides a thorough bug analysis with a clear table showing edge cases and expected vs actual behavior.",
+        "The response correctly identifies the ambiguity in 'find all pairs' and provides both unique-pair and index-pair solutions.",
+        "The response demonstrates strong software engineering practices with docstrings, type clarity, and organized test structure.",
+        "The evaluator failed to recognize that the response is one of the most thorough and well-structured answers possible for this prompt."
+      ],
+      "reasoning": "This evaluation is fundamentally flawed. The evaluator claims the response is 'truncated and stops abruptly in the middle of the first task,' but the actual response provided is extensive and complete, covering all four required tasks in great detail. The response includes: (1) thorough bug identification with a summary table, (2) three corrected versions handling all specified edge cases, (3) detailed complexity analysis for both buggy and fixed versions, and (4) comprehensive pytest-based test cases organized into multiple test classes. The only minor truncation is at the very end of the last test method, which is inconsequential given the vast amount of complete test coverage already provided. The evaluator's scores (accuracy: 5, completeness: 1, clarity: 2, originality: 1) are wildly miscalibrated — the response deserves high scores across nearly all dimensions. It appears the evaluator either saw a different (truncated) version of the response, or made a catastrophic error in reading the response. This is one of the worst possible evaluations for what is actually a very strong response.",
+      "timestamp": 1770408230.9072268,
+      "error": null
+    }
+  ]
+}

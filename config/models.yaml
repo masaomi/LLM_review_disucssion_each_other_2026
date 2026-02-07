@@ -1,0 +1,18 @@
+models:
+  opus_4_5:
+    id: "anthropic/claude-opus-4.5"
+    display_name: "Claude Opus 4.5"
+    max_tokens: 4096
+
+  opus_4_6:
+    id: "anthropic/claude-opus-4.6"
+    display_name: "Claude Opus 4.6"
+    max_tokens: 4096
+
+  gemini_3_pro:
+    id: "google/gemini-3-pro-preview"
+    display_name: "Gemini 3.0 Pro"
+    max_tokens: 4096
+
+# NOTE: Update model IDs to match actual OpenRouter model slugs.
+# Check https://openrouter.ai/models for the latest available models.

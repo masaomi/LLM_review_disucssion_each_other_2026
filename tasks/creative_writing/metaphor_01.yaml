@@ -1,0 +1,22 @@
+id: creative_writing_001
+domain: creative_writing
+difficulty: medium
+prompt: |
+  Write a short essay (300-500 words) explaining the concept of
+  "entropy" using an extended metaphor from everyday life.
+
+  Requirements:
+  1. The metaphor should be original (not the commonly used
+     "messy room" metaphor).
+  2. The essay should be scientifically accurate while remaining
+     accessible to a general audience.
+  3. Include at least one moment where the metaphor reveals a
+     counterintuitive aspect of entropy.
+  4. End with a reflection on why entropy matters for understanding
+     the universe.
+expected_aspects:
+  - original_metaphor
+  - scientific_accuracy
+  - accessibility
+  - counterintuitive_insight
+  - philosophical_reflection

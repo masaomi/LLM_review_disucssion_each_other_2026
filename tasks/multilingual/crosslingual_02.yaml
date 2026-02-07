@@ -1,0 +1,21 @@
+id: multilingual_002
+domain: multilingual
+difficulty: hard
+prompt: |
+  Consider the German compound word "Verschlimmbesserung"
+  (an attempted improvement that makes things worse).
+
+  Tasks:
+  1. Explain the morphological structure of this word.
+  2. Find equivalent concepts in at least 3 other languages.
+     For each, explain whether the concept is expressed as a
+     single word, idiom, or requires a full description.
+  3. Create a NEW English compound word that captures this concept.
+     Explain your word formation strategy.
+  4. Write a short paragraph (50-100 words) using your new word
+     naturally in context.
+expected_aspects:
+  - morphological_analysis
+  - cross_linguistic_knowledge
+  - creative_neologism
+  - natural_usage_in_context

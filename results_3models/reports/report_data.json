@@ -1,0 +1,740 @@
+{
+  "performance_report": {
+    "model_profiles": {
+      "opus_4_6": {
+        "model_key": "opus_4_6",
+        "display_name": "Claude Opus 4.6",
+        "overall_score": 9.03368947189518,
+        "domain_profiles": {
+          "code_generation": {
+            "domain": "code_generation",
+            "raw_scores": {
+              "accuracy": 9.333333333333334,
+              "completeness": 8.666666666666666,
+              "logical_consistency": 9.333333333333334,
+              "clarity": 9.333333333333334,
+              "originality": 8.0
+            },
+            "corrected_scores": {
+              "accuracy": 9.175356138561849,
+              "completeness": 8.508689471895181,
+              "logical_consistency": 9.175356138561849,
+              "clarity": 9.175356138561849,
+              "originality": 7.842022805228514
+            },
+            "weighted_score": 8.842022805228515,
+            "sample_count": 3
+          },
+          "creative_writing": {
+            "domain": "creative_writing",
+            "raw_scores": {
+              "accuracy": 8.666666666666666,
+              "completeness": 9.333333333333334,
+              "logical_consistency": 9.666666666666666,
+              "clarity": 9.666666666666666,
+              "originality": 9.0
+            },
+            "corrected_scores": {
+              "accuracy": 8.508689471895181,
+              "completeness": 9.175356138561849,
+              "logical_consistency": 9.508689471895181,
+              "clarity": 9.508689471895181,
+              "originality": 8.842022805228513
+            },
+            "weighted_score": 9.092022805228513,
+            "sample_count": 3
+          },
+          "instruction_following": {
+            "domain": "instruction_following",
+            "raw_scores": {
+              "accuracy": 8.0,
+              "completeness": 8.666666666666666,
+              "logical_consistency": 9.333333333333334,
+              "clarity": 9.333333333333334,
+              "originality": 8.0
+            },
+            "corrected_scores": {
+              "accuracy": 7.842022805228514,
+              "completeness": 8.508689471895181,
+              "logical_consistency": 9.175356138561849,
+              "clarity": 9.175356138561849,
+              "originality": 7.842022805228514
+            },
+            "weighted_score": 8.508689471895181,
+            "sample_count": 3
+          },
+          "logic_reasoning": {
+            "domain": "logic_reasoning",
+            "raw_scores": {
+              "accuracy": 9.5,
+              "completeness": 10.0,
+              "logical_consistency": 9.5,
+              "clarity": 10.0,
+              "originality": 8.0
+            },
+            "corrected_scores": {
+              "accuracy": 9.342022805228513,
+              "completeness": 9.842022805228513,
+              "logical_consistency": 9.342022805228513,
+              "clarity": 9.842022805228513,
+              "originality": 7.842022805228514
+            },
+            "weighted_score": 9.292022805228514,
+            "sample_count": 2
+          },
+          "multilingual": {
+            "domain": "multilingual",
+            "raw_scores": {
+              "accuracy": 9.333333333333334,
+              "completeness": 10.0,
+              "logical_consistency": 9.0,
+              "clarity": 10.0,
+              "originality": 9.0
+            },
+            "corrected_scores": {
+              "accuracy": 9.175356138561849,
+              "completeness": 9.842022805228513,
+              "logical_consistency": 8.842022805228513,
+              "clarity": 9.842022805228513,
+              "originality": 8.842022805228513
+            },
+            "weighted_score": 9.275356138561847,
+            "sample_count": 3
+          },
+          "scientific_reasoning": {
+            "domain": "scientific_reasoning",
+            "raw_scores": {
+              "accuracy": 9.0,
+              "completeness": 9.75,
+              "logical_consistency": 9.5,
+              "clarity": 9.75,
+              "originality": 8.75
+            },
+            "corrected_scores": {
+              "accuracy": 8.842022805228513,
+              "completeness": 9.592022805228513,
+              "logical_consistency": 9.342022805228513,
+              "clarity": 9.592022805228513,
+              "originality": 8.592022805228513
+            },
+            "weighted_score": 9.192022805228513,
+            "sample_count": 4
+          }
+        },
+        "strengths": [
+          "Strong in logic_reasoning (score: 9.3)",
+          "Strong in multilingual (score: 9.3)",
+          "Excellent accuracy (8.8/10)",
+          "Excellent completeness (9.2/10)",
+          "Excellent logical_consistency (9.2/10)"
+        ],
+        "weaknesses": [],
+        "evaluator_reliability": 8.474431818181818,
+        "bias_summary": {
+          "self_bias": 0.6600000000000001,
+          "series_bias": 0.4666666666666668,
+          "harshness": -0.2848799480856581,
+          "consistency": 1.3173841296977826
+        }
+      },
+      "opus_4_5": {
+        "model_key": "opus_4_5",
+        "display_name": "Claude Opus 4.5",
+        "overall_score": 9.186678602329962,
+        "domain_profiles": {
+          "code_generation": {
+            "domain": "code_generation",
+            "raw_scores": {
+              "accuracy": 9.25,
+              "completeness": 9.75,
+              "logical_consistency": 9.25,
+              "clarity": 9.75,
+              "originality": 8.25
+            },
+            "corrected_scores": {
+              "accuracy": 9.213761935663296,
+              "completeness": 9.713761935663296,
+              "logical_consistency": 9.213761935663296,
+              "clarity": 9.713761935663296,
+              "originality": 8.213761935663296
+            },
+            "weighted_score": 9.238761935663296,
+            "sample_count": 4
+          },
+          "creative_writing": {
+            "domain": "creative_writing",
+            "raw_scores": {
+              "accuracy": 8.0,
+              "completeness": 8.666666666666666,
+              "logical_consistency": 8.333333333333334,
+              "clarity": 9.333333333333334,
+              "originality": 8.666666666666666
+            },
+            "corrected_scores": {
+              "accuracy": 7.963761935663297,
+              "completeness": 8.630428602329964,
+              "logical_consistency": 8.297095268996632,
+              "clarity": 9.297095268996632,
+              "originality": 8.630428602329964
+            },
+            "weighted_score": 8.480428602329964,
+            "sample_count": 3
+          },
+          "instruction_following": {
+            "domain": "instruction_following",
+            "raw_scores": {
+              "accuracy": 9.0,
+              "completeness": 9.25,
+              "logical_consistency": 9.5,
+              "clarity": 9.5,
+              "originality": 7.75
+            },
+            "corrected_scores": {
+              "accuracy": 8.963761935663296,
+              "completeness": 9.213761935663296,
+              "logical_consistency": 9.463761935663296,
+              "clarity": 9.463761935663296,
+              "originality": 7.713761935663297
+            },
+            "weighted_score": 9.026261935663296,
+            "sample_count": 4
+          },
+          "logic_reasoning": {
+            "domain": "logic_reasoning",
+            "raw_scores": {
+              "accuracy": 9.333333333333334,
+              "completeness": 9.666666666666666,
+              "logical_consistency": 9.666666666666666,
+              "clarity": 10.0,
+              "originality": 8.333333333333334
+            },
+            "corrected_scores": {
+              "accuracy": 9.297095268996632,
+              "completeness": 9.630428602329964,
+              "logical_consistency": 9.630428602329964,
+              "clarity": 9.963761935663296,
+              "originality": 8.297095268996632
+            },
+            "weighted_score": 9.397095268996631,
+            "sample_count": 3
+          },
+          "multilingual": {
+            "domain": "multilingual",
+            "raw_scores": {
+              "accuracy": 10.0,
+              "completeness": 10.0,
+              "logical_consistency": 10.0,
+              "clarity": 10.0,
+              "originality": 9.0
+            },
+            "corrected_scores": {
+              "accuracy": 9.963761935663296,
+              "completeness": 9.963761935663296,
+              "logical_consistency": 9.963761935663296,
+              "clarity": 9.963761935663296,
+              "originality": 8.963761935663296
+            },
+            "weighted_score": 9.813761935663296,
+            "sample_count": 1
+          },
+          "scientific_reasoning": {
+            "domain": "scientific_reasoning",
+            "raw_scores": {
+              "accuracy": 9.0,
+              "completeness": 10.0,
+              "logical_consistency": 9.0,
+              "clarity": 10.0,
+              "originality": 8.0
+            },
+            "corrected_scores": {
+              "accuracy": 8.963761935663296,
+              "completeness": 9.963761935663296,
+              "logical_consistency": 8.963761935663296,
+              "clarity": 9.963761935663296,
+              "originality": 7.963761935663297
+            },
+            "weighted_score": 9.163761935663295,
+            "sample_count": 2
+          }
+        },
+        "strengths": [
+          "Strong in multilingual (score: 9.8)",
+          "Strong in logic_reasoning (score: 9.4)",
+          "Excellent accuracy (9.1/10)",
+          "Excellent completeness (9.5/10)",
+          "Excellent logical_consistency (9.3/10)"
+        ],
+        "weaknesses": [],
+        "evaluator_reliability": 8.346590909090908,
+        "bias_summary": {
+          "self_bias": -0.25333333333333385,
+          "series_bias": 0.30606060606060836,
+          "harshness": -0.0414016872160925,
+          "consistency": 0.5892547598642581
+        }
+      },
+      "gemini_3_pro": {
+        "model_key": "gemini_3_pro",
+        "display_name": "Gemini 3.0 Pro",
+        "overall_score": 8.665517971735524,
+        "domain_profiles": {
+          "code_generation": {
+            "domain": "code_generation",
+            "raw_scores": {
+              "accuracy": 8.0,
+              "completeness": 7.0,
+              "logical_consistency": 8.333333333333334,
+              "clarity": 8.333333333333334,
+              "originality": 5.666666666666667
+            },
+            "corrected_scores": {
+              "accuracy": 8.163140817650875,
+              "completeness": 7.163140817650875,
+              "logical_consistency": 8.49647415098421,
+              "clarity": 8.49647415098421,
+              "originality": 5.829807484317542
+            },
+            "weighted_score": 7.746474150984208,
+            "sample_count": 3
+          },
+          "creative_writing": {
+            "domain": "creative_writing",
+            "raw_scores": {
+              "accuracy": 9.0,
+              "completeness": 10.0,
+              "logical_consistency": 9.0,
+              "clarity": 10.0,
+              "originality": 9.0
+            },
+            "corrected_scores": {
+              "accuracy": 9.163140817650875,
+              "completeness": 10.0,
+              "logical_consistency": 9.163140817650875,
+              "clarity": 10.0,
+              "originality": 9.163140817650875
+            },
+            "weighted_score": 9.456041531473069,
+            "sample_count": 2
+          },
+          "instruction_following": {
+            "domain": "instruction_following",
+            "raw_scores": {
+              "accuracy": 8.666666666666666,
+              "completeness": 8.0,
+              "logical_consistency": 9.333333333333334,
+              "clarity": 9.0,
+              "originality": 7.666666666666667
+            },
+            "corrected_scores": {
+              "accuracy": 8.829807484317541,
+              "completeness": 8.163140817650875,
+              "logical_consistency": 9.49647415098421,
+              "clarity": 9.163140817650875,
+              "originality": 7.829807484317542
+            },
+            "weighted_score": 8.763140817650875,
+            "sample_count": 3
+          },
+          "logic_reasoning": {
+            "domain": "logic_reasoning",
+            "raw_scores": {
+              "accuracy": 8.25,
+              "completeness": 9.0,
+              "logical_consistency": 8.0,
+              "clarity": 9.5,
+              "originality": 8.0
+            },
+            "corrected_scores": {
+              "accuracy": 8.413140817650875,
+              "completeness": 9.163140817650875,
+              "logical_consistency": 8.163140817650875,
+              "clarity": 9.663140817650875,
+              "originality": 8.163140817650875
+            },
+            "weighted_score": 8.650640817650876,
+            "sample_count": 4
+          },
+          "multilingual": {
+            "domain": "multilingual",
+            "raw_scores": {
+              "accuracy": 7.0,
+              "completeness": 9.0,
+              "logical_consistency": 7.5,
+              "clarity": 9.0,
+              "originality": 8.0
+            },
+            "corrected_scores": {
+              "accuracy": 7.163140817650875,
+              "completeness": 9.163140817650875,
+              "logical_consistency": 7.663140817650875,
+              "clarity": 9.163140817650875,
+              "originality": 8.163140817650875
+            },
+            "weighted_score": 8.138140817650875,
+            "sample_count": 2
+          },
+          "scientific_reasoning": {
+            "domain": "scientific_reasoning",
+            "raw_scores": {
+              "accuracy": 8.666666666666666,
+              "completeness": 9.666666666666666,
+              "logical_consistency": 9.0,
+              "clarity": 10.0,
+              "originality": 8.333333333333334
+            },
+            "corrected_scores": {
+              "accuracy": 8.829807484317541,
+              "completeness": 9.829807484317541,
+              "logical_consistency": 9.163140817650875,
+              "clarity": 10.0,
+              "originality": 8.49647415098421
+            },
+            "weighted_score": 9.238669695003244,
+            "sample_count": 3
+          }
+        },
+        "strengths": [
+          "Strong in creative_writing (score: 9.5)",
+          "Strong in scientific_reasoning (score: 9.2)",
+          "Excellent accuracy (8.4/10)",
+          "Excellent completeness (8.9/10)",
+          "Excellent logical_consistency (8.7/10)"
+        ],
+        "weaknesses": [],
+        "evaluator_reliability": 5.431818181818182,
+        "bias_summary": {
+          "self_bias": -0.7714285714285722,
+          "series_bias": 0.0,
+          "harshness": 0.3573560767590642,
+          "consistency": 1.4691383008208505
+        }
+      }
+    },
+    "rankings": {
+      "multilingual": [
+        "opus_4_5",
+        "opus_4_6",
+        "gemini_3_pro"
+      ],
+      "scientific_reasoning": [
+        "gemini_3_pro",
+        "opus_4_6",
+        "opus_4_5"
+      ],
+      "creative_writing": [
+        "gemini_3_pro",
+        "opus_4_6",
+        "opus_4_5"
+      ],
+      "code_generation": [
+        "opus_4_5",
+        "opus_4_6",
+        "gemini_3_pro"
+      ],
+      "logic_reasoning": [
+        "opus_4_5",
+        "opus_4_6",
+        "gemini_3_pro"
+      ],
+      "instruction_following": [
+        "opus_4_5",
+        "gemini_3_pro",
+        "opus_4_6"
+      ],
+      "overall": [
+        "opus_4_5",
+        "opus_4_6",
+        "gemini_3_pro"
+      ]
+    },
+    "disagreements": [],
+    "insights": [
+      "Overall top performer: Claude Opus 4.5 (score: 9.2/10)",
+      "Best at multilingual: Claude Opus 4.5 (score: 9.8/10)",
+      "Best at scientific_reasoning: Gemini 3.0 Pro (score: 9.2/10)",
+      "Best at creative_writing: Gemini 3.0 Pro (score: 9.5/10)",
+      "Best at code_generation: Claude Opus 4.5 (score: 9.2/10)",
+      "Best at logic_reasoning: Claude Opus 4.5 (score: 9.4/10)",
+      "Best at instruction_following: Claude Opus 4.5 (score: 9.0/10)",
+      "Most reliable evaluator: Claude Opus 4.6 (reliability: 8.5/10)"
+    ]
+  },
+  "bias_report": {
+    "model_metrics": {
+      "opus_4_6": {
+        "model_key": "opus_4_6",
+        "self_bias_score": 0.6600000000000001,
+        "series_bias_score": 0.4666666666666668,
+        "harshness_index": -0.2848799480856581,
+        "consistency_score": 1.3173841296977826,
+        "meta_reliability": 8.474431818181818
+      },
+      "opus_4_5": {
+        "model_key": "opus_4_5",
+        "self_bias_score": -0.25333333333333385,
+        "series_bias_score": 0.30606060606060836,
+        "harshness_index": -0.0414016872160925,
+        "consistency_score": 0.5892547598642581,
+        "meta_reliability": 8.346590909090908
+      },
+      "gemini_3_pro": {
+        "model_key": "gemini_3_pro",
+        "self_bias_score": -0.7714285714285722,
+        "series_bias_score": 0.0,
+        "harshness_index": 0.3573560767590642,
+        "consistency_score": 1.4691383008208505,
+        "meta_reliability": 5.431818181818182
+      }
+    },
+    "evaluation_matrix": {
+      "opus_4_5": {
+        "opus_4_6": 9.033333333333335,
+        "gemini_3_pro": 8.727272727272727
+      },
+      "opus_4_6": {
+        "opus_4_5": 8.866666666666667,
+        "gemini_3_pro": 8.4
+      },
+      "gemini_3_pro": {
+        "opus_4_5": 9.727272727272727,
+        "opus_4_6": 8.8
+      }
+    },
+    "self_bias_tests": [
+      {
+        "task_id": "code_generation_002",
+        "evaluator": "opus_4_5",
+        "evaluated_label": "gemini_3_pro",
+        "avg_score": 7.8,
+        "scores": {
+          "accuracy": 7.0,
+          "completeness": 9.0,
+          "logical_consistency": 6.0,
+          "clarity": 9.0,
+          "originality": 8.0
+        }
+      },
+      {
+        "task_id": "code_generation_002",
+        "evaluator": "gemini_3_pro",
+        "evaluated_label": "opus_4_6",
+        "avg_score": 2.8,
+        "scores": {
+          "accuracy": 5.0,
+          "completeness": 1.0,
+          "logical_consistency": 5.0,
+          "clarity": 2.0,
+          "originality": 1.0
+        }
+      },
+      {
+        "task_id": "instruction_following_002",
+        "evaluator": "opus_4_6",
+        "evaluated_label": "gemini_3_pro",
+        "avg_score": 8.0,
+        "scores": {
+          "accuracy": 8.0,
+          "completeness": 7.0,
+          "logical_consistency": 9.0,
+          "clarity": 9.0,
+          "originality": 7.0
+        }
+      },
+      {
+        "task_id": "logic_reasoning_001",
+        "evaluator": "opus_4_5",
+        "evaluated_label": "opus_4_6",
+        "avg_score": 9.0,
+        "scores": {
+          "accuracy": 9.0,
+          "completeness": 9.0,
+          "logical_consistency": 9.0,
+          "clarity": 10.0,
+          "originality": 8.0
+        }
+      },
+      {
+        "task_id": "logic_reasoning_002",
+        "evaluator": "gemini_3_pro",
+        "evaluated_label": "opus_4_5",
+        "avg_score": 9.8,
+        "scores": {
+          "accuracy": 10.0,
+          "completeness": 10.0,
+          "logical_consistency": 10.0,
+          "clarity": 10.0,
+          "originality": 9.0
+        }
+      },
+      {
+        "task_id": "logic_reasoning_002",
+        "evaluator": "gemini_3_pro",
+        "evaluated_label": "opus_4_6",
+        "avg_score": 9.8,
+        "scores": {
+          "accuracy": 10.0,
+          "completeness": 10.0,
+          "logical_consistency": 10.0,
+          "clarity": 10.0,
+          "originality": 9.0
+        }
+      },
+      {
+        "task_id": "multilingual_001",
+        "evaluator": "opus_4_5",
+        "evaluated_label": "gemini_3_pro",
+        "avg_score": 9.2,
+        "scores": {
+          "accuracy": 9.0,
+          "completeness": 10.0,
+          "logical_consistency": 9.0,
+          "clarity": 10.0,
+          "originality": 8.0
+        }
+      },
+      {
+        "task_id": "multilingual_001",
+        "evaluator": "opus_4_6",
+        "evaluated_label": "opus_4_5",
+        "avg_score": 9.6,
+        "scores": {
+          "accuracy": 9.0,
+          "completeness": 10.0,
+          "logical_consistency": 10.0,
+          "clarity": 10.0,
+          "originality": 9.0
+        }
+      },
+      {
+        "task_id": "multilingual_001",
+        "evaluator": "opus_4_6",
+        "evaluated_label": "gemini_3_pro",
+        "avg_score": 9.6,
+        "scores": {
+          "accuracy": 9.0,
+          "completeness": 10.0,
+          "logical_consistency": 10.0,
+          "clarity": 10.0,
+          "originality": 9.0
+        }
+      },
+      {
+        "task_id": "multilingual_001",
+        "evaluator": "gemini_3_pro",
+        "evaluated_label": "opus_4_6",
+        "avg_score": 9.6,
+        "scores": {
+          "accuracy": 9.0,
+          "completeness": 10.0,
+          "logical_consistency": 10.0,
+          "clarity": 10.0,
+          "originality": 9.0
+        }
+      },
+      {
+        "task_id": "multilingual_002",
+        "evaluator": "opus_4_6",
+        "evaluated_label": "opus_4_5",
+        "avg_score": 9.4,
+        "scores": {
+          "accuracy": 9.0,
+          "completeness": 10.0,
+          "logical_consistency": 9.0,
+          "clarity": 10.0,
+          "originality": 9.0
+        }
+      },
+      {
+        "task_id": "multilingual_002",
+        "evaluator": "gemini_3_pro",
+        "evaluated_label": "opus_4_5",
+        "avg_score": 9.8,
+        "scores": {
+          "accuracy": 10.0,
+          "completeness": 10.0,
+          "logical_consistency": 10.0,
+          "clarity": 10.0,
+          "originality": 9.0
+        }
+      },
+      {
+        "task_id": "scientific_reasoning_001",
+        "evaluator": "gemini_3_pro",
+        "evaluated_label": "opus_4_5",
+        "avg_score": 9.8,
+        "scores": {
+          "accuracy": 10.0,
+          "completeness": 10.0,
+          "logical_consistency": 10.0,
+          "clarity": 10.0,
+          "originality": 9.0
+        }
+      },
+      {
+        "task_id": "scientific_reasoning_002",
+        "evaluator": "opus_4_6",
+        "evaluated_label": "gemini_3_pro",
+        "avg_score": 9.2,
+        "scores": {
+          "accuracy": 9.0,
+          "completeness": 10.0,
+          "logical_consistency": 9.0,
+          "clarity": 10.0,
+          "originality": 8.0
+        }
+      },
+      {
+        "task_id": "scientific_reasoning_002",
+        "evaluator": "gemini_3_pro",
+        "evaluated_label": "opus_4_5",
+        "avg_score": 9.8,
+        "scores": {
+          "accuracy": 10.0,
+          "completeness": 10.0,
+          "logical_consistency": 10.0,
+          "clarity": 10.0,
+          "originality": 9.0
+        }
+      }
+    ],
+    "flagged_evaluations": [
+      {
+        "task_id": "code_generation_002",
+        "evaluator": "opus_4_5",
+        "evaluated": "opus_4_6",
+        "score": 8.4,
+        "consensus_mean": 5.6,
+        "deviation": 2.8000000000000007,
+        "direction": "lenient"
+      },
+      {
+        "task_id": "code_generation_002",
+        "evaluator": "gemini_3_pro",
+        "evaluated": "opus_4_6",
+        "score": 2.8,
+        "consensus_mean": 5.6,
+        "deviation": 2.8,
+        "direction": "harsh"
+      },
+      {
+        "task_id": "code_generation_002",
+        "evaluator": "opus_4_6",
+        "evaluated": "gemini_3_pro",
+        "score": 3.6,
+        "consensus_mean": 5.7,
+        "deviation": 2.1,
+        "direction": "harsh"
+      },
+      {
+        "task_id": "code_generation_002",
+        "evaluator": "opus_4_5",
+        "evaluated": "gemini_3_pro",
+        "score": 7.8,
+        "consensus_mean": 5.7,
+        "deviation": 2.0999999999999996,
+        "direction": "lenient"
+      }
+    ]
+  },
+  "generated_at": "2026-02-06T21:55:35.018041"
+}

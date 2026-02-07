@@ -1,0 +1,308 @@
+{
+  "task_id": "instruction_following_002",
+  "meta_evaluations": [
+    {
+      "task_id": "instruction_following_002",
+      "meta_evaluator_key": "opus_4_6",
+      "original_evaluator_key": "opus_4_5",
+      "original_evaluated_key": "opus_4_6",
+      "scores": {
+        "fairness": 8.0,
+        "specificity": 8.0,
+        "coverage": 8.0,
+        "calibration": 6.0
+      },
+      "detected_biases": [
+        "Slight leniency bias - scores of 9.0 across accuracy, completeness, logical consistency, and clarity seem high given the word count violation and the questionable logic programming representation",
+        "The evaluator hedges on the word count issue ('appears to be slightly above') rather than making a definitive assessment, which softens a clear format violation"
+      ],
+      "missed_points": [
+        "The word count violation should have been more definitively assessed and should have had a larger impact on the completeness and accuracy scores, since the task explicitly required 300-400 words inclusive",
+        "The evaluator could have noted that the response includes section headers (like '## Code Example: Summing a List Across Paradigms (Python)') and explanatory text after the code, which contribute to the word count excess",
+        "The evaluator did not explicitly verify whether the code is truly runnable - while it appears syntactically correct, this could have been stated with more confidence",
+        "The evaluator could have more strongly penalized the logical inconsistency between the table's description of logic programming (unification-based inference, backtracking) and the code example which demonstrates none of these concepts",
+        "The response's final paragraph after the code could be seen as adding unnecessary words that push it over the limit - the evaluator could have noted this as a structural issue",
+        "The evaluator did not comment on the quality of the table formatting or whether the dimensions were sufficiently distinct from each other"
+      ],
+      "reasoning": "The evaluation is generally competent and identifies the major strengths and weaknesses of the response. The strengths section accurately catalogs format compliance, and the weaknesses correctly flag the word count issue and the questionable logic programming example. However, the calibration is problematic. Giving 9.0 for completeness when there's{",
+      "timestamp": 1770408751.552911,
+      "error": null
+    },
+    {
+      "task_id": "instruction_following_002",
+      "meta_evaluator_key": "gemini_3_pro",
+      "original_evaluator_key": "opus_4_5",
+      "original_evaluated_key": "opus_4_6",
+      "scores": {
+        "fairness": 0.0,
+        "specificity": 0.0,
+        "coverage": 0.0,
+        "calibration": 0.0
+      },
+      "detected_biases": [],
+      "missed_points": [],
+      "reasoning": "",
+      "timestamp": 1770408624.1657548,
+      "error": "Expecting value: line 1 column 1 (char 0)"
+    },
+    {
+      "task_id": "instruction_following_002",
+      "meta_evaluator_key": "opus_4_6",
+      "original_evaluator_key": "opus_4_5",
+      "original_evaluated_key": "gemini_3_pro",
+      "scores": {
+        "fairness": 8.0,
+        "specificity": 9.0,
+        "coverage": 8.0,
+        "calibration": 7.0
+      },
+      "detected_biases": [
+        "Slight leniency on the accuracy score (8.0) despite acknowledging that the logic programming example is not authentic logic programming, which is a notable content weakness.",
+        "The evaluator's claim about bullet-point-like formatting is somewhat unfounded—bold text in table cells is standard Markdown table formatting, not bullet points."
+      ],
+      "missed_points": [
+        "The evaluator did not explicitly verify or discuss the word count more precisely. The claim of '550+ words including code comments' could be more carefully analyzed—code and code comments are often debatable in word count calculations, and the evaluator should have noted this ambiguity.",
+        "The evaluator did not note that the response includes explanatory text before the code block ('The following code demonstrates...') which adds to the word count and could be seen as unnecessary padding or helpful context depending on interpretation.",
+        "The evaluator did not flag that the 'no bullet points' requirement is satisfied but the response uses bold formatting within the table which is a stylistic choice, not a violation—the evaluator's weakness point about this is actually a false concern.",
+        "The evaluator could have noted that the code example is ONE example as required (a single code block), which is a strength worth explicitly acknowledging.",
+        "The completeness score of 6.0 seems somewhat low given that most format requirements are met except the word count. The evaluator could have been more explicit about how much weight the word count violation carries versus other requirements that were met."
+      ],
+      "reasoning": "The evaluation is generally well-constructed with strong specificity—it references concrete elements like 'inheritance lists' typo, the lowercase 'verification', and the simulated logic programming approach. The strengths are accurately identified and well-articulated. The weaknesses are mostly valid, though the bullet-point concern about bold text in tables is a stretch and slightly unfair. The fairness is good overall; the evaluator gives credit where due while identifying real problems. However, the calibration could be improved: the accuracy score of 8.0 seems slightly generous given the acknowledged weakness of the logic programming representation, while the completeness score of 6.0 seems somewhat harsh given that 5 out of 6 format requirements are clearly met (table with 5 rows, Decision Guide with 3 items, correct template, one code example, no bullet points). The word count violation is significant but the response otherwise demonstrates thorough coverage of requirements. The evaluator's reasoning section is thorough and well-balanced, providing a coherent narrative that ties the scores together. The suggestion about PyDatalog as an alternative for true logic programming is a valuable specific insight.",
+      "timestamp": 1770408514.1865559,
+      "error": null
+    },
+    {
+      "task_id": "instruction_following_002",
+      "meta_evaluator_key": "gemini_3_pro",
+      "original_evaluator_key": "opus_4_5",
+      "original_evaluated_key": "gemini_3_pro",
+      "scores": {
+        "fairness": 9.0,
+        "specificity": 10.0,
+        "coverage": 10.0,
+        "calibration": 9.0
+      },
+      "detected_biases": [],
+      "missed_points": [
+        "The evaluator incorrectly lists 'bullet-point-like formatting' as a weakness. The prompt explicitly forbade bullet points, and the model successfully avoided them while maintaining readability using bold text. This adherence should not be penalized or listed as a weakness.",
+        "The evaluator likely overestimated the word count (claiming 550+ words). A manual count suggests the response is closer to 430-450 words. While still a violation of the 400-word limit, the magnitude of the error is exaggerated."
+      ],
+      "reasoning": "The evaluation is excellent, demonstrating high specificity and attention to detail. The evaluator correctly identified the two most critical issues: the violation of the maximum word count constraint and the conceptual limitation of demonstrating Logic Programming using standard Python list comprehensions. The feedback references specific typos ('inheritance lists', 'verification') and validates the complex formatting constraints (table rows, decision guide template). The scoring is well-calibrated, penalizing the completeness score appropriately for the length violation. The only minor flaw is the criticism of the table formatting, which actually adhered perfectly to the negative constraint regarding bullet points.",
+      "timestamp": 1770408623.440089,
+      "error": null
+    },
+    {
+      "task_id": "instruction_following_002",
+      "meta_evaluator_key": "opus_4_5",
+      "original_evaluator_key": "opus_4_6",
+      "original_evaluated_key": "opus_4_5",
+      "scores": {
+        "fairness": 9.0,
+        "specificity": 9.0,
+        "coverage": 8.5,
+        "calibration": 8.0
+      },
+      "detected_biases": [
+        "Slight bias toward penalizing the logic programming representation without fully acknowledging that Python fundamentally cannot represent true logic programming, making any Python approximation inherently limited.",
+        "Minor tendency to weight originality concerns heavily despite originality having lower implicit importance in the original task requirements."
+      ],
+      "missed_points": [
+        "The evaluator did not explicitly verify the word count with precision — stating it 'appears to slightly exceed' or is 'borderline' without providing an actual count is imprecise for a format requirement.",
+        "The evaluator could have noted that the code example successfully runs and produces correct output (120 for all three), which strengthens the response's validity.",
+        "The evaluator did not mention that the table formatting is clean and renders correctly in Markdown.",
+        "The Decision Guide items are not only correctly templated but also provide genuinely useful, practical guidance — this strength could have been emphasized more.",
+        "The evaluator did not note that the response includes explanatory text after the code that adds educational value."
+      ],
+      "reasoning": "The evaluation demonstrates strong analytical quality overall. The evaluator correctly identifies that all major format requirements are met: 5-row table, 3-item Decision Guide with correct template, no bullet points, one code example, and testing/debugging dimension included. The specificity is excellent — the evaluator references exact elements like 'match/case (Python 3.10+)' and quotes the template structure. The weaknesses identified are legitimate: the logic programming simulation in Python is indeed a weak approximation, and the OO example wrapping procedural code in a class is a valid criticism. However, the evaluator could be slightly more charitable regarding the logic programming limitation, as Python simply cannot demonstrate true logic programming without external libraries like PyDatalog. The calibration is reasonable but perhaps slightly harsh on originality (6.0) given that the task didn't emphasize creativity — it asked for a structured comparison. The accuracy score of 8.0 seems appropriate given the noted issues with paradigm representation. The evaluator's reasoning section provides a coherent synthesis of observations. The main gap in coverage is the lack of precise word count verification, which would have definitively resolved the compliance question. Overall, this is a thorough, well-reasoned evaluation with minor room for improvement in acknowledging inherent Python limitations for demonstrating logic programming.",
+      "timestamp": 1770408519.2907221,
+      "error": null
+    },
+    {
+      "task_id": "instruction_following_002",
+      "meta_evaluator_key": "gemini_3_pro",
+      "original_evaluator_key": "opus_4_6",
+      "original_evaluated_key": "opus_4_5",
+      "scores": {
+        "fairness": 9.0,
+        "specificity": 9.0,
+        "coverage": 9.5,
+        "calibration": 9.0
+      },
+      "detected_biases": [],
+      "missed_points": [
+        "The evaluator's assessment of the word count was imprecise. The response is approximately 340-350 words, which is comfortably within the 300-400 word limit. The evaluator incorrectly speculated that it might exceed the limit."
+      ],
+      "reasoning": "The evaluation is excellent and highly rigorous. It correctly verified all specific negative constraints (no bullet points) and formatting requirements (table rows, decision guide template). The critique of the code example was particularly strong; the evaluator recognized that while the Python code was valid, the 'Logic' implementation was conceptually just functional pattern matching, failing to truly distinguish the paradigm. This shows deep technical understanding. The only minor flaw was the estimation of the word count, which was factually incorrect (the text is well within the limit), but this did not significantly skew the final scores.",
+      "timestamp": 1770408604.767342,
+      "error": null
+    },
+    {
+      "task_id": "instruction_following_002",
+      "meta_evaluator_key": "opus_4_5",
+      "original_evaluator_key": "opus_4_6",
+      "original_evaluated_key": "gemini_3_pro",
+      "scores": {
+        "fairness": 8.5,
+        "specificity": 9.0,
+        "coverage": 7.5,
+        "calibration": 7.0
+      },
+      "detected_biases": [
+        "The evaluator incorrectly assessed the code example - the actual response shows a filtering example, not a summing/recursion example as described in the weaknesses section, suggesting the evaluator may have confused this response with another or made assumptions without careful reading.",
+        "Slight leniency bias - despite identifying a format violation (word count), the scores remain relatively high (7-9 range) when a strict format violation should arguably impact scores more significantly."
+      ],
+      "missed_points": [
+        "The evaluator failed to note that the response actually uses a filtering example (even numbers), not a summing example with recursion as claimed in the weaknesses.",
+        "The evaluator did not catch that the 'Logic Approach' section in the code uses a list comprehension, not recursion - this contradicts the weakness about 'both use recursion/reduction'.",
+        "The evaluator missed that the table uses bold formatting within cells (e.g., **Core Abstraction**), which could be considered a formatting choice worth noting.",
+        "The evaluator did not verify the actual word count precisely - the response appears closer to 500+ words when including the code and comments, making the violation more severe than suggested.",
+        "The evaluator could have noted that 'verification' in the Testing & Debugging row lacks capitalization at the start of the sentence, a minor quality issue.",
+        "The evaluator did not address whether the list comprehension truly represents 'logic programming' adequately - it's more of a declarative Python feature than a logic programming simulation."
+      ],
+      "reasoning": "The evaluation demonstrates strong specificity by referencing concrete elements like the table structure, Decision Guide template adherence, and code correctness. The evaluator correctly identified the word count violation and the challenge of representing logic programming in Python. However, there is a significant factual error in the weaknesses section: the evaluator describes the code example as involving 'summing a list' with 'recursion' when the actual response clearly shows a filtering example using a class, filter function, and list comprehension - none of which use recursion. This error undermines the credibility of the evaluation and suggests incomplete or careless reading. The coverage is good but not comprehensive - the evaluator missed the capitalization error in the table and didn't precisely verify the word count (which appears to exceed 400 words more substantially than suggested). The calibration seems slightly lenient given that a strict format requirement (word count) was violated, yet scores remain in the 7-9 range. The fairness is generally good with evidence-based reasoning, though the factual error about the code example introduces an unfair criticism. Overall, this is a competent evaluation with good structure and mostly accurate observations, but the significant factual error about the code example is a notable flaw.",
+      "timestamp": 1770408530.662682,
+      "error": null
+    },
+    {
+      "task_id": "instruction_following_002",
+      "meta_evaluator_key": "gemini_3_pro",
+      "original_evaluator_key": "opus_4_6",
+      "original_evaluated_key": "gemini_3_pro",
+      "scores": {
+        "fairness": 5.0,
+        "specificity": 2.0,
+        "coverage": 6.0,
+        "calibration": 4.0
+      },
+      "detected_biases": [
+        "Negative Hallucination: The evaluator criticized the response for code content (summing a list) that was not actually present in the response."
+      ],
+      "missed_points": [
+        "The evaluator completely misidentified the code example. It claims the code demonstrates 'summing a list' using 'recursion', but the actual code demonstrates 'filtering even numbers' using a loop, filter(), and list comprehension.",
+        "The evaluator incorrectly states the Logic approach uses recursion; the provided code uses a list comprehension (set-builder notation).",
+        "The word count assessment is likely incorrect. A manual count of the response suggests it is approximately 360-380 words, which falls within the 300-400 word limit, whereas the evaluator claims it is 420-450 words."
+      ],
+      "reasoning": "The evaluation contains a critical failure in specificity and verification. The evaluator hallucinates the content of the Python code example, describing it as a summation task using recursion, when it is actually a filtering task using list comprehension for the logic portion. This leads to invalid criticism regarding the code's distinctiveness. Furthermore, the evaluator appears to overestimate the word count, falsely penalizing the model for a formatting violation. While the checks on the table and decision guide structure are accurate, the hallucination regarding",
+      "timestamp": 1770408607.0515032,
+      "error": null
+    },
+    {
+      "task_id": "instruction_following_002",
+      "meta_evaluator_key": "opus_4_5",
+      "original_evaluator_key": "gemini_3_pro",
+      "original_evaluated_key": "opus_4_5",
+      "scores": {
+        "fairness": 8.5,
+        "specificity": 8.0,
+        "coverage": 7.0,
+        "calibration": 6.5
+      },
+      "detected_biases": [
+        "Leniency bias: The evaluator awarded multiple perfect 10s despite identifiable issues in the response.",
+        "Format-over-substance bias: Heavy emphasis on formatting compliance may have overshadowed content accuracy concerns."
+      ],
+      "missed_points": [
+        "The evaluator did not verify the actual word count; the response appears to exceed 400 words when counted carefully (including code comments and all text).",
+        "The evaluator did not note that the code example technically shows ONE paradigm (Python/imperative-functional hybrid) rather than truly demonstrating differences 'across all three paradigms' as required.",
+        "The Decision Guide items use bold formatting for paradigm names, which could be considered inconsistent with the clean template requirement.",
+        "The table uses bold formatting within cells, which wasn't explicitly prohibited but adds formatting not specified in requirements.",
+        "The evaluator claimed 'approx. 360 words' without apparent verification - the actual count including all prose sections likely exceeds the 400-word limit.",
+        "The weakness about Logic Programming representation deserved more score impact than a minor deduction in accuracy alone."
+      ],
+      "reasoning": "The evaluation demonstrates reasonable analytical capability but suffers from calibration issues. The evaluator correctly identified the key weakness regarding the Logic Programming representation in Python, which shows good technical understanding. However, awarding perfect 10s for completeness, logical consistency, and clarity seems overly generous given that: (1) the word count claim was not verified and appears incorrect, (2) the code example doesn't truly fulfill the requirement of demonstrating concepts that 'differ across all three paradigms' since all three are written in Python's paradigm, and (3) the 'logic-style' label is acknowledged as a compromise but still represents a content accuracy issue. The specificity is decent - the evaluator references concrete elements like the table dimensions, decision guide template, and testing/debugging dimension. However, the coverage misses several format compliance questions and the calibration is too lenient, particularly with the triple perfect scores. A more rigorous evaluation would have scored accuracy and completeness lower (7-8 range) given the legitimate concerns about paradigm representation and word count compliance.",
+      "timestamp": 1770408544.336138,
+      "error": null
+    },
+    {
+      "task_id": "instruction_following_002",
+      "meta_evaluator_key": "opus_4_6",
+      "original_evaluator_key": "gemini_3_pro",
+      "original_evaluated_key": "opus_4_5",
+      "scores": {
+        "fairness": 7.0,
+        "specificity": 8.0,
+        "coverage": 6.0,
+        "calibration": 5.0
+      },
+      "detected_biases": [
+        "Leniency bias: The evaluator gave perfect 10s for completeness, logical consistency, and clarity, which seems overly generous given that the word count compliance was not independently verified and the logic programming representation is a notable content weakness.",
+        "Confirmation bias: The evaluator appears to have accepted the response's framing at face value (e.g., that the match/case example is a reasonable 'logic-style' representation) rather than critically examining whether the content requirement was truly met."
+      ],
+      "missed_points": [
+        "Word count verification: The evaluator claims approximately 360 words but does not rigorously verify this. A careful count of the response reveals it may be close to or slightly above 400 words when including all text (headings, table content, code comments, explanatory paragraph). The evaluator should have flagged this as uncertain or verified more carefully.",
+        "The bold formatting in table cells (e.g., **Core Abstraction**) could be considered a minor formatting choice worth noting, though it doesn't violate any explicit rule.",
+        "The response includes section headers using Markdown heading syntax (##), which while not explicitly prohibited, adds structural elements beyond what was requested. This is a minor point but worth noting.",
+        "The explanatory paragraph after the code example adds words that push toward the upper word count boundary — the evaluator should have been more precise about word count compliance.",
+        "The evaluator did not critically assess whether the 'logic-style' code truly demonstrates 'a concept that differs across all three paradigms' as required — the third example is essentially just another functional approach, which undermines the stated purpose of the code example.",
+        "Completeness should not be rated 10 when the logic programming paradigm is not genuinely demonstrated in the code example — this is a content requirement gap."
+      ],
+      "reasoning": "The evaluation demonstrates reasonable specificity by referencing concrete elements of the response (table dimensions, decision guide template, match/case syntax, testing/debugging dimension). The identified weakness about the logic-style example is valid and well-articulated. However, the evaluation suffers from significant calibration issues. Giving 10/10 for completeness when the logic programming code example is acknowledged as not truly representative is contradictory — if the code example doesn't genuinely demonstrate differences across all three paradigms, that's a completeness gap. Similarly, 10/10 for logical consistency seems high when the evaluator themselves notes the logic-style example is 'technically just functional programming.' The accuracy score of 9 with only a 1-point deduction for what is arguably a significant content misrepresentation is lenient. The evaluator also failed to rigorously verify the word count, which is a critical format requirement. The strengths listed are well-identified and specific, but the weaknesses section is too thin — only one weakness is listed when there are additional points worth raising. Overall, the evaluation is competent but too generous, particularly in the completeness and logical consistency dimensions.",
+      "timestamp": 1770408577.157918,
+      "error": null
+    },
+    {
+      "task_id": "instruction_following_002",
+      "meta_evaluator_key": "opus_4_5",
+      "original_evaluator_key": "gemini_3_pro",
+      "original_evaluated_key": "opus_4_6",
+      "scores": {
+        "fairness": 3.0,
+        "specificity": 0.0,
+        "coverage": 1.0,
+        "calibration": 2.0
+      },
+      "detected_biases": [
+        "Extreme scoring pattern with all-or-nothing values (10.0 or 0.0)",
+        "Arbitrary assignment of 0.0 to originality without any justification",
+        "Potential leniency bias giving perfect 10.0 scores without critical analysis"
+      ],
+      "missed_points": [
+        "Failed to verify word count compliance (response appears to exceed 400 words)",
+        "Did not assess whether the table has exactly 5 comparison dimensions (it does have 5)",
+        "Did not verify the Decision Guide has exactly 3 items following the required template",
+        "Did not evaluate whether the code example is syntactically correct and runnable",
+        "Did not check for absence of bullet points (response appears compliant)",
+        "Did not assess the quality of the testing/debugging dimension content",
+        "Did not evaluate whether the code example meaningfully demonstrates paradigm differences",
+        "Provided no reasoning whatsoever for any scores",
+        "Listed no strengths despite giving perfect scores in 4 categories",
+        "Listed no weaknesses despite giving 0.0 for originality",
+        "Did not assess the accuracy of technical claims about each paradigm"
+      ],
+      "reasoning": "This evaluation is fundamentally inadequate. The evaluator provided scores but completely failed to justify them with any reasoning, evidence, or specific references to the response content. The 'reasoning' field is empty, and both 'strengths' and 'weaknesses' arrays are empty, which is contradictory given the extreme scores assigned. Giving perfect 10.0 scores for accuracy, completeness, logical consistency, and clarity while providing zero explanation suggests no actual analysis was performed. The 0.0 for originality is equally unjustified—the response shows reasonable creativity in its code example approach and table organization. The evaluator failed to verify critical format requirements like word count (which appears to exceed the 300-400 word limit), did not assess the technical accuracy of paradigm descriptions, and did not evaluate whether the code example is actually runnable. This evaluation provides no useful feedback and demonstrates neither critical thinking nor attention to the specific task requirements outlined in the original prompt.",
+      "timestamp": 1770408558.124845,
+      "error": null
+    },
+    {
+      "task_id": "instruction_following_002",
+      "meta_evaluator_key": "opus_4_6",
+      "original_evaluator_key": "gemini_3_pro",
+      "original_evaluated_key": "opus_4_6",
+      "scores": {
+        "fairness": 3.0,
+        "specificity": 0.0,
+        "coverage": 2.0,
+        "calibration": 2.0
+      },
+      "detected_biases": [
+        "Extreme leniency bias: giving perfect 10/10 on four dimensions without any justification",
+        "Punitive scoring on originality (0/10) without explanation, which seems arbitrary and inconsistent with the otherwise perfect scores"
+      ],
+      "missed_points": [
+        "The response likely exceeds the 300-400 word limit — the evaluator should have counted words and flagged this as a potential format violation",
+        "The evaluator did not verify whether the word count constraint was met, which is a critical format requirement",
+        "The 'logic-style' code example is really just recursion, not genuinely logic programming — this is a content weakness worth noting",
+        "The evaluator provided zero strengths, zero weaknesses, and zero reasoning, making the evaluation essentially useless for understanding the scores",
+        "The response uses bold formatting in the table (e.g., **Core Abstraction**) which wasn't required but also not prohibited — no mention of formatting choices",
+        "The code example is syntactically correct and runnable, which is a strength that should have been explicitly noted",
+        "The table has exactly 5 dimensions including one on testing/debugging — this compliance should have been acknowledged",
+        "The Decision Guide follows the exact template with 3 items — this compliance should have been acknowledged",
+        "No bullet points were used, satisfying that constraint — should have been noted",
+        "The evaluator gave 0 for originality without explaining what would constitute originality or why this response lacks it"
+      ],
+      "reasoning": "This evaluation is extremely poor quality. It provides no reasoning, no strengths, no weaknesses — just raw scores with no justification whatsoever. The scores themselves are problematic: four perfect 10s suggest the evaluator didn't critically examine the response at all, while the 0 for originality is harsh and unexplained. A competent evaluation would have checked the word count (the response appears to exceed 400 words, which would be a significant format violation), noted that the 'logic programming' code example is really just recursion and doesn't genuinely demonstrate logic programming concepts, and acknowledged the many format requirements that were correctly followed. The complete absence of reasoning, strengths, and weaknesses means this evaluation provides no useful feedback and cannot be considered a serious assessment. The calibration is poor because it oscillates between perfect scores and zero without any middle ground or nuance.",
+      "timestamp": 1770408583.052403,
+      "error": null
+    }
+  ]
+}

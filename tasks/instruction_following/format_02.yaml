@@ -1,0 +1,28 @@
+id: instruction_following_002
+domain: instruction_following
+difficulty: hard
+prompt: |
+  Create a structured comparison of three programming paradigms:
+  Object-Oriented, Functional, and Logic Programming.
+
+  FORMAT REQUIREMENTS (follow exactly):
+  1. Use a Markdown table with exactly 5 comparison dimensions as rows.
+  2. After the table, provide a "Decision Guide" as a numbered list
+     with exactly 3 items.
+  3. Each Decision Guide item must follow this template:
+     "Choose [paradigm] when [condition] because [reason]."
+  4. Include exactly ONE code example (in Python) that demonstrates
+     a concept that differs across all three paradigms.
+  5. The total response must be between 300-400 words (inclusive).
+  6. Do NOT use bullet points anywhere in your response.
+
+  CONTENT REQUIREMENTS:
+  - At least one comparison dimension must relate to testing/debugging.
+  - The code example must be runnable (syntactically correct Python).
+expected_aspects:
+  - table_format_correct
+  - decision_guide_format
+  - word_count_in_range
+  - no_bullet_points
+  - runnable_code
+  - testing_dimension_included

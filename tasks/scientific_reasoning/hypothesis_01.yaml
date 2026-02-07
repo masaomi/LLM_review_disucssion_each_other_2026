@@ -1,0 +1,20 @@
+id: scientific_reasoning_001
+domain: scientific_reasoning
+difficulty: medium
+prompt: |
+  A researcher observes that plants grown under blue LED lights
+  produce 30% more biomass than plants grown under red LED lights,
+  despite both groups receiving the same total photon flux.
+
+  Tasks:
+  1. Generate at least 3 plausible hypotheses to explain this observation.
+  2. For each hypothesis, design a specific experiment to test it.
+     Include controls, variables, and expected outcomes.
+  3. Identify potential confounding variables in the original observation.
+  4. What additional data would you need before drawing conclusions?
+expected_aspects:
+  - multiple_hypotheses
+  - experimental_design
+  - control_identification
+  - confounding_variable_awareness
+  - scientific_rigor

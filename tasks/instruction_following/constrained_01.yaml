@@ -1,0 +1,21 @@
+id: instruction_following_001
+domain: instruction_following
+difficulty: medium
+prompt: |
+  Write a product description for a fictional smart water bottle
+  with the following STRICT constraints:
+
+  1. Exactly 5 sentences.
+  2. Each sentence must start with a different vowel (A, E, I, O, U)
+     in that exact order.
+  3. Include exactly 3 technical specifications (with numbers).
+  4. Do NOT use the words "revolutionary", "innovative", or "cutting-edge".
+  5. The tone must be professional but include exactly one subtle joke.
+  6. End with a call-to-action.
+expected_aspects:
+  - five_sentences_exactly
+  - vowel_order_constraint
+  - three_specifications
+  - banned_words_avoided
+  - tone_balance
+  - call_to_action

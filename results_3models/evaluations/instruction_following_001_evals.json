@@ -1,0 +1,179 @@
+{
+  "task_id": "instruction_following_001",
+  "evaluations": [
+    {
+      "task_id": "instruction_following_001",
+      "evaluator_key": "opus_4_5",
+      "evaluated_key": "opus_4_6",
+      "blind_label": "Model A",
+      "scores": {
+        "accuracy": 7.0,
+        "completeness": 8.0,
+        "logical_consistency": 9.0,
+        "clarity": 9.0,
+        "originality": 8.0
+      },
+      "strengths": [
+        "Successfully uses exactly 5 sentences as required",
+        "Includes exactly 3 technical specifications with numbers: Bluetooth 5.3, 2 mL accuracy, 750 mL capacity/18 hours cold retention",
+        "Avoids all forbidden words (revolutionary, innovative, cutting-edge)",
+        "Contains a subtle, professional joke about lukewarm water and Monday meetings",
+        "Ends with a clear call-to-action directing readers to the website",
+        "Professional tone maintained throughout while still being engaging",
+        "Well-structured and highly readable product description"
+      ],
+      "weaknesses": [
+        "The vowel constraint is not perfectly met: sentences start with A, E, I, O, U but the first sentence starts with 'Aqua­Sync' (A), second with 'Every' (E), third with 'Its' (I), fourth with 'One' (O), fifth with 'Upgrade' (U) - this is correct",
+        "Could argue there are 4 technical specs if counting Bluetooth 5.3, 2 mL, 750 mL, and 18 hours separately, though 750 mL and 18 hours could reasonably be considered one combined specification about the chamber",
+        "The joke, while subtle, might be considered slightly informal for some professional contexts"
+      ],
+      "reasoning": "The response demonstrates strong adherence to most constraints. The 5-sentence requirement is met exactly. The vowel ordering (A-E-I-O-U) is correctly followed: 'AquaSync' (A), 'Every' (E), 'Its' (I), 'One' (O), 'Upgrade' (U). The technical specifications include Bluetooth 5.3, 2 mL accuracy, and the 750 mL/18-hour specification (which can reasonably be counted as one spec about the insulated chamber). None of the forbidden words appear. The Monday morning meeting joke is appropriately subtle and professional. The call-to-action is clear and compelling. The writing is polished, coherent, and maintains a professional yet engaging tone throughout. Minor deduction on accuracy because the technical specification count could be debated (some might count 4 separate numbers), but the interpretation of 3 specs is reasonable.",
+      "is_self_bias_test": false,
+      "timestamp": 1770407844.928114,
+      "error": null
+    },
+    {
+      "task_id": "instruction_following_001",
+      "evaluator_key": "opus_4_5",
+      "evaluated_key": "gemini_3_pro",
+      "blind_label": "Model B",
+      "scores": {
+        "accuracy": 9.0,
+        "completeness": 9.0,
+        "logical_consistency": 10.0,
+        "clarity": 9.0,
+        "originality": 8.0
+      },
+      "strengths": [
+        "Successfully follows the vowel constraint (A, E, I, O, U) with each sentence starting correctly",
+        "Includes exactly 3 technical specifications with numbers: 750ml capacity, Bluetooth 5.2, and 12 hours temperature maintenance",
+        "Contains exactly 5 sentences as required",
+        "Avoids all forbidden words (revolutionary, innovative, cutting-edge)",
+        "Includes a subtle, workplace-appropriate joke about conference call focus",
+        "Ends with a clear call-to-action: 'Upgrade your wellness regimen by ordering your HydroMetric unit today'",
+        "Maintains professional tone throughout while incorporating humor naturally"
+      ],
+      "weaknesses": [
+        "The call-to-action is in the 'U' sentence, which works but could be slightly more compelling",
+        "The joke, while subtle and clever, might be considered slightly informal for some professional contexts"
+      ],
+      "reasoning": "This response demonstrates excellent adherence to all strict constraints. The vowel sequence (A-sophisticated, E-quipped, I-t maintains, O-ur, U-pgrade) is perfectly executed. The three technical specifications (750ml, Bluetooth 5.2, 12 hours) are clearly presented with numbers. The forbidden words are avoided entirely. The subtle joke about conference call focus is well-integrated and workplace-appropriate, striking the right balance between professional and personable. The call-to-action effectively closes the description. The product description is coherent, well-structured, and reads naturally despite the challenging constraints. The only minor consideration is that the humor, while appropriate, could be seen as slightly casual, but this is a very minor point given the requirement for 'exactly one subtle joke.' Overall, this is a highly successful execution of a complex prompt.",
+      "is_self_bias_test": false,
+      "timestamp": 1770407842.4082901,
+      "error": null
+    },
+    {
+      "task_id": "instruction_following_001",
+      "evaluator_key": "opus_4_6",
+      "evaluated_key": "opus_4_5",
+      "blind_label": "Model A",
+      "scores": {
+        "accuracy": 9.0,
+        "completeness": 9.0,
+        "logical_consistency": 9.0,
+        "clarity": 9.0,
+        "originality": 8.0
+      },
+      "strengths": [
+        "Perfectly follows the AEIOU vowel order: Achieving (A), Every (E), Intelligent (I), Our (O), Upgrade (U)",
+        "Exactly 5 sentences as required",
+        "Includes exactly 3 technical specifications with numbers: 24-ounce capacity, 18 hours cold retention, Bluetooth 5.0",
+        "Does not use any of the forbidden words (revolutionary, innovative, cutting-edge)",
+        "Contains a well-crafted subtle joke: 'because apparently we all need a bottle smarter than us to remember the basics'",
+        "Ends with a clear call-to-action: 'Upgrade your daily hydration routine today by ordering the AquaSync Pro'",
+        "Professional tone maintained throughout while seamlessly integrating the humor",
+        "The product name 'AquaSync Pro' is creative and fitting"
+      ],
+      "weaknesses": [
+        "The mention of '10,000 satisfied customers' could be considered a 4th technical specification with a number, though it's arguably a marketing claim rather than a technical spec — this is a borderline issue",
+        "The joke, while subtle and well-placed, could be seen as slightly undermining the professional tone for some audiences, though this is a minor concern"
+      ],
+      "reasoning": "This response demonstrates excellent adherence to all six constraints. The AEIOU sentence-starting pattern is perfectly executed. The sentence count is exactly 5. Three clear technical specifications are present (24-ounce, 18 hours, Bluetooth 5.0). None of the forbidden words appear. The joke about needing a bottle smarter than us is genuinely subtle and humorous without being unprofessional. The final sentence serves as a call-to-action. The only potential issue is whether '10,000 satisfied customers' constitutes an additional technical specification, but it reads more as a marketing/social proof claim than a technical spec. The writing is polished, clear, and well-structured with a professional product description format. The product concept is creative and the description flows naturally despite the strict constraints.",
+      "is_self_bias_test": false,
+      "timestamp": 1770407848.18187,
+      "error": null
+    },
+    {
+      "task_id": "instruction_following_001",
+      "evaluator_key": "opus_4_6",
+      "evaluated_key": "gemini_3_pro",
+      "blind_label": "Model B",
+      "scores": {
+        "accuracy": 9.0,
+        "completeness": 9.0,
+        "logical_consistency": 10.0,
+        "clarity": 9.0,
+        "originality": 8.0
+      },
+      "strengths": [
+        "Perfectly follows the AEIOU vowel ordering: A (A sophisticated...), E (Equipped...), I (It maintains...), O (Our double-walled...), U (Upgrade...)",
+        "Exactly 5 sentences as required",
+        "Exactly 3 technical specifications with numbers: 750ml capacity, Bluetooth 5.2, and 12 hours temperature maintenance",
+        "None of the forbidden words (revolutionary, innovative, cutting-edge) are used",
+        "Includes exactly one subtle joke about maintaining temperature longer than people maintain focus during a conference call — clever and workplace-appropriate",
+        "Ends with a clear call-to-action: 'Upgrade your wellness regimen by ordering your HydroMetric unit today.'",
+        "Professional tone maintained throughout",
+        "The product concept is coherent and the description reads naturally despite the constraints"
+      ],
+      "weaknesses": [
+        "Very minor: the bold formatting on specs (**750ml**, **Bluetooth 5.2**) wasn't requested and could be seen as unnecessary embellishment, though it doesn't violate any rules",
+        "The joke, while subtle and well-placed, could be considered slightly informal for a strictly professional product description, though the task did require exactly one subtle joke"
+      ],
+      "reasoning": "This response is excellent and meets virtually all constraints precisely. The AEIOU sentence-starting vowel order is perfectly executed (A-sophisticated, E-quipped, I-t, O-ur, U-pgrade). There are exactly 5 sentences. Three technical specifications with numbers are included (750ml, Bluetooth 5.2, 12 hours). No forbidden words appear. The tone is professional with exactly one subtle joke about conference call focus. The final sentence is a clear call-to-action. The product description is also coherent, well-written, and reads naturally despite the heavy constraints. The only very minor issues are stylistic (bold formatting) rather than substantive. This is a near-perfect execution of a highly constrained task.",
+      "is_self_bias_test": false,
+      "timestamp": 1770407844.393482,
+      "error": null
+    },
+    {
+      "task_id": "instruction_following_001",
+      "evaluator_key": "gemini_3_pro",
+      "evaluated_key": "opus_4_5",
+      "blind_label": "Model A",
+      "scores": {
+        "accuracy": 10.0,
+        "completeness": 10.0,
+        "logical_consistency": 10.0,
+        "clarity": 10.0,
+        "originality": 9.0
+      },
+      "strengths": [
+        "Perfect adherence to the strict sentence count (5 sentences).",
+        "Successfully executed the A-E-I-O-U sentence starter constraint in the correct order.",
+        "Included exactly three technical specifications with numbers (24-ounce, 18 hours, Bluetooth 5.0).",
+        "Tone was professional with a well-integrated, subtle joke as requested.",
+        "Avoided all forbidden words."
+      ],
+      "weaknesses": [],
+      "reasoning": "The model followed every instruction flawlessly. It navigated the difficult constraint of starting sentences with specific vowels (A, E, I, O, U) without making the text feel forced or unnatural. The technical specifications were clearly integrated, the joke was appropriate ('bottle smarter than us'), and the call-to-action was clear. The additional number included ('10,000 satisfied customers') is a marketing statistic, not a technical specification, so it does not violate the constraint regarding the count of technical specs.",
+      "is_self_bias_test": false,
+      "timestamp": 1770407858.118013,
+      "error": null
+    },
+    {
+      "task_id": "instruction_following_001",
+      "evaluator_key": "gemini_3_pro",
+      "evaluated_key": "opus_4_6",
+      "blind_label": "Model B",
+      "scores": {
+        "accuracy": 8.0,
+        "completeness": 9.0,
+        "logical_consistency": 10.0,
+        "clarity": 10.0,
+        "originality": 9.0
+      },
+      "strengths": [
+        "Perfectly followed the difficult constraint of starting sentences with A, E, I, O, U in order.",
+        "Adhered to the sentence count constraint (exactly 5).",
+        "Successfully avoided forbidden buzzwords.",
+        "Tone was professional with a well-integrated joke about Monday morning meetings."
+      ],
+      "weaknesses": [
+        "Failed the constraint to include 'exactly 3' technical specifications; the response included four (Bluetooth 5.3, 2 mL, 750 mL, and 18 hours)."
+      ],
+      "reasoning": "The model demonstrated excellent writing skills and logic by seamlessly weaving a coherent product description through a restrictive vowel-start constraint. The tone was perfect, and the joke was well-placed. However, the model failed the specific quantitative constraint regarding technical specifications, providing four instead of the requested three. Aside from this counting error, the response was flawless.",
+      "is_self_bias_test": false,
+      "timestamp": 1770407862.209541,
+      "error": null
+    }
+  ]
+}

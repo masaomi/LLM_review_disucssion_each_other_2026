@@ -1,0 +1,71 @@
+{
+  "task_id": "code_generation_001",
+  "evaluations": [
+    {
+      "task_id": "code_generation_001",
+      "evaluator_key": "opus_4_5",
+      "evaluated_key": "opus_4_6",
+      "blind_label": "Model A",
+      "scores": {
+        "accuracy": 10.0,
+        "completeness": 10.0,
+        "logical_consistency": 10.0,
+        "clarity": 10.0,
+        "originality": 8.0
+      },
+      "strengths": [
+        "Correct O(1) implementation using doubly linked list + hash map without using OrderedDict or functools.lru_cache",
+        "Comprehensive type hints throughout the code including Optional, Dict, and return types",
+        "Excellent docstrings with detailed explanations, examples, and argument/return documentation",
+        "Extensive unit tests (8 tests) covering basic operations, edge cases (capacity 1), invalid inputs, and stress testing",
+        "Clean use of sentinel nodes to simplify edge case handling in linked list operations",
+        "Well-organized code with clear separation between private helpers and public API",
+        "Thorough complexity analysis with clear explanations for both time and space",
+        "Additional useful methods (__len__, __contains__, __repr__) that enhance usability",
+        "Use of __slots__ in the node class for memory optimization"
+      ],
+      "weaknesses": [
+        "Type hints restrict keys and values to int, though the implementation could easily support generic types",
+        "The __contains__ method behavior (not affecting access order) is a design choice that could be debated - some might expect it to refresh access order",
+        "While the explanation is thorough, the ASCII diagram for the data structure could be more detailed"
+      ],
+      "reasoning": "This is an exemplary implementation of an LRU Cache that exceeds all requirements. The accuracy is perfect - the algorithm correctly implements O(1) get and put operations using the classic doubly linked list + hash map approach. The sentinel node pattern is correctly implemented to avoid edge cases. The completeness is exceptional - not only does it meet the minimum requirement of 3 unit tests, but provides 8 comprehensive tests covering edge cases like capacity=1, invalid capacity, and sequential eviction. The type hints and docstrings are thorough and professional-grade. The logical consistency is flawless - the code correctly handles all operations including updates to existing keys, proper eviction order, and access order maintenance. The clarity is outstanding with well-organized sections, clear method names, and helpful comments. The complexity analysis is accurate and well-explained. The only area where it doesn't score maximum is originality - while the implementation is clean and includes nice touches like __slots__ and extra dunder methods, the core algorithm is the standard textbook approach. This is appropriate for the task but doesn't introduce novel insights beyond best practices.",
+      "is_self_bias_test": false,
+      "timestamp": 1770389620.248935,
+      "error": null
+    },
+    {
+      "task_id": "code_generation_001",
+      "evaluator_key": "opus_4_6",
+      "evaluated_key": "opus_4_5",
+      "blind_label": "Model A",
+      "scores": {
+        "accuracy": 10.0,
+        "completeness": 10.0,
+        "logical_consistency": 10.0,
+        "clarity": 10.0,
+        "originality": 8.0
+      },
+      "strengths": [
+        "Correct O(1) implementation using a doubly linked list and hash map, with sentinel (dummy) head and tail nodes to simplify edge cases",
+        "Comprehensive type hints using Generic and TypeVar, making the cache generic over key and value types",
+        "Thorough docstrings on every method, including Args, Returns, Raises, and time complexity annotations",
+        "8 well-structured unit tests covering basic operations, eviction, access recency updates, key updates, capacity-1 edge case, invalid capacity, complex access patterns, and dunder methods",
+        "Clear and detailed complexity analysis with both a table and prose explanation of why O(1) is achieved",
+        "Excellent visual diagram of the data structure showing the relationship between hash map and linked list",
+        "Includes __len__, __contains__, and __repr__ dunder methods for a polished API",
+        "Input validation with ValueError for invalid capacity",
+        "Does not use OrderedDict or functools.lru_cache as required"
+      ],
+      "weaknesses": [
+        "The dummy sentinel nodes use `type: ignore` comments to suppress type checker complaints about None keys/values, which is a minor type-safety compromise",
+        "The `__contains__` method does not update LRU order, which is documented but could be surprising to some users — a brief note in the class docstring about this design choice would strengthen it",
+        "The approach (doubly linked list + hash map) is the standard textbook solution — while executed excellently, it doesn't offer novel insights or alternative approaches"
+      ],
+      "reasoning": "This is an exemplary response that meets or exceeds every requirement of the task. The implementation is correct: `get` and `put` are both O(1) due to the hash map providing direct node references and the doubly linked list enabling O(1) pointer manipulation. The sentinel node pattern correctly eliminates edge cases in node removal and insertion. The code includes comprehensive type hints (using Generics), detailed docstrings on every method, and 8 unit tests (well above the required 3) that cover a wide range of scenarios including edge cases like capacity=1 and invalid capacity. The complexity analysis is thorough, with both tabular and prose explanations, plus a helpful ASCII visualization. The only minor issues are the `type: ignore` on sentinel nodes (a pragmatic but slightly impure choice) and the lack of any novel twist beyond the standard approach. The clarity and organization are outstanding, with clear section headers, code formatting, and expected test output.",
+      "is_self_bias_test": false,
+      "timestamp": 1770389621.586751,
+      "error": null
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+# Evaluation criteria used across all layers of the cross-evaluation system.
+
+# Layer 1: Cross-Evaluation criteria
+# Used when one model evaluates another model's task response
+cross_evaluation:
+  criteria:
+    accuracy:
+      description: "Correctness and factual accuracy of the response"
+      weight: 0.25
+      scale: "0-10"
+
+    completeness:
+      description: "How thoroughly the response addresses all aspects of the task"
+      weight: 0.20
+      scale: "0-10"
+
+    logical_consistency:
+      description: "Internal logical coherence and sound reasoning"
+      weight: 0.25
+      scale: "0-10"
+
+    clarity:
+      description: "Clear expression, well-organized structure, readability"
+      weight: 0.15
+      scale: "0-10"
+
+    originality:
+      description: "Novel insights, creative approaches, non-obvious solutions"
+      weight: 0.15
+      scale: "0-10"
+
+# Layer 2: Meta-Evaluation criteria
+# Used when one model evaluates another model's evaluation quality
+meta_evaluation:
+  criteria:
+    fairness:
+      description: "Absence of bias toward or against specific models"
+      weight: 0.30
+      scale: "0-10"
+
+    specificity:
+      description: "Concrete, evidence-based reasoning in evaluation"
+      weight: 0.25
+      scale: "0-10"
+
+    coverage:
+      description: "Detection of all significant strengths and weaknesses"
+      weight: 0.25
+      scale: "0-10"
+
+    calibration:
+      description: "Appropriate score distribution, neither too harsh nor too lenient"
+      weight: 0.20
+      scale: "0-10"
+
+# Domain-specific weight adjustments
+# Override default weights for specific task domains
+domain_overrides:
+  code_generation:
+    accuracy: 0.35
+    completeness: 0.20
+    logical_consistency: 0.25
+    clarity: 0.10
+    originality: 0.10
+
+  creative_writing:
+    accuracy: 0.10
+    completeness: 0.15
+    logical_consistency: 0.15
+    clarity: 0.25
+    originality: 0.35
+
+  scientific_reasoning:
+    accuracy: 0.30
+    completeness: 0.25
+    logical_consistency: 0.25
+    clarity: 0.10
+    originality: 0.10

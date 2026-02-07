@@ -1,0 +1,33 @@
+{
+  "task_id": "instruction_following_001",
+  "models": {
+    "opus_4_5": {
+      "task_id": "instruction_following_001",
+      "model_key": "opus_4_5",
+      "model_id": "anthropic/claude-opus-4.5",
+      "response": "**AquaSense Pro Smart Water Bottle**\n\nAchieving optimal hydration has never been easier with the AquaSense Pro, featuring a precision sensor that tracks your daily intake down to the milliliter. Every sip is monitored by our advanced app, which syncs via Bluetooth 5.0 and reminds you to drink before you realize you're thirsty—because apparently, humans forgot how to feel thirsty somewhere between inventing smartphones and forgetting where they put them. Insulated with triple-wall vacuum technology, this 750ml bottle keeps beverages cold for 24 hours or hot for 12 hours, adapting to your lifestyle seamlessly. Our sleek design includes a rechargeable battery lasting 30 days on a single charge, eliminating the hassle of constant maintenance. Upgrade your hydration routine today by visiting aquasensepro.com and discover what intelligent drinking truly means.",
+      "latency_ms": 6117.58112499956,
+      "usage": {
+        "prompt_tokens": 157,
+        "completion_tokens": 202,
+        "total_tokens": 359
+      },
+      "timestamp": 1770389286.144126,
+      "error": null
+    },
+    "opus_4_6": {
+      "task_id": "instruction_following_001",
+      "model_key": "opus_4_6",
+      "model_id": "anthropic/claude-opus-4.6",
+      "response": "# AquaSync Pro Smart Water Bottle\n\nAchieving optimal hydration has never been simpler, thanks to the AquaSync Pro's built-in sensor array that tracks your daily water intake down to the milliliter. Every bottle features a 750ml Tritan body, a 72-hour rechargeable battery, and Bluetooth 5.3 connectivity that syncs seamlessly with your favorite health apps. Intelligent temperature monitoring ensures your beverage stays between your preferred range, while gentle LED reminders nudge you to drink before your body even realizes it's thirsty—because apparently, we need technology to remind us to do what fish do effortlessly. Our engineers designed the AquaSync Pro for professionals, athletes, and anyone who believes staying hydrated shouldn't require guesswork. Upgrade your daily routine today by visiting aquasyncpro.com and discovering what your old water bottle has been missing.",
+      "latency_ms": 7224.862625000242,
+      "usage": {
+        "prompt_tokens": 158,
+        "completion_tokens": 201,
+        "total_tokens": 359
+      },
+      "timestamp": 1770389287.283085,
+      "error": null
+    }
+  }
+}

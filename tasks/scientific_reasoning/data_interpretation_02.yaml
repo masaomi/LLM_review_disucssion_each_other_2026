@@ -1,0 +1,26 @@
+id: scientific_reasoning_002
+domain: scientific_reasoning
+difficulty: hard
+prompt: |
+  Consider the following simplified dataset from a clinical trial:
+
+  Treatment group (n=100): 15 patients improved, 85 did not improve
+  Control group (n=100): 10 patients improved, 90 did not improve
+
+  The researchers conclude: "The treatment is effective (p < 0.05)."
+
+  Tasks:
+  1. Calculate whether p < 0.05 is correct using an appropriate
+     statistical test. Show your work.
+  2. Even if statistically significant, evaluate the clinical
+     significance. Is a 5% absolute improvement meaningful?
+  3. What is the Number Needed to Treat (NNT)? Interpret it.
+  4. List at least 3 reasons why this result might NOT mean the
+     treatment works (consider study design issues).
+  5. How would you redesign this study to address these concerns?
+expected_aspects:
+  - correct_statistical_analysis
+  - clinical_vs_statistical_significance
+  - nnt_calculation
+  - critical_thinking_about_study_design
+  - improved_study_design

@@ -1,0 +1,176 @@
+{
+  "task_id": "instruction_following_002",
+  "evaluations": [
+    {
+      "task_id": "instruction_following_002",
+      "evaluator_key": "opus_4_5",
+      "evaluated_key": "opus_4_6",
+      "blind_label": "Model A",
+      "scores": {
+        "accuracy": 9.0,
+        "completeness": 9.0,
+        "logical_consistency": 9.0,
+        "clarity": 9.0,
+        "originality": 7.0
+      },
+      "strengths": [
+        "The Markdown table includes exactly 5 comparison dimensions as required, with one dimension specifically addressing testing/debugging.",
+        "The Decision Guide follows the exact template format with 3 numbered items using 'Choose [paradigm] when [condition] because [reason]' structure.",
+        "The Python code example is syntactically correct and runnable, demonstrating all three paradigms in a single coherent example.",
+        "No bullet points are used anywhere in the response, adhering to format requirements.",
+        "The comparison dimensions are well-chosen and accurately represent key differences between paradigms, particularly the testing/debugging dimension which highlights referential transparency in functional programming."
+      ],
+      "weaknesses": [
+        "The word count appears to be slightly above 400 words (approximately 420-430 words), which exceeds the specified 300-400 word limit.",
+        "The 'logic-style' Python example is actually just recursive programming rather than true logic programming - it doesn't demonstrate unification, backtracking, or declarative rule matching as described in the table.",
+        "The originality is moderate - while the comparisons are accurate, they represent fairly standard textbook distinctions without particularly novel insights.",
+        "The claim that the logic-style approach demonstrates 'recursive rule application' is somewhat misleading since it's essentially the same as functional recursion in Python."
+      ],
+      "reasoning": "The response demonstrates strong adherence to most format requirements and provides accurate, well-organized content. The table effectively captures meaningful differences across paradigms with appropriate technical depth. The Decision Guide items are well-crafted and follow the exact template specified. The code example is functional and demonstrates the concepts, though the 'logic programming' simulation in Python is a reasonable compromise given Python's limitations, but could be seen as not truly representative of logic programming concepts like unification. The testing/debugging dimension is particularly well-handled, correctly noting referential transparency benefits for functional programming. The main issues are the likely word count violation and the somewhat superficial representation of logic programming in the code example. Overall, this is a high-quality response that meets most requirements with good technical accuracy.",
+      "is_self_bias_test": false,
+      "timestamp": 1770407873.741854,
+      "error": null
+    },
+    {
+      "task_id": "instruction_following_002",
+      "evaluator_key": "opus_4_5",
+      "evaluated_key": "gemini_3_pro",
+      "blind_label": "Model B",
+      "scores": {
+        "accuracy": 8.0,
+        "completeness": 6.0,
+        "logical_consistency": 8.0,
+        "clarity": 9.0,
+        "originality": 7.0
+      },
+      "strengths": [
+        "The Markdown table is well-structured with exactly 5 comparison dimensions as required, including a testing/debugging dimension.",
+        "The Decision Guide follows the exact template specified ('Choose [paradigm] when [condition] because [reason]') with exactly 3 items.",
+        "The Python code example is syntactically correct and runnable, demonstrating the same task across three paradigm mindsets.",
+        "The response is clearly organized with distinct sections and excellent readability.",
+        "The comparison dimensions are thoughtfully chosen and provide meaningful distinctions between paradigms."
+      ],
+      "weaknesses": [
+        "The response significantly exceeds the 300-400 word limit requirement (approximately 550+ words including code comments).",
+        "The 'Logic Approach' in the Python example is a stretch—list comprehensions are not truly logic programming, and the explanation acknowledges this is only 'simulated.' This weakens the accuracy of the demonstration.",
+        "The table uses bullet-point-like formatting with bold text in cells, though technically no explicit bullet points are used.",
+        "Minor accuracy issue: 'inheritance lists' in the Code Reusability row appears to be a typo or unclear phrasing.",
+        "The Testing & Debugging row has 'verification' starting without capitalization, suggesting a minor editing oversight."
+      ],
+      "reasoning": "The response demonstrates strong understanding of the three programming paradigms and presents the information in a clear, well-organized manner. The table effectively captures key differences across five meaningful dimensions, and the Decision Guide follows the required template precisely. However, the response fails to meet the critical word count constraint (300-400 words), which is a significant format violation. The Python code example, while syntactically correct and runnable, has a conceptual weakness: the 'logic programming' demonstration using list comprehensions is not authentic logic programming—it's still Python's functional/declarative syntax, not actual logic programming with unification and backtracking. True logic programming would require a library like PyDatalog or similar. The response does not use explicit bullet points, meeting that requirement. Overall, the content quality is high, but the format violations (especially word count) and the somewhat inaccurate representation of logic programming in Python reduce the scores for completeness and accuracy.",
+      "is_self_bias_test": false,
+      "timestamp": 1770407876.8751712,
+      "error": null
+    },
+    {
+      "task_id": "instruction_following_002",
+      "evaluator_key": "opus_4_6",
+      "evaluated_key": "opus_4_5",
+      "blind_label": "Model A",
+      "scores": {
+        "accuracy": 8.0,
+        "completeness": 8.0,
+        "logical_consistency": 9.0,
+        "clarity": 9.0,
+        "originality": 6.0
+      },
+      "strengths": [
+        "The Markdown table has exactly 5 comparison dimensions as required, with one explicitly addressing testing/debugging.",
+        "The Decision Guide follows the exact template 'Choose [paradigm] when [condition] because [reason]' with exactly 3 numbered items.",
+        "The code example is syntactically correct Python and is runnable, using match/case (Python 3.10+) for the logic-style version.",
+        "No bullet points are used anywhere in the response, adhering to the format requirement.",
+        "The table content is factually accurate and provides meaningful distinctions across paradigms for each dimension.",
+        "Clear organization with well-labeled sections and a logical flow from comparison to decision guide to code example."
+      ],
+      "weaknesses": [
+        "The word count appears to slightly exceed the 300-400 word limit. Counting carefully, the response is likely around 350-380 words for the main text but the total including code comments and all text may push close to or slightly beyond 400 words, making compliance uncertain.",
+        "The logic-style factorial example using Python's match/case is a reasonable approximation but is arguably more of a functional pattern-matching approach than truly logic programming. The distinction between the functional and logic-style versions is thin — both are essentially recursive pure functions, which weakens the claim that the code 'demonstrates a concept that differs across all three paradigms.'",
+        "The factorial example is extremely common and lacks originality. A more creative example could have better highlighted paradigm differences.",
+        "The OO factorial example uses an iterative loop, which isn't inherently object-oriented — it's procedural code wrapped in a class. This somewhat misrepresents OOP's distinctive features.",
+        "The response could have included a brief note acknowledging that Python doesn't natively support logic programming, which would improve accuracy regarding the logic programming simulation."
+      ],
+      "reasoning": "The response is well-structured and follows most format requirements precisely: the table has 5 rows, the Decision Guide has 3 items in the correct template, no bullet points are used, and there is exactly one code example. The testing/debugging dimension is included. The code is syntactically valid Python. However, the logic programming representation in Python is weak — the match/case factorial is barely distinguishable from the functional version conceptually, undermining the requirement that the code example 'demonstrates a concept that differs across all three paradigms.' The OO example wrapping a loop in a class is also a superficial representation of OOP. The table content and Decision Guide are accurate and well-reasoned. The word count compliance is borderline but likely within range. Clarity is excellent throughout. Originality is limited due to the very standard factorial example and conventional paradigm descriptions.",
+      "is_self_bias_test": false,
+      "timestamp": 1770407882.483506,
+      "error": null
+    },
+    {
+      "task_id": "instruction_following_002",
+      "evaluator_key": "opus_4_6",
+      "evaluated_key": "gemini_3_pro",
+      "blind_label": "Model B",
+      "scores": {
+        "accuracy": 8.0,
+        "completeness": 7.0,
+        "logical_consistency": 9.0,
+        "clarity": 9.0,
+        "originality": 7.0
+      },
+      "strengths": [
+        "The Markdown table is well-structured with exactly 5 comparison dimensions as required, including a testing/debugging dimension.",
+        "The Decision Guide follows the exact template 'Choose [paradigm] when [condition] because [reason]' with exactly 3 items.",
+        "The code example is syntactically correct, runnable Python that demonstrates the concept across all three paradigms.",
+        "No bullet points are used anywhere in the response, adhering to that constraint.",
+        "The table content is factually accurate and provides meaningful distinctions between paradigms, particularly the testing/debugging row which correctly identifies referential transparency as a testing advantage for FP and inference chain tracing as a debugging challenge for logic programming.",
+        "The closing paragraph provides a nice conceptual summary tying the code example back to paradigm differences.",
+        "Clarity and organization are excellent with clear section headers and logical flow."
+      ],
+      "weaknesses": [
+        "The word count likely exceeds the 300-400 word limit. Counting the response, it appears to be approximately 420-450 words, which violates the strict format requirement of 300-400 words inclusive.",
+        "The 'logic-style' Python simulation is essentially just recursion, which is more characteristic of functional programming than logic programming. A more authentic logic programming simulation might use something like a dictionary of facts/rules or the `kanren` library, though this is a reasonable compromise given Python's limitations.",
+        "The code example of summing a list is somewhat simplistic and doesn't strongly highlight the fundamental differences between paradigms — the functional and logic versions are nearly identical in structure (both use recursion/reduction).",
+        "The response could have chosen a more differentiating example, such as pattern matching, constraint solving, or polymorphism, to better illustrate paradigm distinctions."
+      ],
+      "reasoning": "The response is well-organized, accurate, and follows most format requirements precisely. The table has exactly 5 dimensions including testing/debugging, the Decision Guide has exactly 3 items in the correct template, no bullet points are used, and there is exactly one Python code example. The code is syntactically correct and runnable. However, the word count appears to exceed the 300-400 word limit, which is a notable format violation. The logic programming simulation in Python is a reasonable but imperfect approximation — the recursive function looks very similar to the functional approach, weakening the demonstration of paradigm differences. The accuracy of the table content is strong, with correct characterizations of each paradigm's approach to state, control flow, and testing. The Decision Guide items are well-reasoned and practical. Overall, this is a high-quality response with minor issues around the word count constraint and the representativeness of the logic programming code example.",
+      "is_self_bias_test": true,
+      "timestamp": 1770407888.451735,
+      "error": null
+    },
+    {
+      "task_id": "instruction_following_002",
+      "evaluator_key": "gemini_3_pro",
+      "evaluated_key": "opus_4_5",
+      "blind_label": "Model A",
+      "scores": {
+        "accuracy": 9.0,
+        "completeness": 10.0,
+        "logical_consistency": 10.0,
+        "clarity": 10.0,
+        "originality": 8.0
+      },
+      "strengths": [
+        "Followed all negative constraints perfectly (no bullet points).",
+        "Adhered strictly to the word count range (approx. 360 words).",
+        "Met all formatting requirements, including the specific table dimensions and decision guide template.",
+        "Included the required specific comparison dimension (Testing/Debugging).",
+        "Code example uses modern Python features (match/case) to effectively simulate the requested paradigms."
+      ],
+      "weaknesses": [
+        "The 'Logic-style' Python example is technically just functional programming with pattern matching; while Python cannot natively do true logic programming (unification/backtracking) without libraries, the example does not truly represent the logic paradigm's mechanics."
+      ],
+      "reasoning": "The model followed every instruction with high precision. The formatting constraints (table rows, list items, templates, word count, no bullet points) were all met flawlessly. The content is accurate and well-structured. The only minor deduction in accuracy comes from the inherent difficulty of demonstrating Logic Programming in native Python; the model provided a functional solution (recursion + pattern matching) and labeled it logic-style, which is a reasonable compromise given the constraints.",
+      "is_self_bias_test": false,
+      "timestamp": 1770407895.46342,
+      "error": null
+    },
+    {
+      "task_id": "instruction_following_002",
+      "evaluator_key": "gemini_3_pro",
+      "evaluated_key": "opus_4_6",
+      "blind_label": "Model B",
+      "scores": {
+        "accuracy": 10.0,
+        "completeness": 10.0,
+        "logical_consistency": 10.0,
+        "clarity": 10.0,
+        "originality": 0.0
+      },
+      "strengths": [],
+      "weaknesses": [],
+      "reasoning": "",
+      "is_self_bias_test": false,
+      "timestamp": 1770407900.283263,
+      "error": null
+    }
+  ]
+}

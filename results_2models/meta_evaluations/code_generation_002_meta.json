@@ -1,0 +1,60 @@
+{
+  "task_id": "code_generation_002",
+  "meta_evaluations": [
+    {
+      "task_id": "code_generation_002",
+      "meta_evaluator_key": "opus_4_6",
+      "original_evaluator_key": "opus_4_5",
+      "original_evaluated_key": "opus_4_6",
+      "scores": {
+        "fairness": 8.0,
+        "specificity": 8.0,
+        "coverage": 7.0,
+        "calibration": 7.0
+      },
+      "detected_biases": [
+        "Slight bias toward penalizing the response for specification ambiguity, when the response itself explicitly acknowledges and addresses this ambiguity as a feature rather than a flaw",
+        "The evaluator seems to assume a 'correct' interpretation of the original function's intent without strong justification, then penalizes the response for choosing a different interpretation"
+      ],
+      "missed_points": [
+        "The evaluator didn't sufficiently credit the response for correctly identifying that the original function's seen[nums[i]] = i overwrite behavior is genuinely problematic - this IS a real bug for duplicate handling regardless of interpretation",
+        "The evaluator didn't note that the response's trace-through of the original function's behavior on [3,3,3] is actually correct (it does produce 2 pairs, not 3), which demonstrates careful analysis",
+        "The evaluator could have noted that the response's find_unique_pairs function uses a set for deduplication but then sorts the output, which is a nice design choice for deterministic output",
+        "The evaluator didn't discuss whether the corrected versions actually compile and work correctly - the logic in find_all_pairs_by_index appears sound",
+        "The evaluator didn't mention that the response provides good inline comments explaining the logic in the corrected code",
+        "The evaluator could have noted that the test for test_two_negatives contains a self-correction trace-through, which shows careful thinking but is slightly messy for a final answer",
+        "The evaluator didn't adequately address the quality of the complexity analysis - the O(n + P) characterization with the explanation that O(n²) is unavoidable when there are O(n²) pairs is an excellent insight"
+      ],
+      "reasoning": "The evaluation is generally fair and well-structured, with good specificity in referencing particular examples and code sections. The strengths identified are accurate and well-supported. However, there are some calibration issues. The evaluator's main criticism - that the response 'conflates specification ambiguity with actual bugs' - is partially valid but also partially unfair. The response explicitly acknowledges this ambiguity and provides multiple solutions to address different interpretations, which the evaluator does credit but perhaps doesn't weight heavily enough. The completeness score of 7.0 seems slightly low given the depth of analysis, multiple solution variants, complexity analysis, and extensive test cases - the main incompleteness is the truncation at the end, which is a legitimate concern but may not be the response author's fault. The accuracy score of 8.0 is reasonable - the response does have some minor issues like listing things as 'bugs' that it then acknowledges aren't really bugs. The clarity score of 9.0 is well-justified given the excellent formatting. The evaluator's weakness about the response being 'cut off' is valid and important. Overall, the evaluation demonstrates good analytical capability but could have been more nuanced in distinguishing between genuine bugs in the original code (the overwrite issue IS a real bug) versus specification ambiguity (what counts as a 'pair'). The calibration is slightly harsh on completeness given the substantial content provided.",
+      "timestamp": 1770389841.364743,
+      "error": null
+    },
+    {
+      "task_id": "code_generation_002",
+      "meta_evaluator_key": "opus_4_5",
+      "original_evaluator_key": "opus_4_6",
+      "original_evaluated_key": "opus_4_5",
+      "scores": {
+        "fairness": 6.0,
+        "specificity": 8.0,
+        "coverage": 7.0,
+        "calibration": 6.0
+      },
+      "detected_biases": [
+        "The evaluator appears biased toward a specific interpretation of the problem, claiming the original function is a 'well-known correct pattern' when the task explicitly asks for handling duplicates like [3,3,3] with target 6, which the original clearly fails",
+        "The evaluator incorrectly claims the response is 'truncated' when examining the actual response shows complete test cases - this false claim negatively impacts the evaluation",
+        "The evaluator seems to penalize the response for addressing ambiguity in the problem specification, when this is actually a strength given the task's requirements"
+      ],
+      "missed_points": [
+        "The evaluator failed to acknowledge that the response correctly identifies the core issue: the original function uses a dictionary that overwrites indices, which is definitively a bug given the explicit task requirement to handle duplicates",
+        "The evaluator did not adequately credit the response for providing the find_pairs_with_indices function which offers full traceability - a valuable addition",
+        "The evaluator missed that the response's test cases are actually complete and comprehensive, not truncated",
+        "The evaluator could have noted that the response provides excellent documentation with docstrings for each function variant",
+        "The evaluator didn't fully appreciate that the response correctly handles all four explicit requirements: duplicates, negatives, empty lists, and self-pairing"
+      ],
+      "reasoning": "The evaluation demonstrates good specificity by referencing concrete examples and code patterns, but suffers from fairness issues. The evaluator's claim that the original function is 'correct' contradicts the explicit task requirements which state the function 'has several bugs' and asks for handling duplicates like [3,3,3] with target 6. The original function demonstrably fails this case by only returning 2 pairs instead of 3. The evaluator's assertion that the response is 'truncated' appears incorrect - the response shows complete test classes including TestFindPairs and TestFindPairsPerformance with proper closing. This false claim significantly impacts the completeness score unfairly. The calibration seems too harsh given that the response thoroughly addresses all four explicit requirements (duplicates, negatives, empty lists, self-pairing), provides three solution variants for different use cases, includes comprehensive complexity analysis, and delivers extensive test coverage. The scores of 7.0 for accuracy and completeness seem undervalued given the response's comprehensive treatment of the problem. The evaluator does provide valuable specific feedback about complexity analysis nuances and test case quality, showing good analytical depth in some areas.",
+      "timestamp": 1770389837.0411258,
+      "error": null
+    }
+  ]
+}

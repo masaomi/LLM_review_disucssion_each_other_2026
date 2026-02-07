@@ -1,0 +1,325 @@
+{
+  "task_id": "multilingual_001",
+  "meta_evaluations": [
+    {
+      "task_id": "multilingual_001",
+      "meta_evaluator_key": "opus_4_6",
+      "original_evaluator_key": "opus_4_5",
+      "original_evaluated_key": "opus_4_6",
+      "scores": {
+        "fairness": 8.0,
+        "specificity": 9.0,
+        "coverage": 8.0,
+        "calibration": 7.0
+      },
+      "detected_biases": [
+        "Slight leniency bias — the evaluator appears impressed by the response's presentation quality and depth, which may have inflated scores slightly across the board",
+        "The evaluator seems to weight effort and thoroughness very heavily, potentially overlooking that some of the analysis, while impressive, contains arguable claims (e.g., the Zen/余白 connections are plausible but somewhat speculative as direct influences on this particular sentence)"
+      ],
+      "missed_points": [
+        "The initial literal translation renders 贅沢な時間 as 'a luxurious stretch of time spent thinking about nothing at all' — while good, the phrase 'stretch of time' adds a temporal duration nuance not explicitly in the original, and 'at all' is an intensifier not present in the source. This could be noted as a minor accuracy issue.",
+        "The evaluator did not note that the response's free translation adds details not implied by the original (e.g., 'faint sweetness of the tea,' 'warming my hands') — while acknowledged as a free translation, the evaluator could have discussed whether these additions faithfully represent the emotional tone or risk over-specifying what the original leaves open.",
+        "The response's claim that おばあちゃん is 'softer than grandmother, warmer than grandma' is debatable — 'grandma' in English carries considerable warmth and informality. The evaluator could have flagged this as a slight overstatement.",
+        "The evaluator did not address whether the response's connection to 無心 (mushin) and 余白 (yohaku) is warranted by the text or is an over-interpretation — the original sentence is a personal reminiscence, not necessarily a Zen-inflected philosophical statement.",
+        "The evaluator could have noted that the response doesn't discuss the overall sentence structure challenge: the original is a single flowing sentence with participial-like clauses (ながら construction), and the translation choices around how to handle this long sentence structure are themselves a translation challenge."
+      ],
+      "reasoning": "The evaluation is generally well-constructed, specific, and fair. The evaluator references concrete elements of the response — specific Japanese terms, translation strategies, the bonus concept, formatting choices — which demonstrates strong specificity. The strengths identified are legitimate and well-articulated, particularly the recognition of the response's sophisticated treatment of 縁側 as liminal space and the multiple translation strategies offered.\n\nHowever, the calibration is somewhat generous. A completeness score of 10 is arguably too high — while the response exceeds the minimum requirements, there are aspects of translation challenge analysis that could have been deeper (e.g., sentence-level structural differences, register/tone challenges). The accuracy score of 9 is reasonable but could be questioned given the minor liberties in the literal translation and some debatable cultural claims. The evaluator does identify the engawa inconsistency and the 'clinical' overstatement, which shows good critical attention, but these weaknesses feel somewhat soft-pedaled relative to the high scores.\n\nThe evaluator's third weakness — about sentence structure — is a good catch that demonstrates awareness of what's missing, but it's listed as a minor point when it could be considered a more significant gap in the response's analysis. The evaluation also doesn't question whether the Zen Buddhist framing (無心, 余白) is an over-reading of what might simply be a nostalgic personal memory, which would be a fair critical observation.\n\nOverall, this is a competent evaluation that identifies the response's genuine strengths accurately and catches some real weaknesses, but it leans toward generosity in its scoring and could have been more critically rigorous in a few areas.",
+      "timestamp": 1770408962.092792,
+      "error": null
+    },
+    {
+      "task_id": "multilingual_001",
+      "meta_evaluator_key": "gemini_3_pro",
+      "original_evaluator_key": "opus_4_5",
+      "original_evaluated_key": "opus_4_6",
+      "scores": {
+        "fairness": 10.0,
+        "specificity": 10.0,
+        "coverage": 9.5,
+        "calibration": 10.0
+      },
+      "detected_biases": [],
+      "missed_points": [
+        "While the evaluator noted the inconsistency regarding 'engawa' (used in the translation but later said to need context), they missed a similar inconsistency with Concept 3. The response translates it as 'thinking about nothing at all' but later argues in the analysis that this specific English phrase implies laziness and suggests 'empty mind' as a better strategy."
+      ],
+      "reasoning": "This is an exemplary meta-evaluation. The evaluator demonstrates high specificity by referencing particular arguments made in the response (e.g., the 'clinical' nature of dappled sunlight, the 'liminal space' of the engawa). The critique regarding the inconsistency of using 'engawa' without a gloss in the initial translation is astute. The scores are perfectly calibrated; the response was indeed high-quality, exceeding the prompt's requirements (bonus concept), and the evaluator recognized this while still finding nuanced areas for improvement. The critique of the response's claim about 'dappled sunlight' shows a sophisticated understanding of English nuances.",
+      "timestamp": 1770408935.478347,
+      "error": null
+    },
+    {
+      "task_id": "multilingual_001",
+      "meta_evaluator_key": "opus_4_6",
+      "original_evaluator_key": "opus_4_5",
+      "original_evaluated_key": "gemini_3_pro",
+      "scores": {
+        "fairness": 5.0,
+        "specificity": 6.0,
+        "coverage": 5.0,
+        "calibration": 5.0
+      },
+      "detected_biases": [
+        "The evaluator appears to be evaluating a different (or hallucinated) version of the response than what was actually provided. Multiple strengths and weaknesses reference content not present in the actual response (e.g., 'summary table,' 'てくれた grammatical form,' 'maple leaves,' 'engawa retained in best translation'), suggesting the evaluator fabricated or confused details.",
+        "Leniency bias: The scores are inflated given the actual response content. While the response is genuinely good, a completeness score of 10.0 is generous when the response identifies exactly 3 culturally specific concepts (the minimum required), not 4 as the evaluator claims.",
+        "The evaluator praises the response for including てくれた analysis and a summary table, neither of which exist in the actual response."
+      ],
+      "missed_points": [
+        "The evaluator failed to note that the response correctly identified and analyzed すすりながら (susuru) as one of its three concepts, yet the evaluator lists the absence of this analysis as a weakness — a direct contradiction showing the evaluator did not carefully read the response.",
+        "The evaluator claims the response identifies 4 culturally specific concepts including てくれた, but the actual response only identifies 3: 木漏れ日, 縁側, and すする. The evaluator fabricated the fourth concept.",
+        "The evaluator claims the best translation retains 'engawa' without explanation, but the actual best translation uses 'veranda,' not 'engawa.'",
+        "The evaluator claims the free translation introduces 'maple leaves,' but the actual free translation contains no mention of maple leaves.",
+        "The evaluator references a 'summary table' that does not exist in the response.",
+        "The evaluator could have noted the slight translation choice of 'poured' for 淹れる (which means to brew/steep tea, not pour) in the best translation — a minor accuracy issue.",
+        "The evaluator could have discussed whether 'savoring the luxury of an empty mind' adequately captures 何も考えない贅沢な時間を過ごした, which is more about spending luxurious time thinking about nothing.",
+        "The free translation omits the engawa entirely, replacing it with 'garden,' which could be seen as a significant loss — the evaluator did not critically assess this choice.",
+        "The response meets but does not exceed the requirement of 3 culturally specific concepts, yet receives a perfect completeness score."
+      ],
+      "reasoning": "This evaluation has a fundamental and serious problem: the evaluator appears to be assessing a different response than the one actually provided. Multiple specific claims in both the strengths and weaknesses sections are factually incorrect when checked against the actual response. The evaluator praises the inclusion of てくれた analysis and a summary table (neither exists), criticizes the retention of 'engawa' in the best translation (it uses 'veranda'), criticizes the introduction of 'maple leaves' in the free translation (no maple leaves appear), and — most egregiously — lists the absence of すする analysis as a weakness when it is one of the three main concepts analyzed in the response. This pattern of errors strongly suggests the evaluator either hallucinated details, confused this response with another, or did not carefully read the actual response. The scores themselves (9-10 range) are somewhat inflated but not wildly inappropriate for what is genuinely a strong response. However, the justifications for those scores are largely based on phantom content. The actual response is well-structured, insightful, and demonstrates good translation knowledge, but the evaluation's reasoning is unreliable because it doesn't correspond to the actual content being evaluated. This severely undermines the evaluation's fairness, specificity, and coverage.",
+      "timestamp": 1770408948.797379,
+      "error": null
+    },
+    {
+      "task_id": "multilingual_001",
+      "meta_evaluator_key": "gemini_3_pro",
+      "original_evaluator_key": "opus_4_5",
+      "original_evaluated_key": "gemini_3_pro",
+      "scores": {
+        "fairness": 1.0,
+        "specificity": 1.0,
+        "coverage": 1.0,
+        "calibration": 1.0
+      },
+      "detected_biases": [
+        "Severe Hallucination: The evaluator critiqued and praised content that does not exist in the response."
+      ],
+      "missed_points": [
+        "The evaluator claimed the response analyzed the grammatical form 'tekureta', which it did not.",
+        "The evaluator stated the response used 'tables' and a 'summary table', which are absent.",
+        "The evaluator criticized the response for failing to address 'susuru' (slurping), yet 'Susuru' was explicitly analyzed as Concept C in the response.",
+        "The evaluator claimed the free translation introduced 'maple leaves', which is factually false"
+      ],
+      "reasoning": "",
+      "timestamp": 1770408937.102738,
+      "error": null
+    },
+    {
+      "task_id": "multilingual_001",
+      "meta_evaluator_key": "opus_4_5",
+      "original_evaluator_key": "opus_4_6",
+      "original_evaluated_key": "opus_4_5",
+      "scores": {
+        "fairness": 8.5,
+        "specificity": 9.5,
+        "coverage": 7.5,
+        "calibration": 6.5
+      },
+      "detected_biases": [
+        "Positive bias: The evaluator appears overly generous, awarding multiple perfect 10s despite identifying weaknesses in the response.",
+        "Confirmation bias: The evaluator references concepts (Zen 無心, 余白, morphological breakdown of 木漏れ日) that do not actually appear in the response being evaluated, suggesting the evaluator may have projected expected content onto the actual response.",
+        "Leniency bias: Minor issues are acknowledged but dismissed too readily, not reflected proportionally in the scores."
+      ],
+      "missed_points": [
+        "The response only identifies 4 concepts, not exceeding requirements dramatically as implied — the task asked for 'at least 3' which was met but the evaluator overstates this as exceptional.",
+        "The evaluator claims the response discusses 'Zen 無心' and '余白' in connection with 贅沢な時間, but the actual response does not mention these concepts — this is a factual error in the evaluation.",
+        "The evaluator mentions a 'morphological breakdown' of 木漏れ日 (木 + 漏れ + 日), but the response does not actually provide this breakdown — another factual discrepancy.",
+        "The translation 'savoring a luxurious moment' slightly shifts the meaning from 'spending luxurious time' — this subtle accuracy issue was not noted.",
+        "The free translation adds 'maple leaves' which is not specified in the original — this creative liberty could be seen as a minor accuracy concern that went unmentioned.",
+        "The response could have discussed the challenge of translating the passive/receptive nuance in 'すすりながら' (the onomatopoeic quality of sipping) which was overlooked by both the response and the evaluator."
+      ],
+      "reasoning": "The evaluation demonstrates strong specificity, citing particular elements of the response with detailed references to concepts like 縁側 as liminal space and the てくれた grammatical feature. However, there are significant calibration and coverage issues. The evaluator awards three perfect 10s (completeness, logical consistency, clarity) which seems overly generous given that weaknesses were identified. More critically, the evaluator references content that does not exist in the actual response — specifically the Zen 無心/余白 discussion and the morphological breakdown of 木漏れ日. This suggests the evaluator may have been evaluating an idealized or different version of the response, or projecting expected expert-level content. The weaknesses identified are valid but minor, and the evaluator fails to catch other potential issues such as the addition of 'maple leaves' in the free translation or the subtle meaning shift in 'savoring.' The overall tone is highly laudatory ('outstanding,' 'exceptional,' 'expert-level') which, while the response is indeed good, may not fully account for the gaps between what was claimed and what was actually present. The fairness score is reduced due to the apparent positive bias and factual errors about the response content.",
+      "timestamp": 1770408953.359637,
+      "error": null
+    },
+    {
+      "task_id": "multilingual_001",
+      "meta_evaluator_key": "gemini_3_pro",
+      "original_evaluator_key": "opus_4_6",
+      "original_evaluated_key": "opus_4_5",
+      "scores": {
+        "fairness": 6.0,
+        "specificity": 2.0,
+        "coverage": 5.0,
+        "calibration": 8.0
+      },
+      "detected_biases": [
+        "Positive Hallucination Bias: The evaluator attributes specific content to the response (morphological breakdown of kanji, references to Zen/Mushin/Yohaku) that is completely absent from the text."
+      ],
+      "missed_points": [
+        "The evaluator failed to verify that the specific analytical points it praised were actually present in the response.",
+        "The evaluator missed the actual content of the 'zeitaku na jikan' analysis (which focused on lifestyle/busyness) by hallucinating a philosophical/religious analysis instead."
+      ],
+      "reasoning": "The evaluation contains severe hallucinations regarding the content of the response. The evaluator praises the response for a morphological breakdown of 'komorebi' (木 + 漏れ + 日) and for connecting concepts to 'Zen', 'mushin', and 'yohaku'. None of these elements appear in the provided response text. While the response is indeed high-quality and the numeric scores are likely appropriate (good calibration), the specificity is extremely poor because the evidence cited is fabricated. The evaluator is assessing an imagined version of the response rather than the text provided.",
+      "timestamp": 1770408969.5757172,
+      "error": null
+    },
+    {
+      "task_id": "multilingual_001",
+      "meta_evaluator_key": "opus_4_5",
+      "original_evaluator_key": "opus_4_6",
+      "original_evaluated_key": "gemini_3_pro",
+      "scores": {
+        "fairness": 8.5,
+        "specificity": 9.0,
+        "coverage": 7.5,
+        "calibration": 6.5
+      },
+      "detected_biases": [
+        "Leniency bias: The evaluator awards near-perfect scores (9-10 across all dimensions) despite identifying legitimate weaknesses",
+        "Positive framing bias: Weaknesses are consistently minimized with qualifiers like 'minor stylistic choice rather than an error' and 'somewhat subjective'",
+        "Phantom content bias: The evaluator praises content that doesn't exist in the response (e.g., 'bonus concept' about てくれた/おばあちゃん, discussion of Zen 無心/余白, 'faint sweetness of the tea' in free translation)"
+      ],
+      "missed_points": [
+        "The response only identifies 3 culturally specific concepts as required, not a 'bonus concept' - the evaluator appears to be evaluating a different or imagined response",
+        "The free translation in the actual response does NOT contain 'faint sweetness of the tea' or 'warming my hands' - the evaluator criticizes additions that don't exist",
+        "The actual response uses 'veranda' not 'engawa' in the initial translation, contradicting the evaluator's criticism about glossing 'engawa'",
+        "The response doesn't discuss Zen 無心 or 余白 concepts - this appears to be fabricated praise",
+        "The response doesn't analyze 何も考えない贅沢な時間 as a separate concept - it analyzes 木漏れ日, 縁側, and すする",
+        "The evaluator fails to note that the response numbers its sections incorrectly (jumps from 2 to 3, skipping the preservation strategies as a distinct section)",
+        "No critique of whether 'luxury of an empty mind' fully captures 何も考えない贅沢な時間",
+        "The evaluator doesn't address whether the translation of 淹れてくれた as 'poured' loses the nuance of brewing/steeping tea"
+      ],
+      "reasoning": "This evaluation contains serious accuracy problems that undermine its validity. The evaluator appears to be assessing a different or partially imagined response. Multiple specific praises reference content not present in the actual response: there is no 'bonus concept' about てくれた and おばあちゃん, no discussion of Zen 無心 or 余白, and the free translation doesn't contain 'faint sweetness of the tea' or 'warming my hands.' Similarly, the criticism about using 'engawa' without gloss is incorrect - the response uses 'veranda' in the initial translation. The evaluator demonstrates strong specificity skills when engaging with content that actually exists (the analysis of komorebi, engawa, and susuru is accurately described), but the phantom content significantly damages the evaluation's reliability. The calibration is problematic: awarding 10/10 for completeness and logical consistency while simultaneously noting weaknesses suggests score inflation. A response meeting requirements competently but not exceptionally should not receive multiple perfect scores. The evaluator shows leniency bias by consistently downplaying identified weaknesses. Despite these issues, the evaluation does correctly identify genuine strengths like the clear organization, the thoughtful analysis of the three concepts that were actually discussed, and the quality of the free translation rationale.",
+      "timestamp": 1770408966.5215008,
+      "error": null
+    },
+    {
+      "task_id": "multilingual_001",
+      "meta_evaluator_key": "gemini_3_pro",
+      "original_evaluator_key": "opus_4_6",
+      "original_evaluated_key": "gemini_3_pro",
+      "scores": {
+        "fairness": 2.0,
+        "specificity": 1.0,
+        "coverage": 1.0,
+        "calibration": 1.0
+      },
+      "detected_biases": [
+        "Severe Hallucination/Confabulation",
+        "Positive Bias (inventing strengths not present)"
+      ],
+      "missed_points": [
+        "The evaluator failed to assess the actual third concept provided in the response ('Susuru').",
+        "The evaluator hallucinated an analysis of 'Nothing on my mind' (Zen/Yohaku) which was not in the response.",
+        "The evaluator hallucinated a 'Bonus Concept' section regarding 'tekureta' and 'obaachan' which was not in the response.",
+        "The evaluator hallucinated details in the free translation ('faint sweetness', 'warming my hands') that were not present in the text provided.",
+        "The evaluator criticized the initial translation for using the word 'engawa' without gloss, but the response actually used the word 'veranda'."
+      ],
+      "reasoning": "The evaluation is a catastrophic failure due to extreme hallucination. The evaluator describes and critiques a response that is completely different from the one provided. It cites specific sections (Bonus Concept, Analysis of 'Nothing on my mind'), specific translation choices ('faint sweetness'), and specific errors (using 'engawa' in the first translation) that simply do not exist in the text being evaluated. The evaluator appears to be assessing a hypothetical or different response entirely, making the scores and reasoning invalid.",
+      "timestamp": 1770408970.96894,
+      "error": null
+    },
+    {
+      "task_id": "multilingual_001",
+      "meta_evaluator_key": "opus_4_5",
+      "original_evaluator_key": "gemini_3_pro",
+      "original_evaluated_key": "opus_4_5",
+      "scores": {
+        "fairness": 6.0,
+        "specificity": 8.5,
+        "coverage": 5.0,
+        "calibration": 4.0
+      },
+      "detected_biases": [
+        "Leniency bias: The evaluator awarded perfect 10s across four categories without identifying any weaknesses, suggesting an overly favorable disposition.",
+        "Confirmation bias: The evaluator focused exclusively on strengths and appeared to seek reasons to praise rather than critically assess.",
+        "Halo effect: The impressive presentation (tables, formatting, detailed structure) may have influenced the evaluator to overlook substantive issues."
+      ],
+      "missed_points": [
+        "The initial translation has a minor accuracy issue: 'savoring a luxurious moment' slightly shifts the meaning from 'spent luxurious time' (過ごした) - the original emphasizes duration, not momentary savoring.",
+        "The free translation adds 'maple leaves' which is not specified in the original text - this is an embellishment that could be noted.",
+        "The response doesn't address the grammatical structure of the original sentence or discuss how Japanese sentence flow differs from English.",
+        "No discussion of the verb 'すすりながら' (sipping while) and its onomatopoeic/sensory quality in Japanese.",
+        "The evaluator didn't note that 'engawa' being left untranslated in the 'best translation' may not serve all audiences equally well.",
+        "The summary table, while useful, is somewhat generic and doesn't add substantial new insight beyond what was already discussed.",
+        "The claim that this is a 'flawless response' is hyperbolic - no translation analysis is truly without room for improvement."
+      ],
+      "reasoning": "The evaluation demonstrates strong specificity by citing concrete examples like 'coins of light' and the analysis of '〜てくれた'. However, it suffers from significant calibration issues by awarding near-perfect scores (four 10s and one 9) while identifying zero weaknesses. This is a red flag for leniency bias. While the response being evaluated is genuinely strong and well-structured, labeling it 'flawless' ignores legitimate points for improvement. The evaluator missed opportunities to note minor translation choices that could be debated, the addition of 'maple' in the free translation, and the fact that leaving 'engawa' untranslated assumes reader familiarity with Japanese terms. A well-calibrated evaluation would acknowledge these nuances while still recognizing the response's considerable merits. The empty weaknesses array is particularly problematic for a meta-evaluation context where critical analysis is expected.",
+      "timestamp": 1770408977.84774,
+      "error": null
+    },
+    {
+      "task_id": "multilingual_001",
+      "meta_evaluator_key": "opus_4_6",
+      "original_evaluator_key": "gemini_3_pro",
+      "original_evaluated_key": "opus_4_5",
+      "scores": {
+        "fairness": 4.0,
+        "specificity": 7.0,
+        "coverage": 4.0,
+        "calibration": 3.0
+      },
+      "detected_biases": [
+        "Excessive leniency bias — awarding perfect or near-perfect scores across all dimensions without identifying any weaknesses.",
+        "Halo effect — the overall high quality of the response appears to have prevented the evaluator from critically examining individual aspects.",
+        "Confirmation bias — the evaluator only looked for evidence supporting a positive assessment rather than seeking potential flaws."
+      ],
+      "missed_points": [
+        "The initial translation retains 'engawa' untranslated, which is a defensible choice but could also be seen as a weakness for a 'best English translation' since it requires prior cultural knowledge from the reader. This tradeoff deserved discussion as a potential weakness.",
+        "The free translation introduces 'maple leaves' which is not specified in the original text — this is an embellishment that adds specificity not present in the source, which could be flagged as a minor accuracy concern even in a free translation.",
+        "The free translation restructures the sentence significantly, placing 'Grandmother made tea' as a standalone sentence and splitting the original single flowing sentence into multiple ones. While effective, the evaluator could have noted this as a departure worth discussing.",
+        "The response does not discuss the challenge of translating the overall sentence structure and rhythm — Japanese syntax (with its verb-final structure and embedded clauses) creates a different reading experience that could have been addressed.",
+        "The concept of 'すすりながら' (sipping with a slurping sound, culturally acceptable in Japan) is not identified as a culturally specific concept, and the evaluator did not note this omission.",
+        "Giving accuracy a perfect 10 is questionable — while the translation is very good, there are minor interpretive choices (e.g., 'savoring' adds a connotation not explicitly in the original) that could be discussed.",
+        "The evaluator listed zero weaknesses, which is almost never appropriate for any response, no matter how strong."
+      ],
+      "reasoning": "The evaluation demonstrates strong specificity in its strengths section — it correctly identifies the quality of the 'coins of light' metaphor, the insightful analysis of '〜てくれた', and the nuanced treatment of '贅沢'. However, the evaluation is severely undermined by its lack of critical engagement. Awarding four perfect 10s and a 9 with literally zero weaknesses identified suggests the evaluator was not performing genuine critical analysis. The response, while excellent, is not flawless: the free translation introduces details not in the original (maple leaves), the initial translation leaves a Japanese term untranslated without in-text explanation, and the culturally significant act of 'すする' (slurping tea) goes unanalyzed. A well-calibrated evaluation of this genuinely strong response might have scores in the 8.5-9.5 range with at least 2-3 minor weaknesses noted. The all-perfect scoring pattern suggests either insufficient critical rigor or a bias toward uncritical praise.",
+      "timestamp": 1770408985.818512,
+      "error": null
+    },
+    {
+      "task_id": "multilingual_001",
+      "meta_evaluator_key": "opus_4_5",
+      "original_evaluator_key": "gemini_3_pro",
+      "original_evaluated_key": "opus_4_6",
+      "scores": {
+        "fairness": 6.0,
+        "specificity": 5.0,
+        "coverage": 5.0,
+        "calibration": 6.0
+      },
+      "detected_biases": [
+        "The evaluator appears to have confused the response with a different one - references 'susuru' (slurping) as a highlighted concept, but the actual response does not analyze this term as a standalone cultural concept",
+        "Phantom praise bias - commending elements that don't exist in the actual response",
+        "The evaluator criticizes 'poured' for tea preparation, but the actual response uses 'brewed' - indicating the evaluator may have evaluated a different response entirely"
+      ],
+      "missed_points": [
+        "Failed to acknowledge the excellent bonus concept analysis of てくれた (te kureta) grammatical nuance, which demonstrates sophisticated linguistic understanding",
+        "Did not mention the strong analysis of 何も考えない贅沢な時間 and its connection to Zen Buddhist concepts like 無心 and 余白",
+        "Overlooked the thoughtful discussion of liminal space in the engawa analysis",
+        "Did not evaluate the quality of the translation strategies provided for each concept",
+        "Missed commenting on the well-structured rationale provided for the free translation",
+        "Failed to note the response exceeded requirements by providing a fourth 'bonus' concept"
+      ],
+      "reasoning": "This evaluation contains a critical flaw: the evaluator appears to have assessed a different response than the one provided. The evaluation praises the analysis of 'susuru' (slurping) as a cultural concept, but the actual response never analyzes this term - it uses 'sipped' in the translation but doesn't discuss slurping as a cultural phenomenon. Similarly, the evaluator criticizes the use of 'poured' for tea preparation, but the actual response correctly uses 'brewed.' These factual errors suggest the evaluator either confused responses or did not carefully read the submission. While the scores given (9-10 range) may coincidentally align with the actual quality of this strong response, the reasoning is fundamentally disconnected from the actual content. The response genuinely deserves high marks for its thorough analysis of komorebi, engawa, and the philosophical concept of luxurious emptiness, plus the bonus analysis of te kureta - but the evaluator's justification doesn't accurately reflect these strengths. The coverage score suffers because the evaluator missed discussing the Zen Buddhist connections, the liminal space analysis, and the bonus fourth concept while praising non-existent elements.",
+      "timestamp": 1770408983.659696,
+      "error": null
+    },
+    {
+      "task_id": "multilingual_001",
+      "meta_evaluator_key": "opus_4_6",
+      "original_evaluator_key": "gemini_3_pro",
+      "original_evaluated_key": "opus_4_6",
+      "scores": {
+        "fairness": 4.0,
+        "specificity": 3.0,
+        "coverage": 4.0,
+        "calibration": 5.0
+      },
+      "detected_biases": [
+        "The evaluator appears to be evaluating a different response than the one provided. References to 'susuru' (slurping) analysis and 'poured' as a translation choice do not match the actual response, which uses 'sipped' and does not analyze 'susuru' as a cultural concept. This suggests the evaluator may have confused this response with another ('Model B' is explicitly referenced), indicating a systematic mismatch.",
+        "The evaluator gives inflated scores (multiple 10s) that may reflect a general positive bias rather than careful assessment of the specific response."
+      ],
+      "missed_points": [
+        "The evaluator failed to note that the response actually includes a BONUS fourth cultural concept (おばあちゃんが淹れてくれた / te kureta grammar), which goes beyond the minimum requirement and demonstrates exceptional depth.",
+        "The evaluator did not comment on the quality of the analysis of 何も考えない贅沢な時間 as a cultural concept, which is one of the strongest parts of the response with its connections to Zen Buddhism, mushin, and yohaku.",
+        "The evaluator's weakness about 'poured' vs 'brewed' is entirely fabricated — the actual response uses 'brewed' in the main translation, so this criticism is invalid and applies to a different response.",
+        "The evaluator did not assess whether the literal translation accurately captures all elements of the original Japanese sentence.",
+        "The evaluator could have noted the excellent rationale section provided for the free translation, which demonstrates strong metacognitive awareness of translation strategy.",
+        "The evaluator mentions 'susuru' as a highlighted cultural concept, but the actual response never analyzes susuru/slurping as a cultural concept — this is clearly from a different response.",
+        "The evaluator did not discuss the quality and practicality of the preservation strategies offered for each concept (borrowing, expansion, compensation, footnoting)."
+      ],
+      "reasoning": "This evaluation has a fundamental problem: the evaluator is clearly assessing a different response than the one provided. The evaluation references 'susuru' (slurping) as a cultural concept analyzed in the response, but the actual response never discusses susuru. The evaluation criticizes the use of 'poured' for tea preparation, but the actual response uses 'brewed.' The evaluator explicitly refers to 'Model B,' confirming this is a mismatched evaluation. Because of this mismatch, the strengths cited are partially incorrect (the susuru point), the weakness identified is entirely wrong (the response already uses 'brewed'), and many genuine strengths of the actual response go unrecognized. The scores themselves (9, 10, 10, 10, 9) are arguably in the right ballpark for this high-quality response, but they are arrived at through incorrect reasoning. The evaluation fails on specificity because its specific references don't match the actual content, fails on coverage because it misses the actual notable features of the response (the 何も考えない贅沢な時間 analysis, the bonus te kureta concept, the detailed rationale for the free translation), and fails on fairness because the scores are justified by evidence from a different response entirely.",
+      "timestamp": 1770408988.9793558,
+      "error": null
+    }
+  ]
+}

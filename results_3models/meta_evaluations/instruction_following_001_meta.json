@@ -1,0 +1,275 @@
+{
+  "task_id": "instruction_following_001",
+  "meta_evaluations": [
+    {
+      "task_id": "instruction_following_001",
+      "meta_evaluator_key": "opus_4_6",
+      "original_evaluator_key": "opus_4_5",
+      "original_evaluated_key": "opus_4_6",
+      "scores": {
+        "fairness": 7.0,
+        "specificity": 9.0,
+        "coverage": 7.0,
+        "calibration": 6.0
+      },
+      "detected_biases": [
+        "Leniency bias: The evaluator lists the vowel constraint as a 'weakness' but then immediately confirms it is correct, which inflates the strengths list while padding the weaknesses with a non-issue",
+        "Slight positive bias in overlooking the ambiguity of the technical specification count — the evaluator rationalizes the 3-spec interpretation favorably rather than treating the potential 4-spec count as a genuine concern"
+      ],
+      "missed_points": [
+        "The technical specification count is genuinely debatable and arguably problematic: Bluetooth 5.3, 2 mL accuracy, 750 mL capacity, and 18 hours cold retention are four distinct numerical specifications. The evaluator acknowledges this but dismisses it too easily by grouping 750 mL and 18 hours as one spec. These describe different properties (volume vs. thermal performance duration) and could reasonably be counted as separate specs, meaning the constraint of 'exactly 3' may be violated.",
+        "The evaluator could have noted that the response actually has 4 technical specifications with numbers (Bluetooth 5.3, 2 mL, 750 mL, 18 hours), which is a more significant constraint violation than acknowledged",
+        "The weakness about the joke being 'slightly informal' is trivial and not a real issue given the constraint explicitly requires a joke",
+        "The evaluator did not critically examine whether the call-to-action constitutes the final sentence's primary purpose or is merely appended — though in this case it does serve as a CTA, so this is minor"
+      ],
+      "reasoning": "The evaluation is generally well-structured and demonstrates strong specificity — it references exact sentences, identifies the vowel pattern by quoting first words, and names the specific technical specs. However, there are calibration issues. The scores seem somewhat generous (accuracy at 7, completeness at 8) given that the 'exactly 3 technical specifications' constraint is genuinely ambiguous and arguably violated. Four distinct numbers tied to four distinct properties (Bluetooth version, measurement accuracy, volume, thermal retention time) appear in the text. The evaluator acknowledges this but rationalizes it away rather than treating it as a meaningful constraint violation. The weaknesses section is padded: the first listed weakness is actually confirmed as not a weakness at all, and the third weakness (joke being informal) contradicts the constraint that explicitly requires a joke. This suggests some leniency bias. Coverage is decent but misses the opportunity to more firmly flag the spec-count issue. The logical consistency and clarity scores (9 each) are well-justified. Overall, the evaluation is competent and specific but slightly too generous in its calibration and somewhat self-contradictory in its weakness identification.",
+      "timestamp": 1770408432.658172,
+      "error": null
+    },
+    {
+      "task_id": "instruction_following_001",
+      "meta_evaluator_key": "gemini_3_pro",
+      "original_evaluator_key": "opus_4_5",
+      "original_evaluated_key": "opus_4_6",
+      "scores": {
+        "fairness": 9.0,
+        "specificity": 10.0,
+        "coverage": 8.0,
+        "calibration": 8.0
+      },
+      "detected_biases": [],
+      "missed_points": [
+        "Logical contradiction in the 'Weaknesses' section: The evaluator lists the vowel constraint as a weakness but then explains that the model followed it correctly.",
+        "Potential violation of the 'exactly one subtle joke' constraint: The closing line ('before your body has to send yet another headache as a reminder') could be interpreted as a second joke/witticism, which the evaluator did not address."
+      ],
+      "reasoning": "The evaluation is highly specific, citing exact words and numbers from the response to back up its claims. It correctly identifies the potential issue with the technical specification count (4 numbers vs. the requested 3). However, the evaluation contains a significant logical error in the 'Weaknesses' list, where it claims the vowel constraint was not met, only to immediately demonstrate that it was met perfectly. This suggests a hallucination or formatting error. Additionally, the evaluator missed a potential second violation regarding the 'exactly one joke' constraint, as the final sentence is also humorous.",
+      "timestamp": 1770408435.387625,
+      "error": null
+    },
+    {
+      "task_id": "instruction_following_001",
+      "meta_evaluator_key": "opus_4_6",
+      "original_evaluator_key": "opus_4_5",
+      "original_evaluated_key": "gemini_3_pro",
+      "scores": {
+        "fairness": 8.0,
+        "specificity": 9.0,
+        "coverage": 8.0,
+        "calibration": 7.0
+      },
+      "detected_biases": [
+        "Slight leniency bias - the evaluator appears predisposed to praise the response, with weaknesses being extremely minor and almost dismissive",
+        "The evaluator treats the weaknesses as negligible rather than substantive, which inflates the overall impression"
+      ],
+      "missed_points": [
+        "The evaluator could have noted that the call-to-action constraint says 'End with a call-to-action' - while the last sentence is a CTA, the evaluator could have analyzed whether this fully satisfies the constraint or if it's somewhat generic",
+        "The evaluator did not critically examine whether 'Bluetooth 5.2' counts as a technical specification 'with a number' in the same way the others do - though this is arguably fine, it deserved brief mention",
+        "The weaknesses listed are extremely soft and don't really constitute meaningful critique - the evaluator could have noted that the joke about conference calls, while clever, is somewhat predictable/common in tech product writing",
+        "The evaluator could have discussed whether the professional tone is consistently maintained or if the joke slightly disrupts it, rather than just noting it 'might be considered slightly informal'",
+        "No mention of whether the product description is actually compelling as a product description - it reads more like a spec sheet with personality than a persuasive product description"
+      ],
+      "reasoning": "The evaluation is generally high quality with strong specificity - the evaluator explicitly traces the vowel sequence (A-sophisticated, E-quipped, I-t maintains, O-ur, U-pgrade), verifies the three technical specs, confirms forbidden word avoidance, and identifies the joke and CTA. This evidence-based approach is commendable. However, the calibration is slightly generous. Scores of 9-10 across the board suggest near-perfection, and while the response is indeed very good, the weaknesses identified are so mild as to be almost non-existent, which doesn't fully justify the small deductions made. The accuracy score of 9.0 implies some flaw, but the weaknesses listed don't really point to an accuracy issue. The evaluation correctly identifies all constraint adherence, which is the most critical aspect. The coverage is good but could have been more thorough in examining the quality of the product description as marketing copy, and whether the humor is truly 'subtle' or somewhat obvious. The fairness is generally good - the evaluator doesn't show model-specific bias - but there is a slight tendency toward leniency, treating a solid but not extraordinary response as exceptional.",
+      "timestamp": 1770408432.252039,
+      "error": null
+    },
+    {
+      "task_id": "instruction_following_001",
+      "meta_evaluator_key": "gemini_3_pro",
+      "original_evaluator_key": "opus_4_5",
+      "original_evaluated_key": "gemini_3_pro",
+      "scores": {
+        "fairness": 10.0,
+        "specificity": 10.0,
+        "coverage": 10.0,
+        "calibration": 10.0
+      },
+      "detected_biases": [],
+      "missed_points": [],
+      "reasoning": "",
+      "timestamp": 1770408482.12021,
+      "error": null
+    },
+    {
+      "task_id": "instruction_following_001",
+      "meta_evaluator_key": "opus_4_5",
+      "original_evaluator_key": "opus_4_6",
+      "original_evaluated_key": "opus_4_5",
+      "scores": {
+        "fairness": 9.0,
+        "specificity": 10.0,
+        "coverage": 8.5,
+        "calibration": 8.5
+      },
+      "detected_biases": [
+        "Slight leniency bias - the evaluator appears somewhat generous in overlooking potential issues",
+        "Minor confirmation bias - the evaluator seems predisposed to find the response successful and frames ambiguous elements favorably"
+      ],
+      "missed_points": [
+        "The response actually contains 4 technical specifications with numbers, not 3: 24-ounce capacity, 18 hours cold retention, Bluetooth 5.0, AND 10,000 satisfied customers. While the evaluator noted this as a 'borderline issue,' it should have been weighted more heavily as a potential constraint violation",
+        "The call-to-action analysis could have been more critical - while 'Upgrade your daily hydration routine today by ordering the AquaSync Pro' is a CTA, the addition of 'and discover what 10,000 satisfied customers already know' makes it a compound sentence that dilutes the CTA's directness",
+        "The evaluator did not critically examine whether the professional tone was truly maintained - phrases like 'apparently we all need a bottle smarter than us' could be seen as slightly casual"
+      ],
+      "reasoning": "This evaluation demonstrates strong analytical quality with excellent specificity. The evaluator meticulously verified each constraint, citing exact examples (the AEIOU pattern with specific words, the three technical specs with their values, the exact joke text). The strengths section is comprehensive and well-documented with direct quotes from the response. However, the evaluation shows slight leniency in its calibration. The '10,000 satisfied customers' issue was correctly identified but perhaps too quickly dismissed - a number used to quantify something about the product could reasonably be considered a fourth technical specification, which would violate the 'exactly 3' constraint. The evaluator acknowledged this but still awarded 9/10 for accuracy, which may be slightly generous. The coverage is good but not exhaustive - the evaluator could have examined whether the tone truly remained 'professional' throughout given the self-deprecating humor. The fairness is strong as the evaluator provides evidence-based reasoning without apparent model bias, though there's a subtle tendency to interpret ambiguous elements in the response's favor. Overall, this is a high-quality evaluation with thorough constraint verification, but the scores may be 0.5-1 point too high given the legitimate concern about the fourth numerical specification.",
+      "timestamp": 1770408446.2336268,
+      "error": null
+    },
+    {
+      "task_id": "instruction_following_001",
+      "meta_evaluator_key": "gemini_3_pro",
+      "original_evaluator_key": "opus_4_6",
+      "original_evaluated_key": "opus_4_5",
+      "scores": {
+        "fairness": 10.0,
+        "specificity": 10.0,
+        "coverage": 10.0,
+        "calibration": 10.0
+      },
+      "detected_biases": [],
+      "missed_points": [],
+      "reasoning": "The evaluation is exemplary. The evaluator meticulously verified every constraint, including the complex structural constraint (AEIOU acrostic) and the negative constraints. It provided specific evidence for every claim, quoting the exact words used to satisfy the vowel requirement and listing the specific technical specifications found. The evaluator also demonstrated high-level nuance by identifying the number '10,000' in the text but correctly distinguishing it as a marketing claim (social proof) rather than a technical specification, thereby confirming the 'exactly 3' constraint was met. The scoring is perfectly calibrated to the high quality of the response.",
+      "timestamp": 1770408450.3127549,
+      "error": null
+    },
+    {
+      "task_id": "instruction_following_001",
+      "meta_evaluator_key": "opus_4_5",
+      "original_evaluator_key": "opus_4_6",
+      "original_evaluated_key": "gemini_3_pro",
+      "scores": {
+        "fairness": 9.0,
+        "specificity": 10.0,
+        "coverage": 9.0,
+        "calibration": 8.5
+      },
+      "detected_biases": [
+        "Slight leniency bias - the evaluator appears predisposed to view the response favorably, treating genuinely minor issues as the only concerns while not probing deeper for potential weaknesses"
+      ],
+      "missed_points": [
+        "The evaluator could have noted that 'Bluetooth 5.2' is a connectivity standard rather than a traditional 'technical specification' in the product-feature sense, though this is debatable",
+        "The call-to-action starting with 'Upgrade' serves double duty (satisfying the U-vowel requirement and CTA requirement), which could be noted as particularly clever constraint satisfaction",
+        "The evaluator didn't explicitly verify that each sentence starts with a DIFFERENT vowel in the required A-E-I-O-U order - they stated it correctly but the verification methodology could be more explicit"
+      ],
+      "reasoning": "This is a high-quality evaluation that demonstrates strong analytical rigor. The evaluator systematically addresses each constraint from the original task and provides specific textual evidence for their assessments (e.g., quoting 'A sophisticated...', 'Equipped...', etc. for the vowel requirement). The strengths section is comprehensive and well-documented, correctly identifying all six major constraints and how they were satisfied. The weaknesses identified are genuinely minor and appropriately characterized as such. However, the calibration shows slight leniency - scores of 9-10 across the board for a response that, while excellent, could arguably have minor issues worth more scrutiny. The evaluator's reasoning is thorough and logically sound, walking through each constraint methodically. The specificity is exemplary, with direct quotes and precise references throughout. The only notable gap is that the evaluator could have been slightly more critical in examining whether the technical specifications truly meet the spirit of the requirement (e.g., is Bluetooth version a 'specification with a number' in the intended sense?). Overall, this is a well-executed, evidence-based evaluation with only minor room for improvement in calibration stringency.",
+      "timestamp": 1770408448.204879,
+      "error": null
+    },
+    {
+      "task_id": "instruction_following_001",
+      "meta_evaluator_key": "gemini_3_pro",
+      "original_evaluator_key": "opus_4_6",
+      "original_evaluated_key": "gemini_3_pro",
+      "scores": {
+        "fairness": 10.0,
+        "specificity": 10.0,
+        "coverage": 10.0,
+        "calibration": 10.0
+      },
+      "detected_biases": [],
+      "missed_points": [],
+      "reasoning": "The evaluation is flawless. The evaluator systematically verified every single constraint imposed by the prompt (sentence count, specific vowel starting order, technical specifications, forbidden words, tone/joke, and call-to-action). It provided direct evidence from the text to support its findings, correctly identifying the specific sentences corresponding to the AEIOU pattern and the specific numbers used for specifications. The scoring is well-calibrated, reflecting the near-perfect nature of the response.",
+      "timestamp": 1770408449.9636831,
+      "error": null
+    },
+    {
+      "task_id": "instruction_following_001",
+      "meta_evaluator_key": "opus_4_5",
+      "original_evaluator_key": "gemini_3_pro",
+      "original_evaluated_key": "opus_4_5",
+      "scores": {
+        "fairness": 7.0,
+        "specificity": 8.0,
+        "coverage": 5.0,
+        "calibration": 4.0
+      },
+      "detected_biases": [
+        "Leniency bias - evaluator awarded perfect 10s across most categories without critical scrutiny",
+        "Confirmation bias - evaluator focused on validating constraint compliance without checking for potential issues"
+      ],
+      "missed_points": [
+        "The response contains MORE than 3 technical specifications: 24-ounce capacity, 18 hours cold retention, Bluetooth 5.0, AND 10,000 customers. While the evaluator dismissed '10,000 satisfied customers' as a marketing statistic, this distinction is debatable and warranted more critical analysis.",
+        "The call-to-action requirement was noted as met, but the evaluator didn't critically assess whether 'Upgrade your daily hydration routine today by ordering...' fully qualifies as a strong CTA or just a closing statement.",
+        "The evaluator listed zero weaknesses, which is unrealistic for any response - even excellent ones typically have minor areas for improvement.",
+        "The 'double-walled stainless steel' could arguably count as a technical specification, which would further complicate the '3 specs' constraint.",
+        "No assessment of whether the joke was truly 'subtle' as required - 'apparently we all need a bottle smarter than us' is fairly overt humor."
+      ],
+      "reasoning": "The evaluation demonstrates good specificity by citing concrete examples (the vowel sequence, specific technical specs, the joke). However, it suffers from significant calibration issues by awarding near-perfect scores (four 10s and one 9) without identifying any weaknesses whatsoever. This is a red flag for leniency bias. The evaluator's reasoning about the '10,000 customers' not being a technical spec is reasonable but should have been flagged as a potential concern rather than dismissed entirely. The coverage is incomplete because the evaluator failed to scrutinize whether the joke was truly 'subtle' (it's quite direct), whether there might be more than 3 technical specifications depending on interpretation, and whether the response had any stylistic or structural weaknesses. A well-calibrated evaluation would acknowledge that even strong responses have room for improvement and would apply more critical analysis to edge cases in constraint compliance.",
+      "timestamp": 1770408460.103324,
+      "error": null
+    },
+    {
+      "task_id": "instruction_following_001",
+      "meta_evaluator_key": "opus_4_6",
+      "original_evaluator_key": "gemini_3_pro",
+      "original_evaluated_key": "opus_4_5",
+      "scores": {
+        "fairness": 6.0,
+        "specificity": 8.0,
+        "coverage": 6.0,
+        "calibration": 4.0
+      },
+      "detected_biases": [
+        "Leniency bias: The evaluator gave perfect 10s across almost all dimensions without identifying any weaknesses whatsoever.",
+        "Confirmation bias: The evaluator appears to have looked for reasons the response succeeded rather than critically examining potential issues."
+      ],
+      "missed_points": [
+        "The constraint says 'exactly 3 technical specifications (with numbers)' — the response arguably contains more than 3 numbers that could be considered technical specs. While the evaluator correctly noted that '10,000 satisfied customers' is a marketing stat, the response contains 24-ounce, 18 hours, Bluetooth 5.0, and potentially the LED reminders could be seen as a feature spec. The evaluator should have at least discussed whether exactly 3 specs were present more carefully.",
+        "The call-to-action requirement says the description must 'end with a call-to-action.' The last sentence does function as a CTA, but the evaluator could have noted this more explicitly as a strength rather than just listing it briefly.",
+        "The subtle joke ('apparently we all need a bottle smarter than us to remember the basics') is arguably not that subtle — it's fairly overt. A more critical evaluator might have questioned whether this meets the 'subtle' requirement.",
+        "The evaluator listed zero weaknesses, which is almost never appropriate for any response. Even excellent responses have minor areas for improvement, such as the joke's subtlety level or the slightly promotional tone of the last sentence.",
+        "Giving a perfect 10 for originality-adjacent dimensions like clarity and logical consistency without any nuance suggests insufficient critical analysis."
+      ],
+      "reasoning": "The evaluation demonstrates good specificity — it references concrete elements like the vowel ordering, the specific technical specs (24-ounce, 18 hours, Bluetooth 5.0), and the joke. It also correctly identifies that '10,000 satisfied customers' is not a technical specification. However, the evaluation is significantly over-calibrated toward perfection. Giving 10/10 on accuracy, completeness, logical consistency, and clarity with zero weaknesses is excessively generous. While the response is indeed quite good and meets most constraints well, a rigorous evaluator should have noted: (1) the joke may not be 'subtle' enough as required, (2) there could be debate about whether the number of technical specs is exactly 3 given other numerical mentions, and (3) the overall quality, while high, rarely warrants perfect scores across the board. The empty weaknesses array is a red flag for insufficient critical analysis. The evaluation reads more like praise than a balanced assessment.",
+      "timestamp": 1770408464.396312,
+      "error": null
+    },
+    {
+      "task_id": "instruction_following_001",
+      "meta_evaluator_key": "opus_4_5",
+      "original_evaluator_key": "gemini_3_pro",
+      "original_evaluated_key": "opus_4_6",
+      "scores": {
+        "fairness": 9.0,
+        "specificity": 9.0,
+        "coverage": 7.0,
+        "calibration": 6.0
+      },
+      "detected_biases": [
+        "Slight leniency bias — the evaluator awarded very high scores (8-10) despite identifying a clear constraint violation."
+      ],
+      "missed_points": [
+        "The evaluator did not verify whether the response ends with a proper call-to-action. While the final sentence does include a CTA ('Upgrade your hydration habit today by visiting aquasyncpro.com and ordering yours'), this should have been explicitly confirmed as a strength.",
+        "The technical specification count is debatable: Bluetooth 5.3 is a protocol version, 2 mL is a precision metric, 750 mL is a capacity, and 18 hours is a duration. The evaluator counted four, but one could argue whether all qualify as 'technical specifications with numbers' in the traditional sense. This nuance was not explored.",
+        "The evaluator did not comment on whether the joke was 'subtle' as required — the Monday meeting joke is fairly overt, which could be seen as a minor constraint deviation."
+      ],
+      "reasoning": "The evaluation demonstrates strong specificity by citing exact examples (Bluetooth 5.3, 2 mL, 750 mL, 18 hours) and correctly identifying the vowel-order compliance, sentence count, and forbidden word avoidance. The evaluator was fair in acknowledging both strengths and the specification count issue. However, calibration is questionable: an accuracy score of 8.0 seems generous given a clear constraint violation (4 specs instead of 3), and the other scores (9-10) may be inflated for a response that failed at least one explicit requirement. Coverage is incomplete because the evaluator did not explicitly verify the call-to-action constraint (though it was met) and did not assess whether the joke qualified as 'subtle.' The evaluation is competent but could benefit from stricter calibration and more thorough constraint verification.",
+      "timestamp": 1770408461.001486,
+      "error": null
+    },
+    {
+      "task_id": "instruction_following_001",
+      "meta_evaluator_key": "opus_4_6",
+      "original_evaluator_key": "gemini_3_pro",
+      "original_evaluated_key": "opus_4_6",
+      "scores": {
+        "fairness": 8.0,
+        "specificity": 9.0,
+        "coverage": 7.0,
+        "calibration": 6.0
+      },
+      "detected_biases": [
+        "Slight leniency bias — the evaluator gave very high scores (8-10) despite identifying a clear constraint violation, which should have more significantly impacted the accuracy score.",
+        "Positive framing bias — the evaluator described the response as 'flawless' aside from the counting error, which may understate the severity of failing a strict constraint."
+      ],
+      "missed_points": [
+        "The call-to-action constraint: The evaluator did not explicitly confirm or credit the response for ending with a call-to-action, which it does ('Upgrade your hydration habit today by visiting aquasyncpro.com...'). This is a strength that should have been noted.",
+        "The last sentence starts with 'U' (Upgrade), which satisfies the vowel constraint — the evaluator confirmed this but could have been more explicit about verifying each sentence's starting letter.",
+        "Whether having 4 technical specs instead of 3 is debatable: one could argue that '750 mL' is a product dimension rather than a 'technical specification,' or that Bluetooth 5.3 is a feature name rather than a standalone spec. The evaluator did not explore this nuance.",
+        "The evaluator did not discuss whether the joke qualifies as 'subtle' — the Monday morning meeting joke is reasonably subtle but this deserved explicit analysis since 'exactly one subtle joke' was a constraint.",
+        "The accuracy score of 8.0 seems too high given that a strict numerical constraint (exactly 3 technical specifications) was violated. When the task says 'STRICT constraints' and 'exactly 3,' failing this should be penalized more heavily."
+      ],
+      "reasoning": "The evaluation is generally competent and demonstrates good analytical skills. The evaluator correctly identified the vowel ordering compliance, sentence count, avoidance of forbidden words, and the tone/joke integration. The identification of the technical specification count issue (4 instead of 3) is a strong and specific observation. However, the evaluation has notable calibration issues: an accuracy score of 8.0 is generous when a strict constraint was violated, especially given the task's emphasis on 'STRICT constraints' and 'exactly' language. The completeness score of 9.0 also seems slightly high given that the evaluator didn't explicitly verify all constraints (e.g., call-to-action). Coverage is decent but misses some nuances — the evaluator didn't discuss whether the joke qualifies as 'subtle,' didn't explicitly credit the call-to-action, and didn't explore whether the 4-spec count is debatable. The specificity is strong, with concrete references to Bluetooth 5.3, 2 mL, 750 mL, and 18 hours. Overall, this is a solid but somewhat lenient evaluation that could benefit from stricter calibration and more thorough constraint-by-constraint verification.",
+      "timestamp": 1770408466.414515,
+      "error": null
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "task_id": "multilingual_001",
+  "meta_evaluations": [
+    {
+      "task_id": "multilingual_001",
+      "meta_evaluator_key": "opus_4_6",
+      "original_evaluator_key": "opus_4_5",
+      "original_evaluated_key": "opus_4_6",
+      "scores": {
+        "fairness": 7.0,
+        "specificity": 9.0,
+        "coverage": 8.0,
+        "calibration": 6.0
+      },
+      "detected_biases": [
+        "Leniency bias: The evaluator appears overly generous, awarding near-perfect scores (9-10 across the board) with relatively minor weaknesses identified",
+        "Presentation bias: The evaluator may be influenced by the polished formatting and organization of the response, which could inflate perceived quality beyond the actual substance"
+      ],
+      "missed_points": [
+        "The literal translation's rendering of 'spending a luxurious time in which I thought of nothing at all' is somewhat awkward and stilted in English — this could have been noted as an accuracy/quality issue for the 'best translation'",
+        "The evaluator did not question whether the cultural analysis, while impressive, occasionally overstates the case — e.g., the claim that komorebi carries 'almost spiritual quality' or that the English paraphrase is merely 'a description of optics' is somewhat hyperbolic and could be seen as romanticizing Japanese linguistic concepts",
+        "The response's claim that 'English must add gratitude lexically or lose it' is an oversimplification — English has prosodic, contextual, and other pragmatic means of conveying gratitude beyond explicit lexical markers. The evaluator accepted this uncritically.",
+        "The evaluator could have noted that すすりながら (sipping/slurping) has its own cultural nuance — in Japanese culture, audibly sipping tea is acceptable and even expected, which 'sipped' in English doesn't fully convey. This was missed by both the response and the evaluator.",
+        "The initial 'best' translation is somewhat wooden and reads more like a gloss than a polished English translation. The evaluator only lightly touched on the engawa issue but didn't address the overall naturalness of the translation.",
+        "The connection to mushin and ma, while intellectually interesting, is arguably a stretch for this particular sentence — the text is more about a simple domestic moment than a Zen meditation. The evaluator praised this depth without questioning whether it was over-reading the source text."
+      ],
+      "reasoning": "The evaluation is well-structured and demonstrates strong specificity — it references particular phrases, linguistic features, and translation choices with precision. The strengths identified are genuinely present in the response, and the evaluator shows good linguistic knowledge. However, the evaluation suffers from significant leniency bias. Giving 10/10 for completeness, logical consistency, and clarity leaves no room for the real imperfections that exist. The literal translation is not particularly natural English, which should affect the accuracy score more than it did. The evaluator identified only three weaknesses, all described as minor, when there are more substantive issues: the over-romanticization of Japanese concepts, the somewhat wooden literal translation, and the occasional analytical overreach (connecting a simple domestic scene to Zen philosophy). The weaknesses that were identified are valid but relatively superficial compared to what was missed. The coverage is decent but not comprehensive — the evaluator caught the engawa loanword issue and the free translation's loss of 'sipping,' but missed the naturalness problems in the literal translation and the analytical overstatements. Overall, this is a competent evaluation that correctly identifies the response as high-quality, but the scores are inflated by approximately 1-2 points across most dimensions.",
+      "timestamp": 1770391115.528247,
+      "error": null
+    },
+    {
+      "task_id": "multilingual_001",
+      "meta_evaluator_key": "opus_4_5",
+      "original_evaluator_key": "opus_4_6",
+      "original_evaluated_key": "opus_4_5",
+      "scores": {
+        "fairness": 9.0,
+        "specificity": 9.5,
+        "coverage": 8.5,
+        "calibration": 7.5
+      },
+      "detected_biases": [
+        "Slight leniency bias - the evaluator appears predisposed to praise, with 3 scores at perfect 10 and the lowest at 9.0",
+        "Possible sophistication bias - the evaluator may be overly impressed by academic framing and cultural references, potentially inflating scores"
+      ],
+      "missed_points": [
+        "The evaluator's 'Best English Translation' in Task 1 differs significantly from what they describe in the evaluation (the evaluation mentions 'spending a luxurious time in which I thought of nothing at all' but the actual response says 'savoring the luxurious gift of an empty mind') - this discrepancy suggests the evaluator may have been working from a different version or misread",
+        "The response identifies 4 concepts (A-D) but labels the 4th as a bonus 'てくれた' analysis in the evaluation, when actually the response treats お茶を淹れてくれた as concept C and 何も考えない贅沢な時間 as concept D - there's no separate 'bonus' てくれた section",
+        "The free translation in the response differs from what the evaluator quotes ('that was all there was — and it was everything' does not appear in the actual response)",
+        "The evaluator could have noted that the response's literal translation uses 'engawa' without translation, which is a debatable choice for a 'best English translation' aimed at general readers",
+        "No mention of whether the translation accurately captures the verb tense and aspect of the original Japanese"
+      ],
+      "reasoning": "The evaluation demonstrates strong analytical skills and provides detailed, evidence-based reasoning for most assessments. The evaluator shows excellent specificity by referencing particular phrases, concepts, and structural elements. The strengths identified are largely accurate and well-articulated, particularly the praise for the liminal space analysis of engawa and the Zen connections.\n\nHowever, there are significant concerns about calibration and accuracy. The scores cluster very high (9-10 across all dimensions), which may not fully account for the response's limitations. More critically, the evaluator appears to quote or reference content that doesn't match the actual response - mentioning a 'literal translation' phrasing and a free translation closing line that don't appear in the submitted work. This raises questions about whether the evaluation was conducted carefully.\n\nThe weaknesses section is thoughtful but relatively brief compared to the extensive strengths list (3 weaknesses vs 8 strengths), suggesting possible leniency. The weakness about 'dappled light' being a reasonable English equivalent is valid and well-observed. However, the evaluator missed that the response's approach to Task 1 (using 'engawa' untranslated) could be questioned as not fully meeting the 'best English translation' brief.\n\nOverall, this is a competent evaluation with strong analytical depth, but the apparent textual discrepancies and generous scoring suggest room for improvement in accuracy and calibration.",
+      "timestamp": 1770391113.274252,
+      "error": null
+    }
+  ]
+}
